@@ -1,0 +1,269 @@
+const { blazetz } = require("../../devblaze/blazetz");
+const util = require("util");
+const fs = require("fs-extra");
+const path = require("path");
+const os = require("os");
+const moment = require("moment-timezone");
+const { format } = require(__dirname + "/../../devblaze/mesfonctions");
+const s = require(__dirname + "/../../settings");
+const { isIosPlainMenu, iosPlainMenu } = require(__dirname + "/../../lib/menuStyle");
+
+// ====== LOAD RANDOM IMAGE FROM /scs FOLDER ======
+function getRandomScsImage() {
+    const scsFolder = path.join(__dirname, "../scs");
+    const images = fs.readdirSync(scsFolder).filter(f =>
+        /^menu\d+\.(jpg|jpeg|png|mp4|gif)$/i.test(f)
+    );
+    
+    if (images.length === 0) {
+        return null;
+    }
+    
+    // Get random image from folder
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return path.join(scsFolder, images[randomIndex]);
+}
+
+function getIosMenuImage() {
+    const imagePath = path.join(__dirname, "../scs/ios-menu.jpg");
+    return fs.existsSync(imagePath) ? imagePath : null;
+}
+
+// ====== CONTACT QUOTE ======
+const quotedContact = {
+  key: {
+    fromMe: false,
+    participant: `0@s.whatsapp.net`,
+    remoteJid: "status@broadcast"
+  },
+  message: {
+    contactMessage: {
+      displayName: "BLAZE VERIFIED ✅",
+      vcard:
+        "BEGIN:VCARD\n" +
+        "VERSION:3.0\n" +
+        "FN:BLAZE VERIFIED ✅\n" +
+        "ORG:BLAZE-TECH BOT;\n" +
+        "TEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\n" +
+        "END:VCARD"
+    }
+  }
+};
+
+// ====== CONTEXT INFO (Bila links) ======
+const contextInfo = {
+  forwardingScore: 999,
+  isForwarded: true,
+  forwardedNewsletterMessageInfo: {
+    newsletterJid: "120363421014261315@newsletter",
+    newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+    serverMessageId: 1
+  }
+};
+
+// ====== BOT INFO (Bila date na time) ======
+function getPlatform() {
+  if (process.env.P_SERVER_UUID || process.env.PTERODACTYL) return 'Pterodactyl';
+  if (process.env.DYNO) return 'Heroku';
+  if (process.env.KATABUMP || process.env.KATABUMP_SERVER) return 'Katabump';
+  return 'Node.js';
+}
+
+function getBotInfo(mode, totalCommands, ownerName) {
+  const usedRAM = format(os.totalmem() - os.freemem());
+  const totalRAM = format(os.totalmem());
+
+  return `
+╭───「 *BLAZE XMD* 」─────⊛
+┃⊛╭───────────────⊛
+┃⊛│👑 *Owner*: ${ownerName || 'ARNOLD EMMANUEL TARIMO'}
+┃⊛│🖥️ *Platform*: ${getPlatform()}
+┃⊛│⚙️ *Mode*: ${mode.toUpperCase()}
+┃⊛│📦 *Total Plugins*: ${totalCommands}
+┃⊛│🖥️ *RAM*: ${usedRAM} / ${totalRAM}
+┃⊛│✅ *Status*: ONLINE
+┃⊛│🌐 *Website*: https://blaze-xmd.zone.id
+┃⊛╰━━━━━━━━━━━━━━⊛
+╰━━━━━━━━━━━━━━━━━━━━⊛
+`;
+}
+
+// ====== MAIN COMMAND ======
+blazetz({
+  nomCom: "menu",
+  categorie: "General",
+  reaction: "🌚",
+}, async (dest, client, commandeOptions) => {
+  const { ms, repondre, prefixe } = commandeOptions;
+  const { cm } = require(__dirname + "/../../devblaze/blazetz");
+
+  // ====== GROUP COMMANDS BY CATEGORY ======
+  let coms = {};
+  let mode = s.MODE.toLowerCase() !== "yes" ? "private" : "public";
+
+  for (const com of cm) {
+    if (!coms[com.categorie]) coms[com.categorie] = [];
+    coms[com.categorie].push(com.nomCom);
+  }
+
+  const categories = Object.keys(coms);
+  const totalCommands = cm.length;
+
+  // ====== GET RANDOM IMAGE FROM /scs ======
+  const imagePath = getRandomScsImage();
+  
+  // ====== BUILD OPTIONS TEXT ======
+  // iOS mode intentionally stays text-only and numeric: it avoids dense
+  // box-drawing layouts while preserving the existing reply-by-number flow.
+  const iosMenu = isIosPlainMenu;
+  let optionsText = iosMenu
+    ? `${iosPlainMenu(["BLAZE XMD IOS MENU", "", "Reply with a category number:", ""])}\n`
+    : `📑 *BLAZE TOOL MENU*\n\nReply with category number:\n\n`;
+
+  categories.forEach((cat, index) => {
+    optionsText += iosMenu
+      ? `${index + 1}. ${cat.toUpperCase()}\n`
+      : `${index + 1} ➠ ${cat.toUpperCase()}\n`;
+  });
+
+  optionsText += iosMenu
+    ? `\nSend 1-${categories.length} to open a category`
+    : `\n*Send number (1-${categories.length})*`;
+  if (iosMenu) optionsText = iosPlainMenu([optionsText]);
+
+  // ====== SEND OPTIONS WITH IMAGE ======
+  let sentMessage;
+  if (iosMenu) {
+    const iosImagePath = getIosMenuImage();
+    if (iosImagePath) {
+      try {
+        sentMessage = await client.sendMessage(dest, {
+          image: fs.readFileSync(iosImagePath),
+          caption: optionsText,
+        });
+      } catch (_) {
+        sentMessage = await client.sendMessage(dest, { text: optionsText });
+      }
+    } else {
+      sentMessage = await client.sendMessage(dest, { text: optionsText });
+    }
+  } else if (imagePath) {
+    try {
+      const imageBuffer = fs.readFileSync(imagePath);
+      sentMessage = await client.sendMessage(dest, {
+        image: imageBuffer,
+        caption: optionsText,
+        contextInfo,
+      }, { quoted: quotedContact });
+    } catch (error) {
+      // If image fails, send text only
+      sentMessage = await client.sendMessage(dest, {
+        text: optionsText,
+        contextInfo,
+      }, { quoted: quotedContact });
+    }
+  } else {
+    // If no image found, send text only
+    sentMessage = await client.sendMessage(dest, {
+      text: optionsText,
+      contextInfo,
+    }, { quoted: quotedContact });
+  }
+
+  // ====== LISTENER ======
+  client.ev.on('messages.upsert', async (update) => {
+    const message = update.messages[0];
+    if (!message.message || !message.message.extendedTextMessage) return;
+
+    // Check if replying to menu options
+    if (message.message.extendedTextMessage.contextInfo?.stanzaId !== sentMessage.key.id) return;
+
+    const responseText = message.message.extendedTextMessage.text.trim();
+    const categoryIndex = parseInt(responseText) - 1;
+
+    // ====== VALIDATE NUMBER ======
+    if (isNaN(categoryIndex) || categoryIndex < 0 || categoryIndex >= categories.length) {
+      await repondre(iosMenu
+        ? iosPlainMenu([`Invalid number. Send 1-${categories.length}`])
+        : `❌ Invalid number! Send 1-${categories.length}`);
+      return;
+    }
+
+    try {
+      // ====== REACT TO USER ======
+      if (!iosMenu) {
+        await client.sendMessage(message.key.remoteJid, {
+          react: { text: "⏳", key: message.key }
+        });
+      }
+
+      const selectedCategory = categories[categoryIndex];
+      const commands = coms[selectedCategory];
+
+      // ====== BUILD CATEGORY MENU ======
+      let menuText = iosMenu
+        ? `BLAZE XMD IOS MENU\n\n${selectedCategory.toUpperCase()}\n\n`
+        : `📂 *${selectedCategory.toUpperCase()}*\n\n`;
+      commands.forEach((cmd, commandIndex) => {
+        menuText += iosMenu
+          ? `${commandIndex + 1}. ${prefixe}${cmd}\n`
+          : `🔹 *${prefixe}${cmd}\n`;
+      });
+      if (iosMenu) menuText = iosPlainMenu([menuText]);
+
+      const infoText = getBotInfo(mode, totalCommands, s.OWNER_NAME);
+      const finalText = iosMenu ? menuText : infoText + menuText;
+
+      // ====== SEND MENU WITH RANDOM IMAGE ======
+      const categoryImagePath = iosMenu ? null : getRandomScsImage();
+      if (iosMenu) {
+        const iosImagePath = getIosMenuImage();
+        if (iosImagePath) {
+          try {
+            await client.sendMessage(dest, {
+              image: fs.readFileSync(iosImagePath),
+              caption: finalText,
+            });
+          } catch (_) {
+            await client.sendMessage(dest, { text: finalText });
+          }
+        } else {
+          await client.sendMessage(dest, { text: finalText });
+        }
+      } else if (categoryImagePath) {
+        try {
+          const categoryImageBuffer = fs.readFileSync(categoryImagePath);
+          await client.sendMessage(dest, {
+            image: categoryImageBuffer,
+            caption: finalText,
+            contextInfo,
+          }, { quoted: ms });
+        } catch (error) {
+          // If image fails, send text only
+          await client.sendMessage(dest, {
+            text: finalText,
+            contextInfo,
+          }, { quoted: ms });
+        }
+      } else {
+        await client.sendMessage(dest, {
+          text: finalText,
+          contextInfo,
+        }, { quoted: ms });
+      }
+
+      // ====== REACT SUCCESS ======
+      if (!iosMenu) {
+        await client.sendMessage(message.key.remoteJid, {
+          react: { text: "✅", key: message.key }
+        });
+      }
+
+    } catch (error) {
+      console.error(error);
+      await repondre(iosMenu
+        ? iosPlainMenu([`Error: ${error.message}`])
+        : `❌ Error: ${error.message}`);
+    }
+  });
+});
