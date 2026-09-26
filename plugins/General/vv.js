@@ -55,7 +55,7 @@ blazetz({
     const buffer = await collectMedia(media.payload, media.type);
     if (!buffer.length) return repondre('❌ No media data was available.');
 
-    const caption = '👁️ Media retrieved successfully.\n\n© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃';
+    const caption = '👁️ Media retrieved successfully.\n\n© BLAZE XMD';
     if (media.type === 'image') {
       await client.sendMessage(dest, { image: buffer, caption }, { quoted: ms });
     } else {

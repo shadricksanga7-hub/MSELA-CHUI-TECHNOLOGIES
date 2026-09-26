@@ -16,7 +16,7 @@ blazetz(
     {
         nomCom: "groupstatus",
         categorie: "Group",
-        author: "𝐌selachui",
+        author: "ARNOLDT20",
         reaction: "📣",
         alias: ["gcstatus"]
     },
@@ -34,7 +34,7 @@ blazetz(
             return repondre("👥 This command can only be used inside a group.");
         }
         if (!verifBlazetzAdmin) {
-            return repondre("❌ Please make 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 an admin before posting a group status.");
+            return repondre("❌ Please make BLAZE XMD an admin before posting a group status.");
         }
 
         const caption = arg.join(" ").trim();

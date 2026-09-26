@@ -99,7 +99,7 @@ blazetz({
     if (!translatedText) throw new Error('The translation service returned an empty response.');
 
     return repondre([
-      '╭━━━〔 MSELA CHUI XMD TRANSLATOR 〕━━━╮',
+      '╭━━━〔 BLAZE TRANSLATOR 〕━━━╮',
       `┃ From: ${String(detectedLanguage).toUpperCase()}`,
       `┃ To: ${displayLanguage(request.targetLanguage, request.requestedLanguage)}`,
       '╰━━━━━━━━━━━━━━━━━━━━━━╯',

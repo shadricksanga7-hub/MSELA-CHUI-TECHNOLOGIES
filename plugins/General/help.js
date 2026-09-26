@@ -20,9 +20,9 @@ function categories() {
 
 function categoryMenu(prefixe) {
   const list = categories();
-  const lines = ['╭━━━〔 ❔ 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 HELP 〕━━━╮', '', 'Reply with a category number:', ''];
+  const lines = ['╭━━━〔 ❔ BLAZE XMD HELP 〕━━━╮', '', 'Reply with a category number:', ''];
   list.forEach(([category], index) => lines.push(`${index + 1} ➜ ${category}`));
-  lines.push('', `Send a number from 1-${list.length}`, '╰━━━〔 𝐌selachui 〕━━━╯');
+  lines.push('', `Send a number from 1-${list.length}`, '╰━━━〔 ARNOLDT20 〕━━━╯');
   return { text: lines.join('\n'), list };
 }
 
@@ -35,7 +35,7 @@ function commandPage(prefixe, category, commands) {
     lines.push(`• ${prefixe}${name}${aliases}`);
     lines.push(`  ${description}`);
   }
-  lines.push('', 'Reply with another category number, `0` for categories, or `back`.', '╰━━━〔 𝐌selachui 〕━━━╯');
+  lines.push('', 'Reply with another category number, `0` for categories, or `back`.', '╰━━━〔 ARNOLDT20 〕━━━╯');
   return lines.join('\n');
 }
 
@@ -90,7 +90,7 @@ blazetz({
   alias: ['h', 'guide', 'commands'],
   desc: 'Interactive help by command category.',
   categorie: 'General',
-  author: '𝐌selachui',
+  author: 'ARNOLDT20',
   reaction: '❔'
 }, async (dest, client, options) => {
   const { prefixe, repondre } = options;

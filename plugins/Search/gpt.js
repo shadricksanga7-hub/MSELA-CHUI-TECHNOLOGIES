@@ -26,9 +26,9 @@ function extractQuotedText(message) {
 }
 
 function isLikelyAiResponse(text) {
-  return /^╭━━━〔\s*🤖\s*𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI/i.test(text)
-    || /^🤖\s*\*?MSELA CHUI XMD GPT/i.test(text)
-    || /╰━━━〔\s*𝐌selachui\s*〕━━━╯/i.test(text);
+  return /^╭━━━〔\s*🤖\s*BLAZE AI/i.test(text)
+    || /^🤖\s*\*?BLAZE GPT/i.test(text)
+    || /╰━━━〔\s*ARNOLDT20\s*〕━━━╯/i.test(text);
 }
 
 function responseText(data) {
@@ -48,7 +48,7 @@ async function requestAnswer(instruction, conversationId) {
     ? {
         model: process.env.BLAZE_CHATBOT_MODEL || 'gpt-5-mini',
         messages: [
-          { role: 'system', content: 'You are 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃, a concise and helpful WhatsApp assistant. Keep ordinary replies short unless detail is requested.' },
+          { role: 'system', content: 'You are BLAZE XMD, a concise and helpful WhatsApp assistant. Keep ordinary replies short unless detail is requested.' },
           { role: 'user', content: instruction }
         ],
         max_completion_tokens: 700
@@ -66,7 +66,7 @@ blazetz(
     nomCom: 'gpt',
     categorie: 'Search',
     reaction: '🤖',
-    author: '𝐌selachui',
+    author: 'ARNOLDT20',
     alias: ['ai', 'ask', 'aiask', 'askgpt']
   },
   async (dest, client, context) => {
@@ -77,7 +77,7 @@ blazetz(
 
     if (!arg.length && !replyingToAi || ['help', '?'].includes(first)) {
       return repondre([
-        '🤖 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI ASSISTANT*',
+        '🤖 *BLAZE XMD AI ASSISTANT*',
         '',
         '`.ai your question` or `.gpt your question` — ask anything',
         '`.gpt code write a JavaScript function` — coding mode',
@@ -125,13 +125,13 @@ blazetz(
       const modeLabel = mode === 'general' ? '' : `\n🧭 *Mode:* ${mode.toUpperCase()}\n`;
       const continuationLabel = replyingToAi ? '\n🔁 *Conversation continued*\n' : '';
       const output = [
-        '╭━━━〔 🤖 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI 〕━━━╮',
+        '╭━━━〔 🤖 BLAZE AI 〕━━━╮',
         `${modeLabel}${continuationLabel}`,
         `📝 *Request:* ${query.slice(0, 180)}${query.length > 180 ? '…' : ''}`,
         '',
         answer,
         '',
-        '╰━━━〔 𝐌selachui 〕━━━╯'
+        '╰━━━〔 ARNOLDT20 〕━━━╯'
       ].join('\n');
 
       await client.sendMessage(dest, { text: output }, { quoted: ms });

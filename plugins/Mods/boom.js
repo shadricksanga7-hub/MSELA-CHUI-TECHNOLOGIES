@@ -8,9 +8,9 @@ blazetz(
     nomCom: 'boom',
     categorie: 'Mods',
     reaction: '😈',
-  },
+  }, 
 
-
+  
 
   async (dest,client, commandeOptions) => {
     const {ms,arg,repondre,superUser} = commandeOptions;

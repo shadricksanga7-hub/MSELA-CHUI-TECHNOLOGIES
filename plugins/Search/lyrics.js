@@ -44,13 +44,13 @@ blazetz({
   try {
     // Download album art
     const imageResponse = await axios.get(imageUrl, { responseType: "arraybuffer" });
-
+    
     await client.sendMessage(dest, {
       image: Buffer.from(imageResponse.data),
-      caption: `🎶 *${title}* - ${artist}\n\n${lyrics}\n\n*Powered by 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃*`,
+      caption: `🎶 *${title}* - ${artist}\n\n${lyrics}\n\n*Powered by BLAZE-TECH*`,
       contextInfo: {
         externalAdReply: {
-          title: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 Lyrics Finder",
+          title: "BLAZE-TECH Lyrics Finder",
           body: "Get any song lyrics instantly",
           thumbnail: await (await axios.get(imageUrl, { responseType: "arraybuffer" })).data,
           mediaType: 1,
@@ -66,4 +66,4 @@ blazetz({
     repondre(`🎶 *${title}* - ${artist}\n\n${lyrics.substring(0, 2000)}...\n\n*[Truncated - image failed to load]*`);
   }
 });
-
+      

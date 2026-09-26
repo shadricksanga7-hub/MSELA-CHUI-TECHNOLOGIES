@@ -88,7 +88,7 @@ function extractTwitterMedia(html) {
 }
 
 async function downloadTwitter(url) {
-  const headers = { Accept: 'application/json, text/html', 'User-Agent': 'Mozilla/5.0 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃/1.0' };
+  const headers = { Accept: 'application/json, text/html', 'User-Agent': 'Mozilla/5.0 BLAZE-XMD/1.0' };
   if (X_API) {
     try {
       const response = await axios.get(X_API, { params: { url }, timeout: 45_000, headers });
@@ -115,7 +115,7 @@ async function fetchMedia(platform, url) {
 
 function progressCard(icon, title, stage, bar) {
   return [
-    `╭━━〔 ${icon} *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 〕━━╮`,
+    `╭━━〔 ${icon} *BLAZE XMD* 〕━━╮`,
     `│ *${title}*`,
     `│ ${bar} ${stage}`,
     '╰━━━━━━━━━━━━━━━━━━╯'
@@ -171,7 +171,7 @@ blazetz({
   categorie: 'Download',
   reaction: '⬇️',
   desc: 'Download public videos from supported social-media links',
-  author: '𝐌selachui'
+  author: 'ARNOLDT20'
 }, async (dest, client, options) => {
   const { arg = [], repondre, ms } = options;
   const rawUrl = String(arg[0] || '').trim();
@@ -189,7 +189,7 @@ blazetz({
     const progress = await createProgress(client, dest, ms, `${platform.toUpperCase()} MEDIA`);
     const probe = media.type === 'video' ? await probeMedia(media.url) : { length: 0, contentType: '' };
 
-    const caption = `⬇️ *${platform.toUpperCase()} DOWNLOAD*${media.duration ? ` · ${media.duration}` : ''}\n_𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃_`;
+    const caption = `⬇️ *${platform.toUpperCase()} DOWNLOAD*${media.duration ? ` · ${media.duration}` : ''}\n_BLAZE XMD_`;
     const sendAsDocument = media.type === 'video' && probe.length > 50 * 1024 * 1024;
     await advanceProgress(client, dest, progress, `${platform.toUpperCase()} MEDIA`);
     if (media.type === 'image') {

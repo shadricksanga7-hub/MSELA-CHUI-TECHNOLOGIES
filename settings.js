@@ -17,6 +17,7 @@ module.exports = {
     OWNER_NAME: process.env.OWNER_NAME || "𝐌selachui",
     NUMERO_OWNER: process.env.NUMERO_OWNER || '260774358600',
     BOT: process.env.BOT_NAME || '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃',
+    BOT_OS: String(process.env.BOT_OS || appConfig.env?.BOT_OS?.value || 'android').toLowerCase(),
     URL: process.env.BOT_MENU_LINKS || 'https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES',
     WELCOME_MEDIA_URL: process.env.WELCOME_MEDIA_URL || '',
     // Joining groups is opt-in to avoid unsolicited joins and account-risky behavior.

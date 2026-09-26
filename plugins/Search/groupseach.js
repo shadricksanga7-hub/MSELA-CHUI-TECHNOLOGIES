@@ -45,7 +45,7 @@ blazetz({
         `🔗 ${group.Link}\n\n`;
     }
 
-    text += `━━━━━━━━━━━━━━━━\n⚡ *Powered by 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃*`;
+    text += `━━━━━━━━━━━━━━━━\n⚡ *Powered by BLAZE TECH*`;
 
     await client.sendMessage(dest, { text }, { quoted: ms });
     await client.sendMessage(dest, { react: { text: "✅", key: ms.key } });

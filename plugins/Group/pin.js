@@ -3,7 +3,7 @@ const { blazetz } = require('../../devblaze/blazetz');
 /**
  * pin / unpin
  *
- * Pins (or unpins) the message the command is replying to. 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's
+ * Pins (or unpins) the message the command is replying to. BLAZE-TECH's
  * commandeOptions doesn't expose the quoted stanzaId directly (only
  * the quoted content via msgRepondu and its author via auteurMsgRepondu),
  * so this reads it straight off the raw message (reponse.ms).

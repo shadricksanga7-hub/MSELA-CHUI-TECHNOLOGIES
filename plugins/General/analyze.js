@@ -22,7 +22,7 @@ blazetz({
   alias: ['analyse', 'what', 'whatsin', 'imginfo'],
   desc: 'Describe what is visible in a replied image.',
   categorie: 'General',
-  author: '𝐌selachui',
+  author: 'ARNOLDT20',
   reaction: '🔍'
 }, async (dest, client, options) => {
   const { repondre } = options;
@@ -40,7 +40,7 @@ blazetz({
     const dataUrl = `data:${mime};base64,${buffer.toString('base64')}`;
     const description = await requestVision(dataUrl, 'Describe only what is visibly present in this image. Mention the main subjects, setting, colors, visible text if readable, actions, and notable objects. Be accurate, concise, and do not guess private identity, location, or facts that cannot be seen.');
     if (!description) throw new Error('empty-vision-response');
-    return repondre(`🔍 *IMAGE ANALYSIS*\n\n${description.slice(0, 2200)}\n\n© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`);
+    return repondre(`🔍 *IMAGE ANALYSIS*\n\n${description.slice(0, 2200)}\n\n© BLAZE XMD`);
   } catch (error) {
     console.error('[image analysis]', error.response?.status || error.message || error);
     return repondre(process.env.BLAZE_VISION_API

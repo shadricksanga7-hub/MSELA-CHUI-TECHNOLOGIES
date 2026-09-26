@@ -20,7 +20,7 @@ function sourceFrom(options) {
 function reportFor(source) {
   const report = analyzeSource(source);
   return [
-    '💻 *MSELA CHUI XMD CODE INSPECTOR*',
+    '💻 *BLAZE CODE INSPECTOR*',
     '',
     `Language: *${report.language}*`,
     `Size: *${report.lines} line(s)* · *${report.characters} character(s)*`,
@@ -38,7 +38,7 @@ blazetz({
   alias: ['inspect', 'codeinspect', 'codeinfo'],
   desc: 'Detect and safely inspect replied JavaScript, Python, HTML, CSS, JSON, or text code.',
   categorie: 'Programming',
-  author: '𝐌selachui',
+  author: 'ARNOLDT20',
   reaction: '💻'
 }, async (dest, client, options) => {
   const source = sourceFrom(options);
@@ -52,7 +52,7 @@ blazetz({
   alias: ['htmlshot', 'previewhtml'],
   desc: 'Owner-only restricted screenshot preview for replied static HTML. Scripts, external resources, and forms are removed.',
   categorie: 'Programming',
-  author: '𝐌selachui',
+  author: 'ARNOLDT20',
   reaction: '🖼️'
 }, async (dest, client, options) => {
   const source = sourceFrom(options);
