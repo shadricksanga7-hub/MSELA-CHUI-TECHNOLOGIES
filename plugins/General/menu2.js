@@ -10,9 +10,9 @@ blazetz({ nomCom: 'menu2', categorie: 'General' }, async (dest, client, options)
   const grouped = {};
   for (const command of cm) (grouped[command.categorie] ||= []).push(command.nomCom);
   moment.tz.setDefault('Africa/Nairobi');
-  let text = `┏━━━⚡ *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* ⚡━━━┓\n┃ 👋 Hello, *${nomAuteurMessage || 'user'}*!\n┃ 📱 Platform: *Android*\n┃ ⚙️ Mode: *${String(settings.MODE).toLowerCase() === 'off' ? 'PRIVATE' : 'PUBLIC'}*\n┃ 🚀 Prefix: *[ ${prefixe} ]*\n┃ ⏳ ${moment().format('HH:mm:ss')}  📆 ${moment().format('DD/MM/YYYY')}\n┃ 📟 Commands: *${cm.length}*\n┣━━━━━━━━━━━━━━━━━━━━━\n`;
-  for (const [category, commands] of Object.entries(grouped)) text += `┃ 🔹 *${category.toUpperCase()}*\n┃   ${commands.map(command => `${prefixe}${command}`).join(' • ')}\n┣━━━━━━━━━━━━━━━━━━━━━\n`;
-  text += '┗🌟 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 - Developed by 𝐌selachui!* 🌟';
+  let text = `┏━━━🐯 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 🐯━━━┓\n┃ 🐾 Hello, *${nomAuteurMessage || 'user'}*!\n┃ 🐆 Platform: *Android*\n┃ 🐯 Mode: *${String(settings.MODE).toLowerCase() === 'off' ? 'PRIVATE' : 'PUBLIC'}*\n┃ 🧭 Prefix: *[ ${prefixe} ]*\n┃ 🌙 ${moment().format('HH:mm:ss')}  📆 ${moment().format('DD/MM/YYYY')}\n┃ 🐾 Commands: *${cm.length}*\n┣━━━━━━━━━━━━━━━━━━━━━\n`;
+  for (const [category, commands] of Object.entries(grouped)) text += `┃ 🐯 *${category.toUpperCase()}*\n┃   ${commands.map(command => `${prefixe}${command}`).join(' • ')}\n┣━━━━━━━━━━━━━━━━━━━━━\n`;
+  text += '┗🐾 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 - Developed by 𝐌selachui!* 🐾';
   try {
     const image = path.join(__dirname, '../scs/leopard-menu-2.jpg');
     if (fs.existsSync(image)) {

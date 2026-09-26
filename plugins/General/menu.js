@@ -6,15 +6,15 @@ const quotedContact = { key: { fromMe: false, participant: '0@s.whatsapp.net', r
 const newsletterContext = { contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363405040601085@newsletter', newsletterName: '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃', serverMessageId: 1 } } };
 const imageDir = path.join(__dirname, '../scs');
 function getMenuImage() { try { const f = fs.readdirSync(imageDir).filter(x => /^leopard-menu-\d+\.(?:png|jpe?g)$/i.test(x)); return f.length ? path.join(imageDir, f[Math.floor(Math.random() * f.length)]) : null; } catch (_) { return null; } }
-function botInfo(total) { const mode = String(settings.MODE || 'on').toLowerCase() === 'off' ? 'PRIVATE' : 'PUBLIC'; return `╭─「 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 」\n│ ⚙️ Mode: *${mode}*\n│ ⌨️ Prefix: *${settings.PREFIXE}*\n│ 📟 Commands: *${total}*\n│ 🌐 github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES\n╰──────────────────\n\n`; }
-blazetz({ nomCom: 'menu', categorie: 'General', reaction: '📜' }, async (dest, client, context) => {
+function botInfo(total) { const mode = String(settings.MODE || 'on').toLowerCase() === 'off' ? 'PRIVATE' : 'PUBLIC'; return `╭─「 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 」\n│ 🐯 Mode: *${mode}*\n│ ⌨️ Prefix: *${settings.PREFIXE}*\n│ 🐾 Commands: *${total}*\n│ 🌐 github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES\n╰──────────────────\n\n`; }
+blazetz({ nomCom: 'menu', categorie: 'General', reaction: '🐯' }, async (dest, client, context) => {
   const { cm } = require(__dirname + '/../../devblaze/blazetz');
   const { repondre, prefixe, ms } = context;
   const grouped = {};
   for (const command of cm) (grouped[command.categorie] ||= []).push(command.nomCom);
   const categories = Object.keys(grouped);
-  let text = botInfo(cm.length) + '📑 *TOOL MENU*\n\nReply with a category number:\n\n';
-  categories.forEach((category, index) => { text += `${index + 1} ➠ ${category.toUpperCase()}\n`; });
+  let text = botInfo(cm.length) + '🐯 *CHUI TOOL MENU*\n\nReply with a category number:\n\n';
+  categories.forEach((category, index) => { text += `🐆 ${index + 1} ➠ ${category.toUpperCase()}\n`; });
   text += `\n*Send a number from 1-${categories.length}*`;
   const image = getMenuImage();
   let sent;
@@ -27,7 +27,7 @@ blazetz({ nomCom: 'menu', categorie: 'General', reaction: '📜' }, async (dest,
     const index = Number(reply.text.trim()) - 1;
     if (!Number.isInteger(index) || index < 0 || index >= categories.length) return repondre(`❌ Invalid number. Send 1-${categories.length}`);
     const category = categories[index];
-    const body = botInfo(cm.length) + `📂 *${category.toUpperCase()}*\n\n` + grouped[category].map(command => `🔹 *${prefixe}${command}*`).join('\n');
+    const body = botInfo(cm.length) + `🐆 *${category.toUpperCase()}*\n\n` + grouped[category].map(command => `🐯 *${prefixe}${command}*`).join('\n');
     const categoryImage = getMenuImage();
     try {
       if (categoryImage) {
