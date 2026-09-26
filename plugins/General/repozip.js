@@ -1,16 +1,16 @@
 const { blazetz } = require('../../devblaze/blazetz');
 const axios = require('axios');
 
-const REPOSITORY = 'blazetech-glitch/BLAZE-XMD';
+const REPOSITORY = 'shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES';
 const ARCHIVE_URL = `https://github.com/${REPOSITORY}/archive/refs/heads/main.zip`;
 const MAX_ARCHIVE_BYTES = 50 * 1024 * 1024;
 
 blazetz({
   nomCom: 'repozip',
   alias: ['sourcezip', 'getzip'],
-  desc: 'Download the latest BLAZE-XMD main repository ZIP.',
+  desc: 'Download the latest MSELA-CHUI-XMD main repository ZIP.',
   categorie: 'General',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '📦'
 }, async (dest, client, { ms, repondre, superUser }) => {
   if (!superUser) {
@@ -18,7 +18,7 @@ blazetz({
   }
 
   try {
-    await repondre('⏳ Preparing the latest BLAZE-XMD repository ZIP...');
+    await repondre('⏳ Preparing the latest MSELA-CHUI-XMD repository ZIP...');
 
     const response = await axios.get(ARCHIVE_URL, {
       responseType: 'arraybuffer',
@@ -27,7 +27,7 @@ blazetz({
       maxBodyLength: MAX_ARCHIVE_BYTES,
       headers: {
         Accept: 'application/zip',
-        'User-Agent': 'BLAZE-XMD-Repository-Archive'
+        'User-Agent': 'MSELA-CHUI-XMD-Repository-Archive'
       }
     });
 
@@ -43,8 +43,8 @@ blazetz({
     await client.sendMessage(dest, {
       document: archive,
       mimetype: 'application/zip',
-      fileName: 'BLAZE-XMD-main.zip',
-      caption: '📦 Latest BLAZE-XMD main repository archive.'
+      fileName: 'MSELA-CHUI-XMD-main.zip',
+      caption: '📦 Latest MSELA-CHUI-XMD main repository archive.'
     }, { quoted: ms });
   } catch (error) {
     console.error('[Repo ZIP] Download failed:', error?.message || error);

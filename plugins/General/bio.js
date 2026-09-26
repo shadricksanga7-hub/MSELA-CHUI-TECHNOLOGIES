@@ -45,7 +45,7 @@ blazetz({
   alias: ['bios', 'aboutme'],
   desc: 'Set, view, list, or remove user bios.',
   categorie: 'General',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🪪'
 }, async (dest, client, options) => {
   const { arg = [], ms, msgRepondu, auteurMessage, nomAuteurMessage, repondre } = options;
@@ -54,7 +54,7 @@ blazetz({
 
   if (['help', '?'].includes(action)) {
     return repondre([
-      '🪪 *BLAZE XMD BIOS*',
+      '🪪 *MSELA-CHUI-XMD BIOS*',
       '',
       '`.bio set Your bio text` — save your own bio',
       'Reply to a message with `.bio set` — save that text as your bio',
@@ -67,17 +67,17 @@ blazetz({
 
   if (action === 'list' || action === 'all') {
     const bios = await listBios();
-    if (!bios.length) return repondre('🪪 *BLAZE XMD BIOS*\n\nNo bios have been added yet.');
+    if (!bios.length) return repondre('🪪 *MSELA-CHUI-XMD BIOS*\n\nNo bios have been added yet.');
     return repondre([
-      '╭━━━〔 🪪 *BLAZE XMD BIOS* 〕━━━╮',
+      '╭━━━〔 🪪 *MSELA-CHUI-XMD BIOS* 〕━━━╮',
       ...bios.slice(0, 20).map(renderEntry),
-      '╰━━━〔 ARNOLDT20 · Updated profiles 〕━━━╯'
+      '╰━━━〔 𝐌selachui · Updated profiles 〕━━━╯'
     ].join('\n'));
   }
 
   if (['remove', 'delete', 'clear'].includes(action)) {
     const removed = await removeBio(userJid);
-    return repondre(removed ? '✅ Your BLAZE XMD bio has been removed.' : 'ℹ️ You do not have a saved bio yet.');
+    return repondre(removed ? '✅ Your MSELA-CHUI-XMD bio has been removed.' : 'ℹ️ You do not have a saved bio yet.');
   }
 
   if (['set', 'add', 'update'].includes(action)) {
@@ -91,19 +91,19 @@ blazetz({
       '╭━━━〔 ✅ *BIO UPDATED* 〕━━━╮',
       `┃ *${String(saved.name).slice(0, 42)}*`,
       `┃ “${saved.bio}”`,
-      `┃ Updated: *${formatDate(saved.updatedAt)}* · BLAZE XMD`,
-      '╰━━━〔 ARNOLDT20 〕━━━╯'
+      `┃ Updated: *${formatDate(saved.updatedAt)}* · MSELA-CHUI-XMD`,
+      '╰━━━〔 𝐌selachui 〕━━━╯'
     ].join('\n'));
   }
 
   const current = await getBio(userJid);
   if (!current) return repondre('🪪 You have no saved bio yet. Use `.bio set Your bio text`.');
   return repondre([
-    '╭━━━〔 🪪 *YOUR BLAZE XMD BIO* 〕━━━╮',
+    '╭━━━〔 🪪 *YOUR MSELA-CHUI-XMD BIO* 〕━━━╮',
     `┃ *${String(current.name).slice(0, 42)}*`,
     `┃ “${current.bio}”`,
     `┃ Updated: *${formatDate(current.updatedAt)}*`,
-    '╰━━━〔 ARNOLDT20 〕━━━╯'
+    '╰━━━〔 𝐌selachui 〕━━━╯'
   ].join('\n'));
 });
 
@@ -113,7 +113,7 @@ blazetz({
   alias: ['randombio', 'pickbio'],
   desc: 'Automatically choose and save a polished personal bio.',
   categorie: 'General',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '✨'
 }, async (dest, client, options) => {
   const { ms, auteurMessage, nomAuteurMessage, repondre } = options;
@@ -125,7 +125,7 @@ blazetz({
     '╭━━━〔 ✨ *AUTO BIO SET* 〕━━━╮',
     `┃ *${String(saved.name).slice(0, 42)}*`,
     `┃ “${saved.bio}”`,
-    `┃ ${formatDate(saved.updatedAt)} · BLAZE XMD`,
-    '╰━━━〔 ARNOLDT20 〕━━━╯'
+    `┃ ${formatDate(saved.updatedAt)} · MSELA-CHUI-XMD`,
+    '╰━━━〔 𝐌selachui 〕━━━╯'
   ].join('\n'));
 });

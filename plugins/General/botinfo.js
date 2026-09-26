@@ -19,9 +19,9 @@ blazetz({
   const usedMb = (memory.rss / 1024 / 1024).toFixed(1);
 
   const text = [
-    '╭━━━〔 BLAZE XMD INFO 〕━━━╮',
-    `┃ Bot: ${settings.BOT_NAME || 'BLAZE XMD'}`,
-    `┃ Developer: ${settings.DEV || 'ARNOLDT20'}`,
+    '╭━━━〔 MSELA-CHUI-XMD INFO 〕━━━╮',
+    `┃ Bot: ${settings.BOT_NAME || 'MSELA-CHUI-XMD'}`,
+    `┃ Developer: ${settings.DEV || '𝐌selachui'}`,
     `┃ Uptime: ${days}d ${hours}h ${minutes}m`,
     `┃ Memory: ${usedMb} MB`,
     `┃ Node: ${process.version}`,

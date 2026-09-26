@@ -54,7 +54,7 @@ blazetz({
       timeout: 45_000,
       maxContentLength: MAX_IMAGE_BYTES,
       maxBodyLength: MAX_IMAGE_BYTES,
-      headers: { 'User-Agent': 'BLAZE-XMD Website Screenshot/1.0' }
+      headers: { 'User-Agent': 'MSELA-CHUI-XMD Website Screenshot/1.0' }
     });
 
     const contentType = String(response.headers['content-type'] || '').toLowerCase();
@@ -65,7 +65,7 @@ blazetz({
 
     await client.sendMessage(dest, {
       image: buffer,
-      caption: `📸 Website screenshot\n🔗 ${url.toString()}\n\n© BLAZE XMD`
+      caption: `📸 Website screenshot\n🔗 ${url.toString()}\n\n© MSELA-CHUI-XMD`
     }, { quoted: ms });
   } catch (error) {
     console.error('[screenshot]', error.response?.status || error.message || error);

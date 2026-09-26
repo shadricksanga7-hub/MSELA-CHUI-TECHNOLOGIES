@@ -6,7 +6,7 @@ blazetz({
   alias: ['statusanalytics', 'statusstats', 'statuslog'],
   desc: 'View analytics and recent history for statuses posted by the bot.',
   categorie: 'General',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '📊'
 }, async (dest, client, { repondre, superUser, arg }) => {
   if (!superUser) {
@@ -38,7 +38,7 @@ blazetz({
     }
 
     return repondre(
-      `📊 *BLAZE XMD STATUS ANALYTICS*\n\n` +
+      `📊 *MSELA-CHUI-XMD STATUS ANALYTICS*\n\n` +
       `Total posted: *${analytics.total}*\n` +
       `Voice notes: *${analytics.voiceNotes}*\n` +
       `First recorded: *${formatDate(analytics.firstPostedAt)}*\n` +

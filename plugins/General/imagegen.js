@@ -18,7 +18,7 @@ blazetz({
   if (!prompt) {
     return repondre([
       '❌ Add a prompt for the image.',
-      'Example: .img a cinematic blue flame logo for BLAZE XMD'
+      'Example: .img a cinematic blue flame logo for MSELA-CHUI-XMD'
     ].join('\n'));
   }
   if (prompt.length > MAX_PROMPT_LENGTH) {
@@ -40,7 +40,7 @@ blazetz({
       timeout: 60_000,
       maxContentLength: MAX_IMAGE_BYTES,
       maxBodyLength: MAX_IMAGE_BYTES,
-      headers: { 'User-Agent': 'BLAZE-XMD Image Generator/1.0' }
+      headers: { 'User-Agent': 'MSELA-CHUI-XMD Image Generator/1.0' }
     });
 
     const contentType = String(response.headers['content-type'] || '').toLowerCase();
@@ -51,7 +51,7 @@ blazetz({
 
     await client.sendMessage(dest, {
       image: buffer,
-      caption: `🎨 Generated image\n📝 ${prompt}\n\n© BLAZE XMD`
+      caption: `🎨 Generated image\n📝 ${prompt}\n\n© MSELA-CHUI-XMD`
     }, { quoted: ms });
   } catch (error) {
     console.error('[imagegen]', error.response?.status || error.message || error);

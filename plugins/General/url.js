@@ -22,7 +22,7 @@ blazetz({
   nomCom: "url",
   categorie: "General",
   reaction: "🖇",
-  desc: "Convert media to BLAZE URL"
+  desc: "Convert media to MSELA URL"
 }, async (dest, client, commandeOptions) => {
   const { repondre, msgRepondu, ms } = commandeOptions;
 
@@ -77,7 +77,7 @@ blazetz({
     const shortId = generateShortId(6);
     const filename = `${shortId}${extension}`;
 
-    // Upload to BLAZE API
+    // Upload to MSELA API
     const form = new FormData();
     form.append('file', fs.createReadStream(mediaBuffer), {
       filename: filename,
@@ -94,7 +94,7 @@ blazetz({
 
     const data = response.data;
     if (!data || !data.url) {
-      throw new Error("Upload failed. BLAZE did not return a valid URL.");
+      throw new Error("Upload failed. MSELA did not return a valid URL.");
     }
 
     const mediaUrl = data.url;
@@ -115,7 +115,7 @@ blazetz({
 🔑 *ID:* ${shortId}
 🌐 *Link:* ${mediaUrl}
 ━━━━━━━━━━━━━━━━
-© BLAZE-TECH`;
+© MSELA-CHUI`;
 
     // Create buttons
     const buttons = [
@@ -142,7 +142,7 @@ blazetz({
                 text: textMessage
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© BLAZE-TECH"
+                text: "© MSELA-CHUI"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 title: "",

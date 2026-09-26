@@ -61,7 +61,7 @@ blazetz({
 📁 *Type:* ${mediaType}
 🔗 *Source:* ${url}
 ━━━━━━━━━━━━━━━━
-⚡ *Powered by BLAZE TECH*`;
+⚡ *Powered by MSELA-CHUI*`;
 
     if (mediaType === "Video") {
       await client.sendMessage(dest, {

@@ -69,7 +69,7 @@ blazetz({
 ├─ 📊 Size: ${fileSize} chars (${fileSizeKB} KB)
 ├─ 📝 Lines: ${fileLines}
 │
-└─ © Powered By BLAZE-TECH
+└─ © Powered By MSELA-CHUI
 
 💻 Javascript Code
 \`\`\`javascript
@@ -108,7 +108,7 @@ ${fullContent}
                 text: fullMessage
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© BLAZE-TECH"
+                text: "© MSELA-CHUI"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 title: "",

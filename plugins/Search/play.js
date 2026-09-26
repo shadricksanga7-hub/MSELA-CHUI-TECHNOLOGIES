@@ -6,7 +6,7 @@ const { ytmp4 } = require('ruhend-scraper');
 const BOT_NAME = '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃';
 const NEWSLETTER_JID = '120363405040601085@newsletter';
 const NEWSLETTER_NAME = '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃';
-const MAX_VIDEO_MB = Number(process.env.BLAZE_MAX_VIDEO_MB || 100);
+const MAX_VIDEO_MB = Number(process.env.MSELA_MAX_VIDEO_MB || 100);
 
 function getContextInfo(query = '') {
   return {
