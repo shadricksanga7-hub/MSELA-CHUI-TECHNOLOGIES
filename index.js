@@ -1146,6 +1146,10 @@ async function main() {
         if (_0x33cedd || _0xf89cb7 === 'sendtopm') {
             console['log']('[Command gate] command=' + (_0xf89cb7 || '') + ' sender=' + (_0x15bc47 || '') + ' mode=' + String(getConf('MODE') || 'on') + ' public=' + (!['off', 'private', 'no', 'false', '0'].includes(String(getConf('MODE') || 'on').toLowerCase())));
             const _0x5a7239 = evt['cm']['find'](_0x1f211e => _0x1f211e["nomCom"] === _0xf89cb7 || Array['isArray'](_0x1f211e['alias']) && _0x1f211e['alias']['includes'](_0xf89cb7));
+            if (!_0x5a7239) {
+                console['warn']('[Command dispatch] no plugin registered for command=' + (_0xf89cb7 || ''));
+                return;
+            }
             if (_0x5a7239) try {
                 const _0x1fe1fe = String(getConf('MODE') || 'on')['trim']()["toLowerCase"](),
                     _0x4d1e58 = !['off', 'private', 'no', 'false', '0'].includes(_0x1fe1fe),
@@ -1174,7 +1178,10 @@ async function main() {
                         return;
                     }
                 }
-                reagir(_0x3ac8b2, _0x4f6f40, _0x4aeba8, _0x5a7239['reaction']), _0x5a7239['fonction'](_0x3ac8b2, _0x4f6f40, _0x7b852d);
+                console['log']('[Command dispatch] running command=' + _0xf89cb7 + ' sender=' + (_0x15bc47 || ''));
+                await Promise.resolve(reagir(_0x3ac8b2, _0x4f6f40, _0x4aeba8, _0x5a7239['reaction']));
+                await Promise.resolve(_0x5a7239['fonction'](_0x3ac8b2, _0x4f6f40, _0x7b852d));
+                console['log']('[Command dispatch] completed command=' + _0xf89cb7);
             } catch (_0x522569) {
                 console['log']('😡😡\x20' + _0x522569), _0x4f6f40["sendMessage"](_0x3ac8b2, {
                     'text': '😡😡\x20' + _0x522569
