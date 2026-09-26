@@ -25,10 +25,10 @@ blazetz({ nomCom: "payment", categorie: "General" }, async (dest, client, comman
   let infoMsg = `┏━━━━━━━━━━━━━━━━━━\n` +
                 `┃ 💳 *Payment Details*\n` +
                 `┃ \n` +
-                `┃ 👤 *Name:* ARNOLD EMMANUEL TARIMO\n` +
-                `┃ 📞 *Number:* 0768418867\n` +
+                `┃ 👤 *Name:* ${s.OWNER_NAME}\n` +
+                `┃ 📞 *Number:* +260774358600\n` +
                 `┃ 🌐 *Method:* Online Payment\n` +
-                `┃ 🌍 *Country:* Tanzania 🇹🇿\n` +
+                `┃ 🌍 *Country:* Zambia 🇿🇲\n` +
                 `┗━━━━━━━━━━━━━━━━━`;
 
   let lien = mybotpic() || "https://files.catbox.moe/0pfgz3.jpg";
@@ -41,7 +41,7 @@ blazetz({ nomCom: "payment", categorie: "General" }, async (dest, client, comman
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: "120363405040601085@newsletter",
-        newsletterName: "𝙽𝙾𝚅𝙰-𝚇𝙼𝙳",
+        newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
         serverMessageId: 1
       }
     };

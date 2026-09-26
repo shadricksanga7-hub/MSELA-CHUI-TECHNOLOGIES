@@ -76,7 +76,7 @@ function getBotInfo(mode, totalCommands, ownerName) {
   return `
 ╭───「 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 」─────⊛
 ┃⊛╭───────────────⊛
-┃⊛│👑 *Owner*: ${ownerName || 'ARNOLD EMMANUEL TARIMO'}
+┃⊛│👑 *Owner*: ${ownerName || s.OWNER_NAME || '𝐌selachui'}
 ┃⊛│🖥️ *Platform*: ${getPlatform()}
 ┃⊛│⚙️ *Mode*: ${mode.toUpperCase()}
 ┃⊛│📦 *Total Plugins*: ${totalCommands}
@@ -99,7 +99,8 @@ blazetz({
 
   // ====== GROUP COMMANDS BY CATEGORY ======
   let coms = {};
-  let mode = s.MODE.toLowerCase() !== "yes" ? "private" : "public";
+  const modeValue = String(s.MODE || '').toLowerCase();
+  let mode = ['on', 'yes', 'public'].includes(modeValue) ? 'public' : 'private';
 
   for (const com of cm) {
     if (!coms[com.categorie]) coms[com.categorie] = [];

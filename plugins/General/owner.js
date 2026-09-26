@@ -53,7 +53,7 @@ blazetz({
                                 booking_url: `https://wa.me/${DEV_NUMBER}`,
                                 phone_number: DEV_NUMBER,
                                 booking_management_url: "https://whatsapp.com/channel/0029Vb6b5YoCMY0BMlXAvQ3H",
-                                description: "*◦ 👤 Name  :*  𝐌selachui\n*◦ 📞 Number  :*  +" + DEV_NUMBER + "\n*◦ 💭 Bio  :*  tech \n*◦ ⚡ Status  :*  _Developer_\n*◦ Country  :*  Tanzania\n",
+                                description: "*◦ 👤 Name  :*  𝐌selachui\n*◦ 📞 Number  :*  +" + DEV_NUMBER + "\n*◦ 💭 Bio  :*  tech \n*◦ ⚡ Status  :*  _Developer_\n*◦ Country  :*  Zambia\n",
                                 email: "",
                                 display_text: "𝐌𝐨𝐫𝐞 𝐎𝐰𝐧𝐞𝐫𝐈𝐧𝐟𝐨",
                                 display_content: {
