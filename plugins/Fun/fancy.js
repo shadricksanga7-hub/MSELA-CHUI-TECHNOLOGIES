@@ -51,10 +51,11 @@ blazetz(
       }
 
       const styleNumber = Number(id);
-      const selectedStyle = Number.isInteger(styleNumber) && styleNumber >= 1 && styleNumber <= 34 ? fancy[styleNumber - 1] : null;
+      const styleKeys = Object.keys(fancy).filter((key) => /^\d+$/.test(key)).map(Number);
+      const selectedStyle = Number.isInteger(styleNumber) && styleKeys.includes(styleNumber - 1) ? fancy[styleNumber - 1] : null;
       const resultText = selectedStyle
         ? fancy.apply(selectedStyle, text)
-        : `Style not found. Choose a number from 1 to 34.`;
+        : `Style not found. Choose one of the ${styleKeys.length} styles shown in the list.`;
 
       // 🔘 COPY BUTTON
       const buttons = [
@@ -107,4 +108,3 @@ blazetz(
     }
   }
 );
-

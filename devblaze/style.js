@@ -9,15 +9,15 @@ function apply(map, text) {
 }
 
 function list(text, fancy) {
-    let styles = Object.keys(fancy).filter(e => e.length < 3);
-    let msg = '\n*Availabe Fancy styles for blaze tech:*\n\n';
-    for (let style in styles) {
-        if (style == 33) {
-            msg += (parseInt(style) + 1) + '. ' + 'blaze tech' + '\n';
-        } else {
-            msg += (parseInt(style) + 1) + '. ' + fancy.apply(fancy[parseInt(style)], text) + '\n';
-        }
+    const styles = Object.keys(fancy)
+        .filter(key => /^\d+$/.test(key))
+        .map(Number)
+        .sort((a, b) => a - b);
+    let msg = '\n*Available Fancy styles for 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃:*\n\n';
+    for (const style of styles) {
+        msg += `${style + 1}. ${fancy.apply(fancy[style], text)}\n`;
     }
+    msg += '\nUse: .fancy <number> <text>';
     return msg;
 }
 
