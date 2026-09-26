@@ -20,7 +20,7 @@ module.exports = {
     session: process.env.SESSION_ID || '',
     PREFIXE: process.env.PREFIX || ".",
     OWNER_NAME: process.env.OWNER_NAME || "𝐌selachui",
-    NUMERO_OWNER: process.env.NUMERO_OWNER || "",
+    NUMERO_OWNER: process.env.NUMERO_OWNER || '260774358600',
     BOT: process.env.BOT_NAME || '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃',
     URL: process.env.BOT_MENU_LINKS || 'https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES',
     WELCOME_MEDIA_URL: process.env.WELCOME_MEDIA_URL || '',

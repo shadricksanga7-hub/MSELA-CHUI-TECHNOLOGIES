@@ -17,6 +17,21 @@
       "value": ".",
       "required": false
     },
+    "NUMERO_OWNER": {
+      "description": "Owner phone number used for protected settings commands.",
+      "value": "260774358600",
+      "required": false
+    },
+    "PUBLIC_MODE": {
+      "description": "Set to on so ordinary commands work for all users; off restricts ordinary commands to owner/sudo.",
+      "value": "on",
+      "required": false
+    },
+    "PM_PERMIT": {
+      "description": "Set to off to allow ordinary private-chat commands from all users.",
+      "value": "off",
+      "required": false
+    },
     "BOT_OS": {
       "description": "Device profile and menu target: android by default; set ios only when explicitly needed.",
       "value": "android",

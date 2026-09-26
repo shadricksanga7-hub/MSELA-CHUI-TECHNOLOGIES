@@ -1141,8 +1141,8 @@ async function main() {
         if (_0x33cedd || _0xf89cb7 === 'sendtopm') {
             const _0x5a7239 = evt['cm']['find'](_0x1f211e => _0x1f211e["nomCom"] === _0xf89cb7 || Array['isArray'](_0x1f211e['alias']) && _0x1f211e['alias']['includes'](_0xf89cb7));
             if (_0x5a7239) try {
-                const _0x1fe1fe = String(getConf('MODE') || '')['trim']()["toLowerCase"](),
-                    _0x4d1e58 = _0x1fe1fe === 'on' || _0x1fe1fe === "public",
+                const _0x1fe1fe = String(getConf('MODE') || 'on')['trim']()["toLowerCase"](),
+                    _0x4d1e58 = !['off', 'private', 'no', 'false', '0'].includes(_0x1fe1fe),
                     _0x17f5e7 = new Set(_0x22fa2a(_0xb17d2e)),
                     _0x5a7fba = Boolean(_0x4aeba8['key']?.["fromMe"]) || _0x22fa2a(_0x15bc47)["some"](_0x5e67a7 => _0x17f5e7['has'](_0x5e67a7)),
                     _0x2b3354 = _0xf89cb7 === 'mode' && _0x3b7703;
