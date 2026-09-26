@@ -14,7 +14,7 @@ blazetz({ nomCom: 'menu2', categorie: 'General' }, async (dest, client, options)
   for (const [category, commands] of Object.entries(grouped)) text += `┃ 🔹 *${category.toUpperCase()}*\n┃   ${commands.map(command => `${prefixe}${command}`).join(' • ')}\n┣━━━━━━━━━━━━━━━━━━━━━\n`;
   text += '┗🌟 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 - Developed by 𝐌selachui!* 🌟';
   try {
-    const image = path.join(__dirname, '../scs/leopard-menu-2.png');
+    const image = path.join(__dirname, '../scs/leopard-menu-2.jpg');
     if (fs.existsSync(image)) {
       try {
         await client.sendMessage(dest, { image: fs.readFileSync(image), caption: text, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363405040601085@newsletter', newsletterName: '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃', serverMessageId: 1 } } }, { quoted: quotedContact });

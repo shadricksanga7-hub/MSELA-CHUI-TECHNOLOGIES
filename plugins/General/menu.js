@@ -5,7 +5,7 @@ const settings = require(__dirname + '/../../settings');
 const quotedContact = { key: { fromMe: false, participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast' }, message: { contactMessage: { displayName: 'MSELA CHUI XMD VERIFIED', vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN:MSELA CHUI XMD VERIFIED\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD' } } };
 const newsletterContext = { contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363405040601085@newsletter', newsletterName: '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃', serverMessageId: 1 } } };
 const imageDir = path.join(__dirname, '../scs');
-function getMenuImage() { try { const f = fs.readdirSync(imageDir).filter(x => /^leopard-menu-\d+\.png$/i.test(x)); return f.length ? path.join(imageDir, f[Math.floor(Math.random() * f.length)]) : null; } catch (_) { return null; } }
+function getMenuImage() { try { const f = fs.readdirSync(imageDir).filter(x => /^leopard-menu-\d+\.(?:png|jpe?g)$/i.test(x)); return f.length ? path.join(imageDir, f[Math.floor(Math.random() * f.length)]) : null; } catch (_) { return null; } }
 function botInfo(total) { const mode = String(settings.MODE || 'on').toLowerCase() === 'off' ? 'PRIVATE' : 'PUBLIC'; return `╭─「 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 」\n│ ⚙️ Mode: *${mode}*\n│ ⌨️ Prefix: *${settings.PREFIXE}*\n│ 📟 Commands: *${total}*\n│ 🌐 github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES\n╰──────────────────\n\n`; }
 blazetz({ nomCom: 'menu', categorie: 'General', reaction: '📜' }, async (dest, client, context) => {
   const { cm } = require(__dirname + '/../../devblaze/blazetz');
