@@ -664,6 +664,14 @@ async function main() {
                 const _0x4b6f3a = (0x0, baileys_1['normalizeMessageContent'])(_0x2e0b1a?.['message']) || _0x2e0b1a?.['message'];
                 return _0x4b6f3a && !_0x4b6f3a['protocolMessage'] && (0x0, baileys_1['getContentType'])(_0x4b6f3a) !== 'reactionMessage';
             }) || (_0x198bda || [])[0x0];
+        if (String(getConf('AUTO_READ') || 'off').toLowerCase() === 'on') {
+            const messageKeys = (_0x198bda || [])
+                .filter(message => message?.['key']?.['remoteJid'] && !message['key']['fromMe'] && message['key']['remoteJid'] !== 'status@broadcast')
+                .map(message => message['key']);
+            if (messageKeys.length) {
+                await _0x4f6f40['readMessages'](messageKeys).catch(error => console.warn('Could not mark incoming messages as read:', error['message'] || error));
+            }
+        }
         if (!_0x4aeba8?.['message']) return;
         _0x4aeba8['message'] = (0x0, baileys_1['normalizeMessageContent'])(_0x4aeba8['message']) || _0x4aeba8['message'];
         const _0x2c7ae1 = _0xf6d9ab => {
@@ -1280,8 +1288,7 @@ async function main() {
                     }
                 };
                 let _0xc1e295 = "╭─「 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 」\n│ ✅ *𝗢𝗡𝗟𝗜𝗡𝗘*\n├──────────────\n│ ⚙️ 𝗠𝗼𝗱𝗲: *" + _0x41aa42['toUpperCase']() + "*\n│ ⌨️ 𝗣𝗿𝗲𝗳𝗶𝘅: *" + prefixe + '*\x0a│\x20🌐\x20𝗪𝗲𝗯:\x20*github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES*\x0a│\x20📣\x20𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹\x20𝗖𝗵𝗮𝗻𝗻𝗲𝗹\x0a╰──────────────';
-                const _0x34c72d = (getConf('NUMERO_OWNER') || conf["NUMERO_OWNER"] || '')['replace'](/[^0-9]/g, ''),
-                    _0x14e99e = _0x34c72d ? _0x34c72d + "@s.whatsapp.net" : (_0x4f6f40['user']['id'] || '')['split'](':')[0x0]["split"]('@')[0x0] + "@s.whatsapp.net";
+                const _0x14e99e = (_0x4f6f40['user']['id'] || '')['split'](':')[0x0];
                 await _0x4f6f40['sendMessage'](_0x14e99e, {
                     'text': _0xc1e295,
                     'contextInfo': _0x5cf0b9
