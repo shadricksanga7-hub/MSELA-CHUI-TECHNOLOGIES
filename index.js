@@ -144,10 +144,20 @@ function decodeSessionId(_0x208c32) {
     const _0x25cb0c = null;
     let _0x4e28a1 = String(_0x208c32 || '')["trim"]();
     if (!_0x4e28a1 || _0x4e28a1['toLowerCase']() === 'zokk') return null;
-    _0x4e28a1 = _0x4e28a1['replace'](/^["']|["']$/g, '')['trim'](), _0x4e28a1 = _0x4e28a1["replace"](/^(?:MSELA CHUI XMD|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃)~/i, ''), _0x4e28a1 = _0x4e28a1['replace'](/\s+/g, '')['replace'](/-/g, '+')["replace"](/_/g, '/');
-    if (!/^[A-Za-z0-9+/]*={0,2}$/ ['test'](_0x4e28a1)) throw new Error('SESSION_ID\x20contains\x20invalid\x20characters;\x20use\x20the\x20complete\x20pairing-session\x20string');
+    _0x4e28a1 = _0x4e28a1['replace'](/^['"]|['"]$/g, '')['trim'](), _0x4e28a1 = _0x4e28a1["replace"](/^(?:MSELA CHUI XMD|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃)~/i, ''), _0x4e28a1 = _0x4e28a1['replace'](/\s+/g, '')['replace'](/-/g, '+')["replace"](/_/g, '/');
+    if (!/^[A-Za-z0-9+/]*={0,2}$/ ['test'](_0x4e28a1)) throw new Error('Session ID contains invalid characters; use the complete pairing-session string');
     while (_0x4e28a1['length'] % 0x4) _0x4e28a1 += '=';
-    return Buffer['from'](_0x4e28a1, 'base64')["toString"]("utf8");
+    const decoded = Buffer['from'](_0x4e28a1, 'base64')["toString"]("utf8")['trim']();
+    if (!decoded['startsWith']('{') || !decoded['endsWith']('}')) throw new Error('Session ID is not a complete creds.json object');
+    let parsed;
+    try {
+        parsed = JSON['parse'](decoded);
+    } catch (_) {
+        throw new Error('Session ID contains invalid creds.json JSON');
+    }
+    if (!parsed || typeof parsed !== 'object' || !parsed['noiseKey'] || !parsed['signedIdentityKey'] || !parsed['signedPreKey']) throw new Error('Session ID is not a Baileys creds.json payload');
+    if (Buffer['from'](_0x4e28a1, 'base64').toString('utf8').trim() !== decoded) throw new Error('Session ID Base64 round-trip validation failed');
+    return decoded;
 }
 let sessionPayload = null;
 try {
