@@ -7,6 +7,7 @@ asset/users_rank.json
 
 # WhatsApp multi-file auth state (never commit credentials or keys)
 public/creds.json
+settings.env
 public/device-list-*.json
 public/session-*.json
 public/pre-key-*.json

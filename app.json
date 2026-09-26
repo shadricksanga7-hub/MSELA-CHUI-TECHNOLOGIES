@@ -17,6 +17,11 @@
       "value": ".",
       "required": false
     },
+    "BOT_OS": {
+      "description": "Menu rendering mode: android or ios. Android keeps the image menu; iOS uses plain text-safe menus.",
+      "value": "android",
+      "required": false
+    },
     "NUMERO_OWNER": {
       "description": "Owner phone number used for protected settings commands.",
       "value": "260774358600",
