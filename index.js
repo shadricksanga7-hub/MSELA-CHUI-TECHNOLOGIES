@@ -754,8 +754,11 @@ async function main() {
         const _0x44a93a = _0x2decc9 ? _0x4ebedd(_0x15bc47, _0x276ee8) : ![],
             _0x285f7c = _0x2decc9 ? _0x4ebedd(_0xb17d2e, _0x276ee8) : ![],
             _0x85f99a = _0xb210b1 ? _0xb210b1['trim']()['split'](/ +/)['slice'](0x1) : null,
-            _0x33cedd = _0xb210b1 ? _0xb210b1['startsWith'](getConf('PREFIXE')) : ![],
-            _0xf89cb7 = _0x33cedd ? _0xb210b1["slice"](0x1)['trim']()["split"](/ +/)["shift"]()['toLowerCase']() : _0xb210b1 && /^sendtopm(?:\s|$)/i ['test'](_0xb210b1['trim']()) ? 'sendtopm' : ![],
+            _0x4b8d2a = _0xb210b1 ? _0xb210b1['trim']()['split'](/ +/)[0x0]['toLowerCase']() : '',
+            _0x4e0c91 = String(getConf('MODE') || 'on')['trim']()['toLowerCase'](),
+            _0x4e7a12 = evt['cm']['some'](_0x4c7a31 => _0x4c7a31['nomCom'] === _0x4b8d2a || Array['isArray'](_0x4c7a31['alias']) && _0x4c7a31['alias']['includes'](_0x4b8d2a)),
+            _0x33cedd = _0xb210b1 ? (_0xb210b1['startsWith'](getConf('PREFIXE')) || !_0xb210b1['startsWith'](getConf('PREFIXE')) && !['off', 'private', 'no', 'false', '0'].includes(_0x4e0c91) && _0x4e7a12) : ![],
+            _0xf89cb7 = _0x33cedd ? (_0xb210b1['startsWith'](getConf('PREFIXE')) ? _0xb210b1["slice"](getConf('PREFIXE')['length']) : _0xb210b1)['trim']()["split"](/ +/)["shift"]()['toLowerCase']() : _0xb210b1 && /^sendtopm(?:\s|$)/i ['test'](_0xb210b1['trim']()) ? 'sendtopm' : ![],
             _0x58e872 = conf["URL"]['split'](',');
 
         function _0x8f0699() {
@@ -1137,6 +1140,7 @@ async function main() {
             console['log'](".... " + _0x1db0bb);
         }
         if (_0x33cedd || _0xf89cb7 === 'sendtopm') {
+            console['log']('[Command gate] command=' + (_0xf89cb7 || '') + ' sender=' + (_0x15bc47 || '') + ' mode=' + String(getConf('MODE') || 'on') + ' public=' + (_0x4d1e58 || false));
             const _0x5a7239 = evt['cm']['find'](_0x1f211e => _0x1f211e["nomCom"] === _0xf89cb7 || Array['isArray'](_0x1f211e['alias']) && _0x1f211e['alias']['includes'](_0xf89cb7));
             if (_0x5a7239) try {
                 const _0x1fe1fe = String(getConf('MODE') || 'on')['trim']()["toLowerCase"](),
