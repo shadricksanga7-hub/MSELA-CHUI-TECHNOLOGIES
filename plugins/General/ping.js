@@ -29,7 +29,7 @@ blazetz({
   desc: 'Check bot speed and system status.',
   categorie: 'General',
   reaction: '⚡',
-  author: 'ARNOLDT20'
+  author: '𝐌selachui'
 }, async (dest, client, response) => {
   const { ms, repondre } = response;
   const startedAt = process.hrtime.bigint();
@@ -40,12 +40,12 @@ blazetz({
     const latency = getLatencyLabel(elapsedMs);
 
     const statusMessage = [
-      '╭─〔 ⚡ *BLAZE XMD* 〕─╮',
+      '╭─〔 ⚡ *MSELA-CHUI-XMD* 〕─╮',
       '│ 🟢 *ONLINE* · Ready',
       `│ ⚡ ${elapsedMs.toFixed(2)} ms · ${latency}`,
       `│ ⏱️ ${formatRuntime(process.uptime())} · 🧠 ${processRamMb.toFixed(0)} MB`,
       '╰──────────────────╯',
-      '       *ARNOLDT20*'
+      '       *𝐌selachui*'
     ].join('\n');
 
     return client.sendMessage(dest, { text: statusMessage }, { quoted: ms });

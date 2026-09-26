@@ -13,7 +13,7 @@ blazetz({
   alias: ['crashcheck', 'healthcheck'],
   desc: 'Run a bounded bot health and stability check.',
   categorie: 'Owner',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🛡️'
 }, async (dest, client, options) => {
   const { repondre, superUser, isOwner } = options;
@@ -27,7 +27,7 @@ blazetz({
     : 'n/a';
 
   return repondre([
-    '╭─〔 🛡️ BLAZE XMD 〕─╮',
+    '╭─〔 🛡️ MSELA-CHUI-XMD 〕─╮',
     '│ ✅ Stability check passed',
     `│ ⏱️ Uptime: ${formatUptime(process.uptime())}`,
     `│ 🧠 RSS: ${rssMb} MB · Heap: ${heapMb} MB`,

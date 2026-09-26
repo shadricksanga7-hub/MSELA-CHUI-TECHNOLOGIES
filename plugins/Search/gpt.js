@@ -5,7 +5,7 @@ const PUBLIC_AI_API = 'https://mqudqfsvnvlcptsgdceo.supabase.co/functions/v1/wha
 const builtInBase = String(process.env.BUILT_IN_FORGE_API_URL || '').replace(/\/$/, '');
 const builtInKey = String(process.env.BUILT_IN_FORGE_API_KEY || '').trim();
 const useBuiltIn = Boolean(builtInBase && builtInKey);
-const AI_API = process.env.BLAZE_CHATBOT_API || (useBuiltIn ? `${builtInBase}/v1/chat/completions` : PUBLIC_AI_API);
+const AI_API = process.env.MSELA_CHATBOT_API || (useBuiltIn ? `${builtInBase}/v1/chat/completions` : PUBLIC_AI_API);
 const MAX_QUERY_LENGTH = 1800;
 
 const MODES = {
@@ -26,9 +26,9 @@ function extractQuotedText(message) {
 }
 
 function isLikelyAiResponse(text) {
-  return /^╭━━━〔\s*🤖\s*BLAZE AI/i.test(text)
-    || /^🤖\s*\*?BLAZE GPT/i.test(text)
-    || /╰━━━〔\s*ARNOLDT20\s*〕━━━╯/i.test(text);
+  return /^╭━━━〔\s*🤖\s*MSELA AI/i.test(text)
+    || /^🤖\s*\*?MSELA GPT/i.test(text)
+    || /╰━━━〔\s*𝐌selachui\s*〕━━━╯/i.test(text);
 }
 
 function responseText(data) {
@@ -43,12 +43,12 @@ function responseText(data) {
 
 async function requestAnswer(instruction, conversationId) {
   const headers = { 'Content-Type': 'application/json' };
-  const builtInRequest = useBuiltIn && !process.env.BLAZE_CHATBOT_API;
+  const builtInRequest = useBuiltIn && !process.env.MSELA_CHATBOT_API;
   const payload = builtInRequest
     ? {
-        model: process.env.BLAZE_CHATBOT_MODEL || 'gpt-5-mini',
+        model: process.env.MSELA_CHATBOT_MODEL || 'gpt-5-mini',
         messages: [
-          { role: 'system', content: 'You are BLAZE XMD, a concise and helpful WhatsApp assistant. Keep ordinary replies short unless detail is requested.' },
+          { role: 'system', content: 'You are MSELA-CHUI-XMD, a concise and helpful WhatsApp assistant. Keep ordinary replies short unless detail is requested.' },
           { role: 'user', content: instruction }
         ],
         max_completion_tokens: 700
@@ -66,7 +66,7 @@ blazetz(
     nomCom: 'gpt',
     categorie: 'Search',
     reaction: '🤖',
-    author: 'ARNOLDT20',
+    author: '𝐌selachui',
     alias: ['ai', 'ask', 'aiask', 'askgpt']
   },
   async (dest, client, context) => {
@@ -77,7 +77,7 @@ blazetz(
 
     if (!arg.length && !replyingToAi || ['help', '?'].includes(first)) {
       return repondre([
-        '🤖 *BLAZE XMD AI ASSISTANT*',
+        '🤖 *MSELA-CHUI-XMD AI ASSISTANT*',
         '',
         '`.ai your question` or `.gpt your question` — ask anything',
         '`.gpt code write a JavaScript function` — coding mode',
@@ -125,13 +125,13 @@ blazetz(
       const modeLabel = mode === 'general' ? '' : `\n🧭 *Mode:* ${mode.toUpperCase()}\n`;
       const continuationLabel = replyingToAi ? '\n🔁 *Conversation continued*\n' : '';
       const output = [
-        '╭━━━〔 🤖 BLAZE AI 〕━━━╮',
+        '╭━━━〔 🤖 MSELA AI 〕━━━╮',
         `${modeLabel}${continuationLabel}`,
         `📝 *Request:* ${query.slice(0, 180)}${query.length > 180 ? '…' : ''}`,
         '',
         answer,
         '',
-        '╰━━━〔 ARNOLDT20 〕━━━╯'
+        '╰━━━〔 𝐌selachui 〕━━━╯'
       ].join('\n');
 
       await client.sendMessage(dest, { text: output }, { quoted: ms });

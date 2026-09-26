@@ -79,7 +79,7 @@ blazetz({
                 text: infoText
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© BLAZE-TECH"
+                text: "© MSELA-CHUI"
               }),
               header: proto.Message.InteractiveMessage.Header.create(headerProps),
               nativeFlowMessage:

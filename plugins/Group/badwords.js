@@ -11,7 +11,7 @@ blazetz({
   alias: ['antibadword'],
   desc: 'Enable or disable automatic bad-word deletion.',
   categorie: 'Group',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🛡️'
 }, async (dest, client, options) => {
   const { repondre, verifGroupe, arg } = options;
@@ -33,7 +33,7 @@ blazetz({
   alias: ['badwords'],
   desc: 'Add or list words blocked by anti-bad-word moderation.',
   categorie: 'Group',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🚫'
 }, async (dest, client, options) => {
   const { repondre, verifGroupe, arg } = options;

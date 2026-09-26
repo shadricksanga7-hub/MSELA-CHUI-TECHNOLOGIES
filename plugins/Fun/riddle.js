@@ -19,9 +19,9 @@ blazetz({
   desc: 'Send a quick riddle with its answer.',
   categorie: 'Funny',
   reaction: '🧩',
-  author: 'ARNOLDT20'
+  author: '𝐌selachui'
 }, async (dest, client, response) => {
   const { repondre } = response;
   const riddle = riddles[Math.floor(Math.random() * riddles.length)];
-  return repondre(`🧩 *RIDDLE TIME*\n\n${riddle.question}\n\n_Answer:_ ||${riddle.answer}||\n\n_BLAZE XMD • ARNOLDT20_`);
+  return repondre(`🧩 *RIDDLE TIME*\n\n${riddle.question}\n\n_Answer:_ ||${riddle.answer}||\n\n_MSELA-CHUI-XMD • 𝐌selachui_`);
 });

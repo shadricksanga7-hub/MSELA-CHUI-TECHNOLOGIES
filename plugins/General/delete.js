@@ -38,7 +38,7 @@ blazetz(
     }
 
     if (verifGroupe && canModerateGroup && !verifBlazetzAdmin) {
-      return repondre("❌ Please make BLAZE XMD an admin before moderating group messages.");
+      return repondre("❌ Please make MSELA-CHUI-XMD an admin before moderating group messages.");
     }
 
     const targetKey = {

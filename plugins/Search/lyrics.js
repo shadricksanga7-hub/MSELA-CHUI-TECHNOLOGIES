@@ -47,10 +47,10 @@ blazetz({
     
     await client.sendMessage(dest, {
       image: Buffer.from(imageResponse.data),
-      caption: `🎶 *${title}* - ${artist}\n\n${lyrics}\n\n*Powered by BLAZE-TECH*`,
+      caption: `🎶 *${title}* - ${artist}\n\n${lyrics}\n\n*Powered by MSELA-CHUI*`,
       contextInfo: {
         externalAdReply: {
-          title: "BLAZE-TECH Lyrics Finder",
+          title: "MSELA-CHUI Lyrics Finder",
           body: "Get any song lyrics instantly",
           thumbnail: await (await axios.get(imageUrl, { responseType: "arraybuffer" })).data,
           mediaType: 1,

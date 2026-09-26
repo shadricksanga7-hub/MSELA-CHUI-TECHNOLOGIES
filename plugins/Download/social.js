@@ -3,7 +3,7 @@ const { blazetz } = require('../../devblaze/blazetz');
 const { ttdl, igdl, fbdl, ytmp4 } = require('ruhend-scraper');
 
 const MAX_URL_LENGTH = 2_048;
-const MAX_VIDEO_MB = Number(process.env.BLAZE_MAX_VIDEO_MB || 100);
+const MAX_VIDEO_MB = Number(process.env.MSELA_MAX_VIDEO_MB || 100);
 const SUPPORTED_HOSTS = {
   tiktok: ['tiktok.com', 'vm.tiktok.com', 'vt.tiktok.com'],
   instagram: ['instagram.com', 'instagr.am'],
@@ -11,7 +11,7 @@ const SUPPORTED_HOSTS = {
   youtube: ['youtube.com', 'youtu.be', 'youtube-nocookie.com'],
   twitter: ['twitter.com', 'x.com', 't.co']
 };
-const X_API = process.env.BLAZE_XDL_API || '';
+const X_API = process.env.MSELA_XDL_API || '';
 const TWITSAVE_URL = 'https://twitsave.com/info';
 
 function hostMatches(hostname, domains) {
@@ -88,7 +88,7 @@ function extractTwitterMedia(html) {
 }
 
 async function downloadTwitter(url) {
-  const headers = { Accept: 'application/json, text/html', 'User-Agent': 'Mozilla/5.0 BLAZE-XMD/1.0' };
+  const headers = { Accept: 'application/json, text/html', 'User-Agent': 'Mozilla/5.0 MSELA-CHUI-XMD/1.0' };
   if (X_API) {
     try {
       const response = await axios.get(X_API, { params: { url }, timeout: 45_000, headers });
@@ -115,7 +115,7 @@ async function fetchMedia(platform, url) {
 
 function progressCard(icon, title, stage, bar) {
   return [
-    `╭━━〔 ${icon} *BLAZE XMD* 〕━━╮`,
+    `╭━━〔 ${icon} *MSELA-CHUI-XMD* 〕━━╮`,
     `│ *${title}*`,
     `│ ${bar} ${stage}`,
     '╰━━━━━━━━━━━━━━━━━━╯'
@@ -171,7 +171,7 @@ blazetz({
   categorie: 'Download',
   reaction: '⬇️',
   desc: 'Download public videos from supported social-media links',
-  author: 'ARNOLDT20'
+  author: '𝐌selachui'
 }, async (dest, client, options) => {
   const { arg = [], repondre, ms } = options;
   const rawUrl = String(arg[0] || '').trim();
@@ -189,7 +189,7 @@ blazetz({
     const progress = await createProgress(client, dest, ms, `${platform.toUpperCase()} MEDIA`);
     const probe = media.type === 'video' ? await probeMedia(media.url) : { length: 0, contentType: '' };
 
-    const caption = `⬇️ *${platform.toUpperCase()} DOWNLOAD*${media.duration ? ` · ${media.duration}` : ''}\n_BLAZE XMD_`;
+    const caption = `⬇️ *${platform.toUpperCase()} DOWNLOAD*${media.duration ? ` · ${media.duration}` : ''}\n_MSELA-CHUI-XMD_`;
     const sendAsDocument = media.type === 'video' && probe.length > 50 * 1024 * 1024;
     await advanceProgress(client, dest, progress, `${platform.toUpperCase()} MEDIA`);
     if (media.type === 'image') {
@@ -200,7 +200,7 @@ blazetz({
         dest,
         media.url,
         platform,
-        `blaze-${platform}-full-video.mp4`,
+        `msela-${platform}-full-video.mp4`,
         caption,
         ms,
         sendAsDocument

@@ -22,7 +22,7 @@ blazetz({
   alias: ['analyse', 'what', 'whatsin', 'imginfo'],
   desc: 'Describe what is visible in a replied image.',
   categorie: 'General',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🔍'
 }, async (dest, client, options) => {
   const { repondre } = options;
@@ -40,11 +40,11 @@ blazetz({
     const dataUrl = `data:${mime};base64,${buffer.toString('base64')}`;
     const description = await requestVision(dataUrl, 'Describe only what is visibly present in this image. Mention the main subjects, setting, colors, visible text if readable, actions, and notable objects. Be accurate, concise, and do not guess private identity, location, or facts that cannot be seen.');
     if (!description) throw new Error('empty-vision-response');
-    return repondre(`🔍 *IMAGE ANALYSIS*\n\n${description.slice(0, 2200)}\n\n© BLAZE XMD`);
+    return repondre(`🔍 *IMAGE ANALYSIS*\n\n${description.slice(0, 2200)}\n\n© MSELA-CHUI-XMD`);
   } catch (error) {
     console.error('[image analysis]', error.response?.status || error.message || error);
-    return repondre(process.env.BLAZE_VISION_API
+    return repondre(process.env.MSELA_VISION_API
       ? '❌ Image analysis failed. Check the vision endpoint, API key, or send a smaller normal image.'
-      : '❌ Image analysis needs a vision API. Set `BLAZE_VISION_API` to an OpenAI-compatible vision endpoint, then restart the bot.');
+      : '❌ Image analysis needs a vision API. Set `MSELA_VISION_API` to an OpenAI-compatible vision endpoint, then restart the bot.');
   }
 });
