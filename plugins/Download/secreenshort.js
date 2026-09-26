@@ -20,8 +20,8 @@ blazetz({
       forwardingScore: 999,
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: "120363421014261315@newsletter",
-        newsletterName: "BLAZE TECH",
+        newsletterJid: "120363405040601085@newsletter",
+        newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
         serverMessageId: 0x8f
       }
     };
@@ -29,7 +29,7 @@ blazetz({
     // Tuma image kama file
     await sock.sendMessage(jid, {
       image: Buffer.from(response.data),
-      caption: "🖼️ *Screenshot Captured Successfully*\n\n> Powered by 𝙱𝙻𝙰𝚉𝙴-𝚃𝙴𝙲𝙷 🤖",
+      caption: "🖼️ *Screenshot Captured Successfully*\n\n> Powered by 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 🤖",
       contextInfo
     }, { quoted: ms });
 

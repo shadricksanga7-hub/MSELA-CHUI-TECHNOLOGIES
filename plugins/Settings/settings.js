@@ -16,14 +16,14 @@
  *      its .env default on the next restart/redeploy (which on Heroku
  *      happens often). They now persist via database/db.js (through
  *      lib/settingsCache.js's write-through cache), matching how
- *      BLAZE-XMD keeps bot settings in its database instead of app.json.
+ *      𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 keeps bot settings in its database instead of app.json.
  */
 const { blazetz } = require("../../devblaze/blazetz");
 const { getCachedSettingsSync, updateCachedSetting } = require("../../lib/settingsCache");
 const s = require("../../settings");
 
-const NEWSLETTER_JID = "120363421014261315@newsletter";
-const NEWSLETTER_NAME = "BLAZE TECH OFFICIAL";
+const NEWSLETTER_JID = "120363405040601085@newsletter";
+const NEWSLETTER_NAME = "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 OFFICIAL";
 const { getAutoContactState, setAutoContactEnabled, getAutoContacts } = require('../../lib/autoContacts');
 const { FIELDS: BUSINESS_FIELDS, getBusinessProfile, updateBusinessProfile, setBusinessEnabled, clearBusinessProfile } = require('../../lib/businessProfile');
 
@@ -104,7 +104,7 @@ blazetz({
   nomCom: 'autocontact',
   alias: ['autoaddcontact', 'savecontacts'],
   categorie: 'Settings',
-  author: 'ARNOLDT20'
+  author: '𝐌selachui'
 }, async (chatId, client, context) => {
   const { repondre, superUser, arg = [] } = context;
   if (!superUser) return repondre('❌ Only the bot owner can control auto-contact saving.');
@@ -120,7 +120,7 @@ blazetz({
     const contacts = await getAutoContacts();
     if (!contacts.length) return repondre('📇 The bot-side contact directory is empty.');
     const lines = contacts.slice(-30).reverse().map((contact, index) => `${index + 1}. *${contact.name}* — ${contact.jid.split('@')[0]}\n   Added: ${new Date(contact.addedAt).toLocaleString()}`);
-    return repondre(`📇 *BLAZE TECH CONTACT DIRECTORY*\n\n${lines.join('\n')}`);
+    return repondre(`📇 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 CONTACT DIRECTORY*\n\n${lines.join('\n')}`);
   }
   const status = await setAutoContactEnabled(option === 'on');
   return repondre(`✅ Auto-contact is now *${status.toUpperCase()}*.\n\nNew private senders will ${status === 'on' ? 'be added to the bot-side directory once.' : 'no longer be registered automatically.'}`);
@@ -129,7 +129,7 @@ blazetz({
   nomCom: 'business',
   alias: ['biz', 'businessbot'],
   categorie: 'Settings',
-  author: 'ARNOLDT20'
+  author: '𝐌selachui'
 }, async (chatId, client, context) => {
   const { repondre, superUser, arg = [] } = context;
   if (!superUser) return repondre('❌ Only the bot owner can configure the business assistant.');

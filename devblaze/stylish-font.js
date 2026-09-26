@@ -1003,7 +1003,7 @@ var   text = text.trim();
    finalText.push(fancy31(text));
    finalText.push(fancy32(text));
    finalText.push(fancy33(text));
-  
+
   return finalText;
 }
 

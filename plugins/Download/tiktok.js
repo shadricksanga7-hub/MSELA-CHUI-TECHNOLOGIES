@@ -11,7 +11,7 @@ const quotedContact = {
   message: {
     contactMessage: {
       displayName: "BLAZE VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:BLAZE-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\nEND:VCARD"
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD"
     }
   }
 };
@@ -22,8 +22,8 @@ const newsletterContext = {
     forwardingScore: 999,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: "120363421014261315@newsletter",
-      newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+      newsletterJid: "120363405040601085@newsletter",
+      newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
       serverMessageId: 1
     }
   }

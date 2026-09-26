@@ -3,9 +3,9 @@ const axios = require('axios');
 const yts = require('yt-search');
 const { ytmp4 } = require('ruhend-scraper');
 
-const BOT_NAME = 'BLAZE XMD';
-const NEWSLETTER_JID = '120363421014261315@newsletter';
-const NEWSLETTER_NAME = 'BLAZE XMD';
+const BOT_NAME = '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃';
+const NEWSLETTER_JID = '120363405040601085@newsletter';
+const NEWSLETTER_NAME = '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃';
 const MAX_VIDEO_MB = Number(process.env.BLAZE_MAX_VIDEO_MB || 100);
 
 function getContextInfo(query = '') {
@@ -84,7 +84,7 @@ async function probeVideo(downloadUrl) {
 
 function progressCard(title, stage, bar) {
   return [
-    '╭━━〔 🎬 *BLAZE XMD* 〕━━╮',
+    '╭━━〔 🎬 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 〕━━╮',
     `│ *${String(title || 'VIDEO').slice(0, 70)}*`,
     `│ ${bar} ${stage}`,
     '╰━━━━━━━━━━━━━━━━━━╯'
@@ -148,7 +148,7 @@ blazetz({
   categorie: 'Search',
   reaction: '🎵',
   desc: 'Download one audio result from a public YouTube title search.',
-  author: 'ARNOLDT20'
+  author: '𝐌selachui'
 }, async (dest, client, options) => {
   const { ms, arg = [], repondre } = options;
   const query = arg.join(' ').trim();
@@ -164,8 +164,8 @@ blazetz({
       audio: { url: downloadUrl },
       mimetype: 'audio/mpeg',
       fileName: `${cleanFileName(title, 'blaze-audio')}.mp3`,
-      title: cleanFileName(title, 'BLAZE XMD audio'),
-      body: `${video.timestamp || 'Audio'} · ${video.author?.name || 'YouTube'} · BLAZE XMD`,
+      title: cleanFileName(title, '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 audio'),
+      body: `${video.timestamp || 'Audio'} · ${video.author?.name || 'YouTube'} · 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`,
       image: { url: video.thumbnail, renderSmallThumbnail: true },
       contextInfo: getContextInfo(query)
     }, { quoted: ms });
@@ -182,7 +182,7 @@ blazetz({
   categorie: 'Search',
   reaction: '🎶',
   desc: 'Download one audio result as a document from a public YouTube title search.',
-  author: 'ARNOLDT20'
+  author: '𝐌selachui'
 }, async (dest, client, options) => {
   const { ms, arg = [], repondre } = options;
   const query = arg.join(' ').trim();
@@ -198,7 +198,7 @@ blazetz({
       document: { url: downloadUrl },
       mimetype: 'audio/mpeg',
       fileName: `${cleanFileName(title, 'blaze-song')}.mp3`,
-      caption: `🎶 *${video.title}*\n${video.timestamp || 'Audio'} · BLAZE XMD`
+      caption: `🎶 *${video.title}*\n${video.timestamp || 'Audio'} · 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`
     }, { quoted: ms });
     await client.sendMessage(dest, { react: { text: '✅', key: ms.key } });
   } catch (error) {
@@ -213,7 +213,7 @@ blazetz({
   categorie: 'Search',
   reaction: '🎬',
   desc: 'Download the full available public YouTube video for a title search.',
-  author: 'ARNOLDT20'
+  author: '𝐌selachui'
 }, async (dest, client, options) => {
   const { ms, arg = [], repondre } = options;
   const query = arg.join(' ').trim();
@@ -230,7 +230,7 @@ blazetz({
     const bytes = await probeVideo(resolved.downloadUrl);
     const title = cleanFileName(resolved.title || video.title, 'blaze-video');
     const fileName = `${title}.mp4`;
-    const caption = `🎬 *${video.title}*\n${video.timestamp || 'Video'} · BLAZE XMD`;
+    const caption = `🎬 *${video.title}*\n${video.timestamp || 'Video'} · 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`;
     await advanceVideoProgress(client, dest, progress, video.title);
     await sendFullVideo(client, dest, resolved.downloadUrl, fileName, caption, ms, bytes > 50 * 1024 * 1024);
     await client.sendMessage(dest, { react: { text: '✅', key: ms.key } });

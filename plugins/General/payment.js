@@ -14,7 +14,7 @@ const quotedContact = {
   message: {
     contactMessage: {
       displayName: "BLAZE VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:BLAZE-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\nEND:VCARD"
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD"
     }
   }
 };
@@ -40,7 +40,7 @@ blazetz({ nomCom: "payment", categorie: "General" }, async (dest, client, comman
       forwardingScore: 999,
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: "120363421014261315@newsletter",
+        newsletterJid: "120363405040601085@newsletter",
         newsletterName: "𝙽𝙾𝚅𝙰-𝚇𝙼𝙳",
         serverMessageId: 1
       }

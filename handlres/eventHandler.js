@@ -6,7 +6,7 @@
  * anti-promote, and anti-demote. Moved here out of index.js (which
  * previously had this logic inline) so index.js only wires up the
  * event listener and delegates the actual work here — matching how
- * BLAZE-XMD splits this into handlers/eventHandler.js's groupEvents()
+ * 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 splits this into handlers/eventHandler.js's groupEvents()
  * function, called from its index.js the same way.
  *
  * This is a structural move only — the behavior (custom text support,
@@ -97,7 +97,7 @@ async function groupEvents(client, group) {
                     .replace(/{time}/g, time)
                     .replace(/{count}/g, String(metadata.participants?.length || ''));
             } else {
-                msg = `✦ *BLAZE XMD* ✦
+                msg = `✦ *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* ✦
 
 Welcome, @${mentionLabel(member)}
 *${groupName}*
@@ -123,7 +123,7 @@ Glad to have you here.`;
                     .replace(/{time}/g, time)
                     .replace(/{count}/g, String(metadata.participants?.length || ''));
             } else {
-                msg = `✦ *BLAZE XMD* ✦
+                msg = `✦ *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* ✦
 
 Goodbye, @${mentionLabel(member)}
 You will be missed in *${groupName}*.`;

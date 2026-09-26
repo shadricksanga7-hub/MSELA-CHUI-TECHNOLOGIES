@@ -14,18 +14,18 @@ function getRandomScsImage() {
     const images = fs.readdirSync(scsFolder).filter(f =>
         /^menu\d+\.(jpg|jpeg|png|mp4|gif)$/i.test(f)
     );
-    
+
     if (images.length === 0) {
         return null;
     }
-    
+
     // Get random image from folder
     const randomIndex = Math.floor(Math.random() * images.length);
     return path.join(scsFolder, images[randomIndex]);
 }
 
 function getIosMenuImage() {
-    const imagePath = path.join(__dirname, "../scs/ios-menu.jpg");
+    const imagePath = path.join(__dirname, "../scs/leopard-menu-1.png");
     return fs.existsSync(imagePath) ? imagePath : null;
 }
 
@@ -43,8 +43,8 @@ const quotedContact = {
         "BEGIN:VCARD\n" +
         "VERSION:3.0\n" +
         "FN:BLAZE VERIFIED ✅\n" +
-        "ORG:BLAZE-TECH BOT;\n" +
-        "TEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\n" +
+        "ORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\n" +
+        "TEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\n" +
         "END:VCARD"
     }
   }
@@ -55,8 +55,8 @@ const contextInfo = {
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: "120363421014261315@newsletter",
-    newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+    newsletterJid: "120363405040601085@newsletter",
+    newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
     serverMessageId: 1
   }
 };
@@ -74,7 +74,7 @@ function getBotInfo(mode, totalCommands, ownerName) {
   const totalRAM = format(os.totalmem());
 
   return `
-╭───「 *BLAZE XMD* 」─────⊛
+╭───「 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 」─────⊛
 ┃⊛╭───────────────⊛
 ┃⊛│👑 *Owner*: ${ownerName || 'ARNOLD EMMANUEL TARIMO'}
 ┃⊛│🖥️ *Platform*: ${getPlatform()}
@@ -82,7 +82,7 @@ function getBotInfo(mode, totalCommands, ownerName) {
 ┃⊛│📦 *Total Plugins*: ${totalCommands}
 ┃⊛│🖥️ *RAM*: ${usedRAM} / ${totalRAM}
 ┃⊛│✅ *Status*: ONLINE
-┃⊛│🌐 *Website*: https://blaze-xmd.zone.id
+┃⊛│🌐 *Website*: https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES
 ┃⊛╰━━━━━━━━━━━━━━⊛
 ╰━━━━━━━━━━━━━━━━━━━━⊛
 `;
@@ -111,13 +111,13 @@ blazetz({
 
   // ====== GET RANDOM IMAGE FROM /scs ======
   const imagePath = getRandomScsImage();
-  
+
   // ====== BUILD OPTIONS TEXT ======
   // iOS mode intentionally stays text-only and numeric: it avoids dense
   // box-drawing layouts while preserving the existing reply-by-number flow.
   const iosMenu = isIosPlainMenu;
   let optionsText = iosMenu
-    ? `${iosPlainMenu(["BLAZE XMD IOS MENU", "", "Reply with a category number:", ""])}\n`
+    ? `${iosPlainMenu(["𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 IOS MENU", "", "Reply with a category number:", ""])}\n`
     : `📑 *BLAZE TOOL MENU*\n\nReply with category number:\n\n`;
 
   categories.forEach((cat, index) => {
@@ -202,7 +202,7 @@ blazetz({
 
       // ====== BUILD CATEGORY MENU ======
       let menuText = iosMenu
-        ? `BLAZE XMD IOS MENU\n\n${selectedCategory.toUpperCase()}\n\n`
+        ? `𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 IOS MENU\n\n${selectedCategory.toUpperCase()}\n\n`
         : `📂 *${selectedCategory.toUpperCase()}*\n\n`;
       commands.forEach((cmd, commandIndex) => {
         menuText += iosMenu

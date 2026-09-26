@@ -48,7 +48,7 @@ blazetz({
   }
 
   if (!parsed || !parsed.text || !Number.isInteger(parsed.count)) {
-    return repondre('❌ Usage: .repeat Message to resend | number\nExample: .repeat BLAZE XMD is online | 3');
+    return repondre('❌ Usage: .repeat Message to resend | number\nExample: .repeat 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 is online | 3');
   }
 
   if (parsed.count < 1 || parsed.count > MAX_REPEATS) {

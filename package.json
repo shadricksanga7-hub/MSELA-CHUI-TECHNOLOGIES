@@ -1,7 +1,7 @@
 {
-  "name": "BLAZE-TECH",
+  "name": "msela-chui-xmd",
   "version": "1.1.0",
-  "description": "blaze-tech-Whatsapp-bot",
+  "description": "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 WhatsApp bot",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
@@ -20,12 +20,9 @@
     "whatsapp-openai",
     "whatsapp-bot",
     "whatsapp-baileys",
-    "blaze-xmd",
-    "blaze-tech",
-    "blaze-xmd",
-    "blaze-tech-Whatsapp-bot"
+    "msela-chui-xmd"
   ],
-  "author": "BLAZE-TECH",
+  "author": "𝐌selachui",
   "license": "ISC",
   "dependencies": {
     "@whiskeysockets/baileys": "npm:bmbtech-baileys@latest",

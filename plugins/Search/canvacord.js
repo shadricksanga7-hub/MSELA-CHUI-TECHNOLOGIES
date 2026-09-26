@@ -20,7 +20,7 @@ function createCanvacordCommand(commandName, canvacordFunction) {
         const image = await client.downloadAndSaveMediaMessage(msgRepondu.imageMessage)
          img = await uploadImageToImgur(image, clientId )
      } else {
-        
+
         img = await client.profilePictureUrl(auteurMsgRepondu, 'image'); }
       } else {
         img = "https://i.pinimg.com/564x/84/09/12/840912dd744e6662ab211b8070b5d84c.jpg";
@@ -69,4 +69,4 @@ createCanvacordCommand("affect", canvacord.Canvacord.affect);
 
 
 
-    
+

@@ -13,10 +13,10 @@ blazetz({
   const q = arg.join(" ");
 
   try {
-    if (!q) return repondre("❎ Please provide a WhatsApp Channel link.\n\n*Example:* .channel https://whatsapp.com/channel/0029VbAjwl9MF8vQQa0ZT32");
+    if (!q) return repondre("❎ Please provide a WhatsApp Channel link.\n\n*Example:* .channel https://whatsapp.com/channel/0029Vb6b5YoCMY0BMlXAvQ3H");
 
     const match = q.match(/whatsapp\.com\/channel\/([\w-]+)/);
-    if (!match) return repondre("⚠️ *Invalid channel link format.*\n\nMake sure it looks like:\nhttps://whatsapp.com/channel/0029VbAjwl9MF8vQQa0ZT32");
+    if (!match) return repondre("⚠️ *Invalid channel link format.*\n\nMake sure it looks like:\nhttps://whatsapp.com/channel/0029Vb6b5YoCMY0BMlXAvQ3H");
 
     const inviteId = match[1];
 
@@ -79,7 +79,7 @@ blazetz({
                 text: infoText
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© BLAZE-TECH"
+                text: "© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃"
               }),
               header: proto.Message.InteractiveMessage.Header.create(headerProps),
               nativeFlowMessage:

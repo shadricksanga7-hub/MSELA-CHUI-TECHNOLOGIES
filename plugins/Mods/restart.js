@@ -10,7 +10,7 @@ const {blazetz}=require("../../devblaze/blazetz")
 blazetz({nomCom:"restart",categorie:"Mods",reaction:"👨🏿‍💼"},async(dest,z,com)=>{
 
 
-  
+
 const{repondre,ms,dev,superUser}=com;
 
   if(!superUser)
@@ -23,9 +23,9 @@ const{repondre,ms,dev,superUser}=com;
     repondre("*restarting ...*");
 
   exec("pm2 restart all");
-  
 
-  
+
+
 
 
 

@@ -11,8 +11,8 @@ const newsletterContext = {
     forwardingScore: 999,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: "120363421014261315@newsletter",
-      newsletterName: "BLAZE XMD",
+      newsletterJid: "120363405040601085@newsletter",
+      newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
       serverMessageId: 1
     }
   }
@@ -27,7 +27,7 @@ const quotedContact = {
   message: {
     contactMessage: {
       displayName: "BLAZE VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:BLAZE-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\nEND:VCARD"
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD"
     }
   }
 };
@@ -53,7 +53,7 @@ blazetz({ nomCom: "menu2", categorie: "General" }, async (dest, client, commandO
 
     let infoMessage = iosMenu
         ? iosPlainMenu([
-            "BLAZE XMD IOS MENU",
+            "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 IOS MENU",
             "",
             `Hello, ${nomAuteurMessage || "user"}.`,
             `Platform: ${os.platform()}`,
@@ -66,7 +66,7 @@ blazetz({ nomCom: "menu2", categorie: "General" }, async (dest, client, commandO
             "COMMAND MENU",
             "",
         ])
-        : `┏━━━⚡ *BLAZE-TECH-V2* ⚡━━━┓
+        : `┏━━━⚡ *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃-V2* ⚡━━━┓
 ┃ 🔥  Hello, *${nomAuteurMessage}*! 🔥
 ┣━━━━━━━━━━━━━━━━━━━━━
 ┃ 📌 *System Info:*
@@ -102,19 +102,19 @@ blazetz({ nomCom: "menu2", categorie: "General" }, async (dest, client, commandO
     }
 
     menuMessage += iosMenu
-        ? `BLAZE XMD - ARNOLDT20`
-        : `┗🌟 *BLAZE XMD - Developed by ARNOLDT20!* 🌟`;
+        ? `𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 - 𝐌selachui`
+        : `┗🌟 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 - Developed by 𝐌selachui!* 🌟`;
 
     try {
         if (iosMenu) {
             await client.sendMessage(dest, { text: iosPlainMenu([infoMessage, menuMessage]) });
         } else {
-            const imagePath = path.join(__dirname, "../../public/blaze-xmd-wordmark.png");
+            const imagePath = path.join(__dirname, "../scs/leopard-menu-2.png");
             const imageBuffer = fs.readFileSync(imagePath);
             await client.sendMessage(dest, {
                 image: imageBuffer,
                 caption: infoMessage + menuMessage,
-                footer: "© BLAZE XMD",
+                footer: "© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
                 ...newsletterContext
             }, { quoted: quotedContact });
         }

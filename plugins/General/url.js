@@ -115,7 +115,7 @@ blazetz({
 🔑 *ID:* ${shortId}
 🌐 *Link:* ${mediaUrl}
 ━━━━━━━━━━━━━━━━
-© BLAZE-TECH`;
+© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`;
 
     // Create buttons
     const buttons = [
@@ -142,7 +142,7 @@ blazetz({
                 text: textMessage
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© BLAZE-TECH"
+                text: "© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 title: "",

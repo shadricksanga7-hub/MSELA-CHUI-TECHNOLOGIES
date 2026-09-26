@@ -70,7 +70,7 @@ blazetz({
 
     const outgoing = {
       [media.type]: buffer,
-      caption: '👁️ Retrieved media\n\n© BLAZE XMD'
+      caption: '👁️ Retrieved media\n\n© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃'
     };
     await client.sendMessage(userJid, outgoing);
     return;

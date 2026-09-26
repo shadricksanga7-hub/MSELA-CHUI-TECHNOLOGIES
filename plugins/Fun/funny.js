@@ -22,7 +22,7 @@ const WOULD_YOU_RATHER = [
 ];
 
 const FUN_FACTS = [
-  'Octopuses have three hearts, but BLAZE XMD still only needs one prefix.',
+  'Octopuses have three hearts, but 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 still only needs one prefix.',
   'Bananas are berries, while strawberries are not. Nature enjoys confusing menus.',
   'A day on Venus is longer than a year on Venus.',
   'Honey can remain edible for a very long time when stored well.',
@@ -39,7 +39,7 @@ blazetz({
   alias: ['funny', 'lol'],
   desc: 'Send a short clean joke.',
   categorie: 'Funny',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '😂'
 }, async (dest, client, { repondre }) => {
   await repondre(`😂 *BLAZE JOKE*\n\n${pick(JOKES)}`);
@@ -50,7 +50,7 @@ blazetz({
   alias: ['wyr', 'choose'],
   desc: 'Send a funny would-you-rather question.',
   categorie: 'Funny',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🤔'
 }, async (dest, client, { repondre }) => {
   await repondre(`🤔 *WOULD YOU RATHER?*\n\n${pick(WOULD_YOU_RATHER)}`);
@@ -61,7 +61,7 @@ blazetz({
   alias: ['fact', 'randomfact'],
   desc: 'Send a light random fact.',
   categorie: 'Funny',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🧠'
 }, async (dest, client, { repondre }) => {
   await repondre(`🧠 *FUN FACT*\n\n${pick(FUN_FACTS)}`);
@@ -72,7 +72,7 @@ blazetz({
   alias: ['flip', 'coin'],
   desc: 'Flip a coin for a quick group decision.',
   categorie: 'Funny',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🪙'
 }, async (dest, client, { repondre }) => {
   const result = randomInt(2) ? 'HEADS' : 'TAILS';

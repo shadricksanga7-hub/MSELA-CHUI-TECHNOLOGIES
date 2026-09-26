@@ -40,7 +40,7 @@ blazetz({ nomCom: "tagall", categorie: 'Group', reaction: "📣" }, async (dest,
   let random = Math.floor(Math.random() * emoji.length);
 
   // Anza kujenga ki box kizuri
-  let tag = 
+  let tag =
 `╭─────❰ *📣 GROUP TAG ALERT* ❱─────╮
 │
 │ 🏷️ *Group:* ${nomGroupe}
@@ -86,7 +86,7 @@ blazetz({ nomCom: "link", categorie: 'Group', reaction: "🙋" }, async (dest, c
 │
 │ 👉 ${lien}
 │
-│ © BLAZE-TECH 𝐬𝐜𝐢𝐞𝐧𝐜𝐞
+│ © 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 𝐬𝐜𝐢𝐞𝐧𝐜𝐞
 ╰────────────────────────────╯`;
 
   repondre(mess);
@@ -106,7 +106,7 @@ blazetz({ nomCom: "promote", categorie: 'Group', reaction: "🔃" }, async (dest
   // caused this command to wrongly report "I am not an administrator"
   // even when the bot WAS admin. Instead, just attempt the action and
   // let WhatsApp's own response tell us if it failed — same approach
-  // BLAZE-XMD's promote.js uses.
+  // 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's promote.js uses.
   try {
     await client.groupParticipantsUpdate(dest, [utilisateur], "promote");
     var txt = `🎊🎊🎊  @${utilisateur.split("@")[0]} rose in rank.\n
@@ -306,7 +306,7 @@ blazetz({ nomCom: "info", categorie: 'Group' }, async (dest, client, commandeOpt
         if (enetatoui) {
           repondre(
 `╭───❰ *ANTILINK STATUS* ❱───╮
-│ 🔗 Antilink is *already activated* 
+│ 🔗 Antilink is *already activated*
 ╰──────────────────────────╯`
           );
         } else {
@@ -330,7 +330,7 @@ blazetz({ nomCom: "info", categorie: 'Group' }, async (dest, client, commandeOpt
         } else {
           repondre(
 `╭───❰ *ANTILINK STATUS* ❱───╮
-│ ℹ️ Antilink was *not active* 
+│ ℹ️ Antilink was *not active*
 ╰──────────────────────────╯`
           );
         }
@@ -429,7 +429,7 @@ blazetz({ nomCom: "left", categorie: "Mods" }, async (dest, client, commandeOpti
     return;
   }
   await repondre('sayonnara') ;
-   
+
   client.groupLeave(dest)
 });
 
@@ -494,7 +494,7 @@ blazetz({ nomCom: "gpp", categorie: 'Group' }, async (dest, client, commandeOpti
   if (!verifAdmin) {
     repondre("order reserved for administrators of the group");
     return;
-  }; 
+  };
   if (msgRepondu.imageMessage) {
     const pp = await  client.downloadAndSaveMediaMessage(msgRepondu.imageMessage) ;
 
@@ -504,7 +504,7 @@ blazetz({ nomCom: "gpp", categorie: 'Group' }, async (dest, client, commandeOpti
                     fs.unlinkSync(pp)
                 }).catch(() =>   client.sendMessage(dest,{text:err})
 )
-        
+
   } else {
     repondre('Please mention an image')
   }

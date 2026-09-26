@@ -3,7 +3,7 @@ const { blazetz } = require("../../devblaze/blazetz");
 const traduire = require("../../devblaze/traduction");
 const { downloadMediaMessage,downloadContentFromMessage } =  require('@whiskeysockets/baileys');
 const fs =require("fs-extra") ;
-const axios = require('axios');  
+const axios = require('axios');
 const FormData = require('form-data');
 const { exec } = require("child_process");
 
@@ -124,7 +124,7 @@ try{
 
 
 
-  
+
 });
 blazetz({nomCom:"take",categorie: "Conversion", reaction: "💗"},async(origineMessage,client,commandeOptions)=>{
    const {ms , msgRepondu,arg,repondre,nomAuteurMessage} = commandeOptions ;
@@ -139,7 +139,7 @@ blazetz({nomCom:"take",categorie: "Conversion", reaction: "💗"},async(origineM
      mediamsg = msgRepondu.imageMessage
   } else if(msgRepondu.videoMessage) {
 mediamsg = msgRepondu.videoMessage
-  } 
+  }
   else if (msgRepondu.stickerMessage) {
     mediamsg = msgRepondu.stickerMessage ;
   } else {
@@ -150,7 +150,7 @@ mediamsg = msgRepondu.videoMessage
 
      let stickerMess = new Sticker(stick, {
             pack: pack,
-            
+
             type: StickerTypes.FULL,
             categories: ["🤩", "🎉"],
             id: "12345",
@@ -177,10 +177,10 @@ blazetz({ nomCom: "write", categorie: "Conversion", reaction: "☘️" }, async 
     return;
   } ;
   text = arg.join(' ') ;
-  
+
   if(!text || text === null) {repondre('Make sure to insert text') ; return } ;
- 
-  
+
+
   const mediamsg = msgRepondu.imageMessage;
   const image = await client.downloadAndSaveMediaMessage(mediamsg);
 
@@ -242,7 +242,7 @@ blazetz({nomCom:"photo",categorie: "Conversion", reaction: "☘️"},async(dest,
    const {ms , msgRepondu,arg,repondre,nomAuteurMessage} = commandeOptions ;
 
   if(!msgRepondu) { repondre( 'make sure to mention the media' ) ; return } ;
- 
+
    if (!msgRepondu.stickerMessage) {
       repondre('Um mention a non-animated sticker'); return
   } ;
@@ -251,10 +251,10 @@ blazetz({nomCom:"photo",categorie: "Conversion", reaction: "☘️"},async(dest,
 
   const alea = (ext) => {
   return `${Math.floor(Math.random() * 10000)}${ext}`;};
-  
+
   let ran = await alea(".png");
 
-  
+
         exec(`ffmpeg -i ${mediaMess} ${ran}`, (err) => {
           fs.unlinkSync(mediaMess);
           if (err) {
@@ -301,15 +301,15 @@ async (dest, client, commandeOptions) => {
 
     const gifUrl = gif.data.results[i].media_formats.gif.url;
 
-    
-   
+
+
 
     // Assurez-vous de remplacer les valeurs manquantes dans la création du sticker
     const packname = nomAuteurMessage; // Remplacez par le nom de votre pack de stickers
 
     const stickerMess = new Sticker(gifUrl, {
       pack: packname,
-      author: 'BLAZE-TECH',
+      author: '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃',
       type: StickerTypes.FULL,
       categories: ["🤩", "🎉"],
       id: "12345",
@@ -329,31 +329,31 @@ blazetz({ nomCom: "trt", categorie: "Conversion", reaction: "💗" }, async (des
 
   const { msgRepondu, repondre , arg } = commandeOptions;
 
-  
+
    if(msgRepondu) {
      try {
-      
-     
+
+
 
        if(!arg || !arg[0]) { repondre('(eg : trt en)') ; return }
-   
+
 
          let texttraduit = await traduire(msgRepondu.conversation , {to : arg[0]}) ;
 
          repondre(texttraduit)
 
         } catch (error) {
-          
+
           repondre('Mention a texte Message') ;
-      
+
         }
 
    } else {
-     
+
      repondre('Mention a texte Message')
    }
 
 
 
 }) ;
-    
+

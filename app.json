@@ -1,9 +1,9 @@
 {
-  "name": "BLAZE-TECH",
-  "description": "BLAZE XMD WhatsApp bot developed by ARNOLDT20",
+  "name": "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
+  "description": "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 WhatsApp bot developed by 𝐌selachui",
   "keywords": ["bot", "node", "baileys", "whatsapp"],
   "logo": "https://files.catbox.moe/hflcbc.jpg",
-  "repository": "https://github.com/blazetech-glitch/BLAZE-XMD",
+  "repository": "https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES",
   "success_url": "/",
   "stack": "heroku-24",
   "env": {

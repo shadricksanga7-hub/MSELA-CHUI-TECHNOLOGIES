@@ -18,12 +18,12 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE TECH VERIFIED ✅",
+      displayName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 VERIFIED ✅",
       vcard: `BEGIN:VCARD
 VERSION:3.0
-FN:BLAZE TECH VERIFIED ✅
-ORG:BLAZE-TECH BOT;
-TEL;type=CELL;type=VOICE;waid=255627417402:+255627417402
+FN:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 VERIFIED ✅
+ORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;
+TEL;type=CELL;type=VOICE;waid=260774358600:+260774358600
 END:VCARD`
     }
   }
@@ -75,7 +75,7 @@ blazetz(
 
       /* ===== RESULT UI ===== */
       const textResult = `
-╭───〔 BLAZE TECH IMAGE URL 〕───
+╭───〔 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 IMAGE URL 〕───
 │
 │ 🔗 Generated Link:
 │

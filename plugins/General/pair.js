@@ -8,8 +8,8 @@ const newsletterContext = {
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: "120363421014261315@newsletter",
-    newsletterName: "BLAZE TECH",
+    newsletterJid: "120363405040601085@newsletter",
+    newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
     serverMessageId: 1
   }
 };
@@ -27,8 +27,8 @@ const quotedStatus = {
       vcard: `BEGIN:VCARD
 VERSION:3.0
 FN:BLAZE VERIFIED
-ORG:BLAZE-TECH;
-TEL;type=CELL;type=VOICE;waid=255627417402:+255627417402
+ORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃;
+TEL;type=CELL;type=VOICE;waid=260774358600:+260774358600
 END:VCARD`
     }
   }

@@ -39,7 +39,7 @@ blazetz({
   alias: ['msginfo', 'messageinfo'],
   desc: 'Show concise details about a replied message.',
   categorie: 'General',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🔎'
 }, async (dest, client, options) => {
   const { ms, msgRepondu, auteurMsgRepondu, nomAuteurMessage, repondre } = options;
@@ -60,13 +60,13 @@ blazetz({
   const type = messageType(target).replace('Message', '').replace(/^./, (letter) => letter.toUpperCase());
 
   return repondre([
-    '╭━━━〔 🔎 *BLAZE XMD INFO* 〕━━━╮',
+    '╭━━━〔 🔎 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 INFO* 〕━━━╮',
     `┃ From: *${String(displayName).slice(0, 40)}*`,
     `┃ JID: \`${sender}\``,
     `┃ Type: *${type}*`,
     `┃ ID: \`${id}\``,
     `┃ Date: *${formatDate(timestamp)}*`,
     `┃ Mentions: *${mentions}* · Forwarded: *${forwarded}*${mediaSummary(target)}`,
-    '╰━━━〔 ARNOLDT20 〕━━━╯'
+    '╰━━━〔 𝐌selachui 〕━━━╯'
   ].join('\n'));
 });

@@ -1,4 +1,4 @@
-/** BLAZE XMD identity, environment loading, and default runtime settings. */
+/** 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 identity, environment loading, and default runtime settings. */
 const fs = require('fs-extra');
 const path = require('path');
 const localSettingsPath = path.join(__dirname, 'settings.env');
@@ -19,10 +19,10 @@ const configuredBotOs = process.env.BOT_OS
 module.exports = {
     session: process.env.SESSION_ID || '',
     PREFIXE: process.env.PREFIX || ".",
-    OWNER_NAME: process.env.OWNER_NAME || "BLAZE XMD",
+    OWNER_NAME: process.env.OWNER_NAME || "𝐌selachui",
     NUMERO_OWNER: process.env.NUMERO_OWNER || "",
-    BOT: process.env.BOT_NAME || 'BLAZE XMD',
-    URL: process.env.BOT_MENU_LINKS || 'https://blaze-xmd.zone.id',
+    BOT: process.env.BOT_NAME || '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃',
+    URL: process.env.BOT_MENU_LINKS || 'https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES',
     WELCOME_MEDIA_URL: process.env.WELCOME_MEDIA_URL || '',
     BOT_OS: String(configuredBotOs).toLowerCase() === 'ios' ? 'ios' : 'android',
 

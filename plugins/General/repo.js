@@ -13,7 +13,7 @@ const quotedContact = {
   message: {
     contactMessage: {
       displayName: "BLAZE VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:BLAZE-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\nEND:VCARD"
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD"
     }
   }
 };
@@ -21,11 +21,11 @@ const quotedContact = {
 blazetz({ nomCom: "repo", categorie: "General" }, async (dest, client, commandeOptions) => {
     let { ms, repondre } = commandeOptions;
 
-    const repoUrl = "https://api.github.com/repos/blazetech-glitch/BLAZE-XMD";
+    const repoUrl = "https://api.github.com/repos/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES";
 
     // Random image from /scs folder
     const scsFolder = path.join(__dirname, "../scs");
-    const images = fs.readdirSync(scsFolder).filter(f => /^menu\d+\.jpg$/i.test(f));
+    const images = fs.readdirSync(scsFolder).filter(f => /^leopard-menu-\d+\.png$/i.test(f));
     const randomImage = images[Math.floor(Math.random() * images.length)];
     const imagePath = path.join(scsFolder, randomImage);
 
@@ -35,7 +35,7 @@ blazetz({ nomCom: "repo", categorie: "General" }, async (dest, client, commandeO
 
         let repoInfo = `
 ╭══════════════⊷❍
-┃ *BLAZE TECH REPOSITORY*
+┃ *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 REPOSITORY*
 ┃══════════════════
 ┃ ❏ Repo Link:🔗 *${repo.html_url}*
 ┃ ❏ Name: *${repo.name}*
@@ -52,13 +52,13 @@ blazetz({ nomCom: "repo", categorie: "General" }, async (dest, client, commandeO
         await client.sendMessage(dest, {
             image: { url: imagePath },
             caption: repoInfo,
-            footer: "*BLAZE TECH GitHub Repository*",
+            footer: "*𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 GitHub Repository*",
             contextInfo: {
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: "120363421014261315@newsletter",
-                    newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+                    newsletterJid: "120363405040601085@newsletter",
+                    newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
                     serverMessageId: 1
                 }
             },
