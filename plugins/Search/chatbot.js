@@ -3,7 +3,7 @@ const {
   setChatbotState,
   isChatbotEnabled,
   toggleChatbot,
-} = require('../../handlres/chatbot');
+} = require('../../handlers/chatbot');
 
 function privateChatIds(...values) {
   return [...new Set(values

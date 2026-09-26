@@ -52,7 +52,7 @@ const pino = require('pino'),
     } = require("./lib/settingsCache"),
     {
         handleChatbotMessage
-    } = require("./handlres/chatbot"),
+    } = require("./handlers/chatbot"),
     {
         handleEmojiRetrieve
     } = require('./lib/retrieveEmoji'),
@@ -1201,7 +1201,7 @@ async function main() {
     });
     const {
         groupEvents: _0x36ec8b
-    } = require("./handlres/eventHandler");
+    } = require("./handlers/eventHandler");
     _0x4f6f40['ev']['on']('group-participants.update', async _0x127afa => {
         const _0x342506 = _0x1c997b;
         try {
@@ -1272,7 +1272,7 @@ async function main() {
                 isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ 𝐌selachui Connected to WhatsApp! ☺️"), console['log']('📱 Device profile: ' + ('Android')), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('msela\x20chui\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20msela\x20chui\x20Commands\x20...\x0a');
                 const {
                     loadPlugins: _0x2f850a
-                } = require(__dirname + '/handlres/commandHandler');
+                } = require(__dirname + '/handlers/commandHandler');
                 _0x2f850a(__dirname + '/plugins'), (0x0, baileys_1["delay"])(0x2bc);
                 var _0x41aa42;
                 if (getConf("MODE")['toLocaleLowerCase']() === 'on') _0x41aa42 = 'public';
