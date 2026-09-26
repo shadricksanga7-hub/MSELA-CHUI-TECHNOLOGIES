@@ -1140,7 +1140,7 @@ async function main() {
             console['log'](".... " + _0x1db0bb);
         }
         if (_0x33cedd || _0xf89cb7 === 'sendtopm') {
-            console['log']('[Command gate] command=' + (_0xf89cb7 || '') + ' sender=' + (_0x15bc47 || '') + ' mode=' + String(getConf('MODE') || 'on') + ' public=' + (_0x4d1e58 || false));
+            console['log']('[Command gate] command=' + (_0xf89cb7 || '') + ' sender=' + (_0x15bc47 || '') + ' mode=' + String(getConf('MODE') || 'on') + ' public=' + (!['off', 'private', 'no', 'false', '0'].includes(String(getConf('MODE') || 'on').toLowerCase())));
             const _0x5a7239 = evt['cm']['find'](_0x1f211e => _0x1f211e["nomCom"] === _0xf89cb7 || Array['isArray'](_0x1f211e['alias']) && _0x1f211e['alias']['includes'](_0xf89cb7));
             if (_0x5a7239) try {
                 const _0x1fe1fe = String(getConf('MODE') || 'on')['trim']()["toLowerCase"](),
