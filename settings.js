@@ -11,11 +11,6 @@ try {
 } catch (_) {
     appConfig = {};
 }
-const configuredBotOs = process.env.BOT_OS
-    || process.env.MENU_OS
-    || process.env.OS
-    || appConfig.env?.BOT_OS?.value
-    || 'android';
 module.exports = {
     session: process.env.SESSION_ID || '',
     PREFIXE: process.env.PREFIX || ".",
@@ -24,7 +19,6 @@ module.exports = {
     BOT: process.env.BOT_NAME || '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃',
     URL: process.env.BOT_MENU_LINKS || 'https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES',
     WELCOME_MEDIA_URL: process.env.WELCOME_MEDIA_URL || '',
-    BOT_OS: String(configuredBotOs).toLowerCase() === 'ios' ? 'ios' : 'android',
     // Joining groups is opt-in to avoid unsolicited joins and account-risky behavior.
     AUTO_JOIN_GROUP: process.env.AUTO_JOIN_GROUP || 'off',
 

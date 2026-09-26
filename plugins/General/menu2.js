@@ -1,126 +1,17 @@
 const fs = require('fs-extra');
 const path = require('path');
-const { blazetz } = require(__dirname + "/../../devblaze/blazetz");
-const os = require("os");
-const moment = require("moment-timezone");
-const s = require(__dirname + "/../../settings");
-const { isIosPlainMenu, iosPlainMenu } = require(__dirname + "/../../lib/menuStyle");
-
-const newsletterContext = {
-  contextInfo: {
-    forwardingScore: 999,
-    isForwarded: true,
-    forwardedNewsletterMessageInfo: {
-      newsletterJid: "120363405040601085@newsletter",
-      newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
-      serverMessageId: 1
-    }
-  }
-};
-
-const quotedContact = {
-  key: {
-    fromMe: false,
-    participant: `0@s.whatsapp.net`,
-    remoteJid: "status@broadcast"
-  },
-  message: {
-    contactMessage: {
-      displayName: "MSELA CHUI XMD VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:MSELA CHUI XMD VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD"
-    }
-  }
-};
-
-const more = String.fromCharCode(8206);
-const readMore = more.repeat(4001);
-
-blazetz({ nomCom: "menu2", categorie: "General" }, async (dest, client, commandOptions) => {
-    let { ms, repondre, prefixe, nomAuteurMessage } = commandOptions;
-    let { cm } = require(__dirname + "/../../devblaze/blazetz");
-    let commandsByCategory = {};
-    let mode = (s.MODE.toLowerCase() === "yes") ? "PUBLIC" : "PRIVATE";
-    const iosMenu = isIosPlainMenu;
-
-    cm.map((com) => {
-        if (!commandsByCategory[com.categorie]) commandsByCategory[com.categorie] = [];
-        commandsByCategory[com.categorie].push(com.nomCom);
-    });
-
-    moment.tz.setDefault("Africa/Nairobi");
-    const currentTime = moment().format('HH:mm:ss');
-    const currentDate = moment().format('DD/MM/YYYY');
-
-    let infoMessage = iosMenu
-        ? iosPlainMenu([
-            "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 IOS MENU",
-            "",
-            `Hello, ${nomAuteurMessage || "user"}.`,
-            `Platform: ${os.platform()}`,
-            `Mode: ${mode}`,
-            `Prefix: ${prefixe}`,
-            `Time: ${currentTime}`,
-            `Date: ${currentDate}`,
-            `Commands: ${cm.length}`,
-            "",
-            "COMMAND MENU",
-            "",
-        ])
-        : `┏━━━⚡ *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃-V2* ⚡━━━┓
-┃ 🔥  Hello, *${nomAuteurMessage}*! 🔥
-┣━━━━━━━━━━━━━━━━━━━━━
-┃ 📌 *System Info:*
-┃ 💻 Platform: *${os.platform()}*
-┣━━━━━━━━━━━━━━━━━━━━━
-┃ ⚙️ *Bot Status:*
-┃ 🔘 Mode: *${mode}*
-┃ 🚀 Prefix: *[ ${prefixe} ]*
-┃ ⏳ Time: *${currentTime}*
-┃ 📆 Date: *${currentDate}*
-┃ 📟 Commands: *${cm.length}*
-┣━━━━━━━━━━━━━━━━━━━━━
-┃ ${readMore}
-┃ 🎩 *Command Menu* 🎩
-┣━━━━━━━━━━━━━━━━━━━━━\n`;
-
-    let menuMessage = "";
-
-    for (const category in commandsByCategory) {
-        if (iosMenu) {
-            menuMessage += `📂 *${category.toUpperCase()}*\n`;
-            commandsByCategory[category].forEach((cmd, index) => {
-                menuMessage += `${index + 1}. ${prefixe}${cmd}\n`;
-            });
-            menuMessage += `\n`;
-        } else {
-            menuMessage += `┣ 🔹 *${category.toUpperCase()}* 🔹\n`;
-            for (const cmd of commandsByCategory[category]) {
-                menuMessage += `┃   🔸 ${cmd}\n`;
-            }
-            menuMessage += `┣━━━━━━━━━━━━━━━━━━━━━\n`;
-        }
-    }
-
-    menuMessage += iosMenu
-        ? `𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 - 𝐌selachui`
-        : `┗🌟 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 - Developed by 𝐌selachui!* 🌟`;
-
-    try {
-        if (iosMenu) {
-            await client.sendMessage(dest, { text: iosPlainMenu([infoMessage, menuMessage]) });
-        } else {
-            const imagePath = path.join(__dirname, "../scs/leopard-menu-2.png");
-            const imageBuffer = fs.readFileSync(imagePath);
-            await client.sendMessage(dest, {
-                image: imageBuffer,
-                caption: infoMessage + menuMessage,
-                footer: "© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
-                ...newsletterContext
-            }, { quoted: quotedContact });
-        }
-
-    } catch (e) {
-        console.log("❌ Menu error: " + e);
-        repondre("❌ Menu error: " + e.message);
-    }
+const moment = require('moment-timezone');
+const { blazetz } = require(__dirname + '/../../devblaze/blazetz');
+const settings = require(__dirname + '/../../settings');
+const quotedContact = { key: { fromMe: false, participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast' }, message: { contactMessage: { displayName: 'MSELA CHUI XMD VERIFIED', vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN:MSELA CHUI XMD VERIFIED\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD' } } };
+blazetz({ nomCom: 'menu2', categorie: 'General' }, async (dest, client, options) => {
+  const { cm } = require(__dirname + '/../../devblaze/blazetz');
+  const { repondre, prefixe, nomAuteurMessage } = options;
+  const grouped = {};
+  for (const command of cm) (grouped[command.categorie] ||= []).push(command.nomCom);
+  moment.tz.setDefault('Africa/Nairobi');
+  let text = `┏━━━⚡ *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* ⚡━━━┓\n┃ 👋 Hello, *${nomAuteurMessage || 'user'}*!\n┃ 📱 Platform: *Android*\n┃ ⚙️ Mode: *${String(settings.MODE).toLowerCase() === 'off' ? 'PRIVATE' : 'PUBLIC'}*\n┃ 🚀 Prefix: *[ ${prefixe} ]*\n┃ ⏳ ${moment().format('HH:mm:ss')}  📆 ${moment().format('DD/MM/YYYY')}\n┃ 📟 Commands: *${cm.length}*\n┣━━━━━━━━━━━━━━━━━━━━━\n`;
+  for (const [category, commands] of Object.entries(grouped)) text += `┃ 🔹 *${category.toUpperCase()}*\n┃   ${commands.map(command => `${prefixe}${command}`).join(' • ')}\n┣━━━━━━━━━━━━━━━━━━━━━\n`;
+  text += '┗🌟 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 - Developed by 𝐌selachui!* 🌟';
+  try { const image = path.join(__dirname, '../scs/leopard-menu-2.png'); await client.sendMessage(dest, fs.existsSync(image) ? { image: fs.readFileSync(image), caption: text, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363405040601085@newsletter', newsletterName: '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃', serverMessageId: 1 } } } : { text }, { quoted: quotedContact }); } catch (error) { await repondre(`❌ Menu error: ${error.message}`); }
 });

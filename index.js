@@ -279,10 +279,8 @@ async function main() {
         state: _0x3c8bf8,
         saveCreds: _0x3818cf
     } = await (0x0, baileys_1["useMultiFileAuthState"])(__dirname + '/public');
-    const _0x4b0aOs = String(getConf('BOT_OS') || conf.BOT_OS || 'android').trim().toLowerCase() === 'ios' ? 'ios' : 'android';
-    const _0x4b0aBrowser = _0x4b0aOs === 'ios'
-        ? ['MSELA CHUI XMD iOS', 'Safari', '1.0.0']
-        : ['MSELA CHUI XMD Android', 'Chrome', '1.0.0'];
+    // Android is the only supported device profile.
+    const _0x4b0aBrowser = ['MSELA CHUI XMD Android', 'Chrome', '1.0.0'];
     const _0x2db888 = {
         'version': _0x5623b0,
         'logger': pino({
@@ -1248,7 +1246,7 @@ async function main() {
         if (_0x5f45b3 === 'connecting') console["log"]('\x20msela\x20chui\x20is\x20connecting...');
         else {
             if (_0x5f45b3 === 'open') {
-                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ 𝐌selachui Connected to WhatsApp! ☺️"), console['log']('📱 Device profile: ' + (String(getConf('BOT_OS') || conf.BOT_OS || 'android').toLowerCase() === 'ios' ? 'iOS' : 'Android')), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('msela\x20chui\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20msela\x20chui\x20Commands\x20...\x0a');
+                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ 𝐌selachui Connected to WhatsApp! ☺️"), console['log']('📱 Device profile: ' + ('Android')), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('msela\x20chui\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20msela\x20chui\x20Commands\x20...\x0a');
                 const {
                     loadPlugins: _0x2f850a
                 } = require(__dirname + '/handlres/commandHandler');

@@ -33,7 +33,7 @@ blazetz(
   async (from, conn, context) => {
     const { arg, repondre, prefixe, ms } = context;
 
-    const id = arg[0]?.match(/\d+/)?.join("");
+    const id = String(arg[0] || '').match(/^\d+$/)?.[0];
     const text = arg.slice(1).join(" ");
 
     try {
@@ -50,10 +50,11 @@ blazetz(
         );
       }
 
-      const selectedStyle = fancy[parseInt(id) - 1];
+      const styleNumber = Number(id);
+      const selectedStyle = Number.isInteger(styleNumber) && styleNumber >= 1 && styleNumber <= 34 ? fancy[styleNumber - 1] : null;
       const resultText = selectedStyle
         ? fancy.apply(selectedStyle, text)
-        : "Style not found";
+        : `Style not found. Choose a number from 1 to 34.`;
 
       // 🔘 COPY BUTTON
       const buttons = [

@@ -9,14 +9,11 @@ function apply(map, text) {
 }
 
 function list(text, fancy) {
-    let styles = Object.keys(fancy).filter(e => e.length < 3);
-    let msg = '\n*Availabe Fancy styles for 𝐌selachui:*\n\n';
-    for (let style in styles) {
-        if (style == 33) {
-            msg += (parseInt(style) + 1) + '. ' + '𝐌selachui' + '\n';
-        } else {
-            msg += (parseInt(style) + 1) + '. ' + fancy.apply(fancy[parseInt(style)], text) + '\n';
-        }
+    const styles = Object.keys(fancy).filter(key => /^\d+$/.test(key)).map(Number).sort((a, b) => a - b);
+    let msg = '\n*Available Fancy styles for 𝐌selachui:*\n\n';
+    for (const style of styles) {
+        const preview = style === 33 ? '𝐌selachui' : fancy.apply(fancy[style], text);
+        msg += `${style + 1}. ${preview}\n`;
     }
     return msg;
 }
