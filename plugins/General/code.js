@@ -92,7 +92,7 @@ blazetz({
             document: source,
             fileName: path.basename(pluginPath),
             mimetype: 'text/javascript',
-            caption: `📄 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 plugin source\n\n${relativeName}`
+            caption: `📄 BLAZE XMD plugin source\n\n${relativeName}`
         });
     } catch (error) {
         console.error('[CODE] Failed to send plugin source:', error);

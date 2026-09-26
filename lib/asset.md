@@ -1,1 +1,1 @@
-#developer 𝐌selachui
+#developer blaze tech 

@@ -2,7 +2,7 @@
 /**
  * commandHandler.js
  *
- * Recursive plugin loader for 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃.
+ * Recursive plugin loader for BLAZE-TECH.
  * Replaces the old flat "require every file in /scs" loop in index.js.
  * Walks /plugins/<category>/*.js and requires each one, so each command
  * file's own blazetz({...}) call registers it exactly like before.

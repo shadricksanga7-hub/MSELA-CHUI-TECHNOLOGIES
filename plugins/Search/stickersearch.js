@@ -25,15 +25,15 @@ async (dest, client, commandeOptions) => {
 
     const gifUrl = gif.data.results[i].media_formats.gif.url;
 
-
-
+    
+   
 
     // Assurez-vous de remplacer les valeurs manquantes dans la création du sticker
     const packname = nomAuteurMessage; // Remplacez par le nom de votre pack de stickers
 
     const stickerMess = new Sticker(gifUrl, {
       pack: packname,
-      author: '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃',
+      author: 'BLAZE-TECH',
       type: StickerTypes.FULL,
       categories: ["🤩", "🎉"],
       id: "12345",

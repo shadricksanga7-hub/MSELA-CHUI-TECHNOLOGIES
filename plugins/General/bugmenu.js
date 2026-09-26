@@ -5,12 +5,12 @@ blazetz({
   alias: ['bugs', 'bughelp'],
   desc: 'Show safe diagnostics and bug-reporting commands.',
   categorie: 'Bug',
-  author: '𝐌selachui',
+  author: 'ARNOLDT20',
   reaction: '🧰'
 }, async (dest, client, options) => {
   const { repondre } = options;
   return repondre([
-    '╭─〔 🧰 MSELA CHUI XMD BUG MENU 〕─╮',
+    '╭─〔 🧰 BLAZE BUG MENU 〕─╮',
     '│ .ping · latency and online check',
     '│ .crsh · owner health and memory check',
     '│ .reportbug <details> · send a bug report',

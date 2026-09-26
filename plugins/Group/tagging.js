@@ -5,17 +5,17 @@ blazetz({
   alias: ['hidetag'],
   desc: 'Notify every group member without printing visible mentions.',
   categorie: 'Group',
-  author: '𝐌selachui',
+  author: 'ARNOLDT20',
   reaction: '📣'
 }, async (dest, client, options) => {
   const { repondre, verifGroupe, verifAdmin, superUser, verifBlazetzAdmin, arg, infosGroupe } = options;
   if (!verifGroupe) return repondre('❌ This command is for groups only.');
   if (!verifAdmin && !superUser) return repondre('❌ Only group admins or the bot owner can use this command.');
-  if (!verifBlazetzAdmin) return repondre('❌ Please make 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 a group admin first.');
+  if (!verifBlazetzAdmin) return repondre('❌ Please make BLAZE XMD a group admin first.');
 
   const members = usableMembers(infosGroupe?.participants);
   if (!members.length) return repondre('❌ No group members were available to mention.');
-  const message = arg?.length ? arg.join(' ') : '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 group announcement';
+  const message = arg?.length ? arg.join(' ') : 'BLAZE XMD group announcement';
   await client.sendMessage(dest, {
     text: `📣 ${message}`,
     mentions: members,
@@ -27,16 +27,16 @@ blazetz({
   nomCom: 'tagall',
   desc: 'Mention every group member visibly.',
   categorie: 'Group',
-  author: '𝐌selachui',
+  author: 'ARNOLDT20',
   reaction: '📣'
 }, async (dest, client, options) => {
   const { repondre, verifGroupe, verifAdmin, superUser, verifBlazetzAdmin, arg, infosGroupe } = options;
   if (!verifGroupe) return repondre('❌ This command is for groups only.');
   if (!verifAdmin && !superUser) return repondre('❌ Only group admins or the bot owner can use this command.');
-  if (!verifBlazetzAdmin) return repondre('❌ Please make 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 a group admin first.');
+  if (!verifBlazetzAdmin) return repondre('❌ Please make BLAZE XMD a group admin first.');
   const members = usableMembers(infosGroupe?.participants);
   if (!members.length) return repondre('❌ No group members were available to mention.');
-  const message = arg?.length ? arg.join(' ') : '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 group announcement';
+  const message = arg?.length ? arg.join(' ') : 'BLAZE XMD group announcement';
   await client.sendMessage(dest, {
     text: `📣 *${message}*\\n\\n${members.map((jid) => `• @${jid.split('@')[0]}`).join('\\n')}`,
     mentions: members,
@@ -49,13 +49,13 @@ blazetz({
   alias: ['admins', 'tagadmin'],
   desc: 'Mention all group administrators.',
   categorie: 'Group',
-  author: '𝐌selachui',
+  author: 'ARNOLDT20',
   reaction: '🛡️'
 }, async (dest, client, options) => {
   const { repondre, verifGroupe, verifAdmin, superUser, verifBlazetzAdmin, arg, infosGroupe } = options;
   if (!verifGroupe) return repondre('❌ This command is for groups only.');
   if (!verifAdmin && !superUser) return repondre('❌ Only group admins or the bot owner can use this command.');
-  if (!verifBlazetzAdmin) return repondre('❌ Please make 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 a group admin first.');
+  if (!verifBlazetzAdmin) return repondre('❌ Please make BLAZE XMD a group admin first.');
 
   const admins = usableMembers((infosGroupe?.participants || []).filter((member) => member.admin));
   if (!admins.length) return repondre('❌ No group administrators were available to mention.');
