@@ -29,7 +29,21 @@ blazetz({ nomCom: 'menu', categorie: 'General', reaction: '📜' }, async (dest,
     const category = categories[index];
     const body = botInfo(cm.length) + `📂 *${category.toUpperCase()}*\n\n` + grouped[category].map(command => `🔹 *${prefixe}${command}*`).join('\n');
     const categoryImage = getMenuImage();
-    try { await client.sendMessage(dest, categoryImage ? { image: fs.readFileSync(categoryImage), caption: body, ...newsletterContext } : { text: body }, { quoted: ms }); await client.sendMessage(dest, { react: { text: '✅', key: message.key } }); } catch (error) { await repondre(`❌ Menu error: ${error.message}`); }
+    try {
+      if (categoryImage) {
+        try {
+          await client.sendMessage(dest, { image: fs.readFileSync(categoryImage), caption: body, ...newsletterContext }, { quoted: ms });
+        } catch (mediaError) {
+          console.warn('Menu image upload failed; using text fallback:', mediaError.message);
+          await client.sendMessage(dest, { text: body }, { quoted: ms });
+        }
+      } else {
+        await client.sendMessage(dest, { text: body }, { quoted: ms });
+      }
+      await client.sendMessage(dest, { react: { text: '✅', key: message.key } });
+    } catch (error) {
+      await repondre(`❌ Menu error: ${error.message}`);
+    }
   };
   client.ev.on('messages.upsert', listener);
 });
