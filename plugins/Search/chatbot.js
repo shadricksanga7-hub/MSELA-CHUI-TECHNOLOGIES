@@ -1,8 +1,9 @@
 const { blazetz } = require('../../devblaze/blazetz');
 const {
   setChatbotState,
-  isChatbotEnabled
-} = require('../../handlers/chatbot');
+  isChatbotEnabled,
+  toggleChatbot,
+} = require('../../handlres/chatbot');
 
 function privateChatIds(...values) {
   return [...new Set(values
