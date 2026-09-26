@@ -4,6 +4,21 @@ const fancy = require("../../devblaze/style");
 const pkg = require("@whiskeysockets/baileys");
 const { generateWAMessageFromContent, proto } = pkg;
 
+function renderAllPreviews(text) {
+  const styles = Object.keys(fancy)
+    .filter((key) => /^\d+$/.test(key))
+    .map(Number)
+    .sort((a, b) => a - b);
+  return [
+    '*Available Fancy previews for 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃:*',
+    '',
+    ...styles.map((style) => `${style + 1}. ${fancy.apply(fancy[style], text)}`),
+    '',
+    'Use: .fancy <number> <text> for one style.',
+    'Use: .fancy all <text> to preview every style.'
+  ].join('\n');
+}
+
 // VCard Contact (status style)
 const quotedContact = {
   key: {
@@ -33,8 +48,10 @@ blazetz(
   async (from, conn, context) => {
     const { arg, repondre, prefixe, ms } = context;
 
+    const first = String(arg[0] || '').toLowerCase();
+    const allMode = first === 'all' || first === 'styles' || first === 'preview';
     const id = String(arg[0] || '').match(/^\d+$/)?.[0];
-    const text = id ? arg.slice(1).join(" ") : arg.join(" ");
+    const text = id || allMode ? arg.slice(1).join(" ") : arg.join(" ");
 
     try {
       // Hakuna ID au text → onyesha list
@@ -44,7 +61,7 @@ blazetz(
           {
             text:
               `Example:\n${prefixe}fancy 10 𝐌selachui\n\n` +
-              fancy.list("𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃", fancy)
+              renderAllPreviews("𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃")
           },
           { quoted: quotedContact }
         );
@@ -52,10 +69,10 @@ blazetz(
 
       // With plain text, return every available style so deployments do not
       // appear to support only one font. A numeric first argument selects one.
-      if (!id) {
+      if (!id || allMode) {
         return await conn.sendMessage(
           from,
-          { text: fancy.list(text, fancy) },
+          { text: renderAllPreviews(text) },
           { quoted: quotedContact }
         );
       }
