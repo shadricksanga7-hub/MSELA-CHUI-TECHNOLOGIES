@@ -34,11 +34,11 @@ blazetz(
     const { arg, repondre, prefixe, ms } = context;
 
     const id = String(arg[0] || '').match(/^\d+$/)?.[0];
-    const text = arg.slice(1).join(" ");
+    const text = id ? arg.slice(1).join(" ") : arg.join(" ");
 
     try {
       // Hakuna ID au text → onyesha list
-      if (!id || !text) {
+      if (!text) {
         return await conn.sendMessage(
           from,
           {
@@ -46,6 +46,16 @@ blazetz(
               `Example:\n${prefixe}fancy 10 𝐌selachui\n\n` +
               fancy.list("𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃", fancy)
           },
+          { quoted: quotedContact }
+        );
+      }
+
+      // With plain text, return every available style so deployments do not
+      // appear to support only one font. A numeric first argument selects one.
+      if (!id) {
+        return await conn.sendMessage(
+          from,
+          { text: fancy.list(text, fancy) },
           { quoted: quotedContact }
         );
       }

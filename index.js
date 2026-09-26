@@ -1221,6 +1221,13 @@ async function main() {
             console["error"]('❌\x20Error\x20handling\x20group\x20participants\x20update:', _0x44f693);
         }
     });
+    function isValidScheduleTime(value) {
+        const match = String(value || '').match(/^(\d{1,2}):(\d{2})$/);
+        if (!match) return false;
+        const hour = Number(match[1]);
+        const minute = Number(match[2]);
+        return hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59;
+    }
     async function _0x4c7233() {
         const _0x1d9f6f = _0x1c997b,
             _0x489108 = require('node-cron'),
@@ -1231,35 +1238,29 @@ async function main() {
         console["log"](_0x5a81bf);
         if (_0x5a81bf['length'] > 0x0)
             for (let _0x5d9ad2 = 0x0; _0x5d9ad2 < _0x5a81bf['length']; _0x5d9ad2++) {
-                if (_0x5a81bf[_0x5d9ad2]['mute_at'] != null) {
+                if (isValidScheduleTime(_0x5a81bf[_0x5d9ad2]['mute_at'])) {
                     let _0x2a6c26 = _0x5a81bf[_0x5d9ad2]["mute_at"]['split'](':');
                     console['log']('Setting\x20auto-mute\x20for\x20' + _0x5a81bf[_0x5d9ad2]['group_id'] + '\x20at\x20' + _0x2a6c26[0x0] + 'H\x20' + _0x2a6c26[0x1]), _0x489108["schedule"](_0x2a6c26[0x1] + '\x20' + _0x2a6c26[0x0] + '\x20*\x20*\x20*', async () => {
                         const _0x203741 = _0x1d9f6f;
                         await _0x4f6f40['groupSettingUpdate'](_0x5a81bf[_0x5d9ad2]['group_id'], 'announcement'), _0x4f6f40["sendMessage"](_0x5a81bf[_0x5d9ad2]['group_id'], {
-                            'image': {
-                                'url': './scs/media/chrono.webp'
-                            },
-                            'caption': 'Hello,\x20it\x27s\x20time\x20to\x20close\x20the\x20group;\x20sayonara.'
+                            'text': '⏰ The group is now closed automatically according to its schedule.'
                         });
                     }, {
                         'timezone': 'Africa/Nairobi'
                     });
                 }
-                if (_0x5a81bf[_0x5d9ad2]["unmute_at"] != null) {
+                if (isValidScheduleTime(_0x5a81bf[_0x5d9ad2]["unmute_at"])) {
                     let _0x32b6f5 = _0x5a81bf[_0x5d9ad2]['unmute_at']["split"](':');
                     console['log']('Setting\x20auto-unmute\x20for\x20' + _0x32b6f5[0x0] + 'H\x20' + _0x32b6f5[0x1]), _0x489108['schedule'](_0x32b6f5[0x1] + '\x20' + _0x32b6f5[0x0] + " * * *", async () => {
                         const _0x2db230 = _0x1d9f6f;
                         await _0x4f6f40['groupSettingUpdate'](_0x5a81bf[_0x5d9ad2]['group_id'], "not_announcement"), _0x4f6f40['sendMessage'](_0x5a81bf[_0x5d9ad2]['group_id'], {
-                            'image': {
-                                'url': './scs/media/chrono.webp'
-                            },
-                            'caption': "Good morning; It's time to open the group."
+                            'text': '🌅 The group is open again according to its schedule.'
                         });
                     }, {
                         'timezone': 'Africa/Nairobi'
                     });
                 }
-            } else console["log"]("Crons were not activated");
+            } else console["log"]("ℹ️ Cron scheduler is ready; no saved group schedules found. Use .cron set HH:MM HH:MM in a group.");
         return;
     }
     return _0x4f6f40['ev']['on']('contacts.upsert', async _0x174bbf => {
