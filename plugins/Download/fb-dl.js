@@ -12,8 +12,8 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅ nORG:BLAZE-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\nEND:VCARD"
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:MSELA CHUI XMD VERIFIED ✅ nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD"
     }
   }
 };
@@ -23,8 +23,8 @@ const newsletterContext = {
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: "120363421014261315@newsletter",
-    newsletterName: "BLAZE TECH",
+    newsletterJid: "120363405040601085@newsletter",
+    newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
     serverMessageId: 1
   }
 };
@@ -57,7 +57,7 @@ Lien: ${result.url}
         }, { quoted: quotedContact });
         await client.sendMessage(dest, {
           video: { url: result.hd },
-          caption: 'facebook video downloader powered by blaze tech',
+          caption: 'facebook video downloader powered by 𝐌selachui',
           contextInfo: newsletterContext
         }, { quoted: quotedContact });
       })
@@ -99,7 +99,7 @@ Lien: ${result.url}
         }, { quoted: quotedContact });
         await client.sendMessage(dest, {
           video: { url: result.sd },
-          caption: 'facebook video downloader powered by blaze tech',
+          caption: 'facebook video downloader powered by 𝐌selachui',
           contextInfo: newsletterContext
         }, { quoted: quotedContact });
       })

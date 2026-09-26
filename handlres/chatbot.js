@@ -255,9 +255,9 @@ function extractQuotedText(message) {
 }
 
 function isAiResponse(text) {
-  return /^╭━━━〔\s*🤖\s*BLAZE AI/i.test(text)
-    || /^🤖\s*\*?BLAZE GPT/i.test(text)
-    || /╰━━━〔\s*ARNOLDT20\s*〕━━━╯/i.test(text);
+  return /^╭━━━〔\s*🤖\s*𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI/i.test(text)
+    || /^🤖\s*\*?MSELA CHUI XMD GPT/i.test(text)
+    || /╰━━━〔\s*𝐌selachui\s*〕━━━╯/i.test(text);
 }
 
 async function handleAutomaticGptReply(client, message, { from, body }) {
@@ -291,7 +291,7 @@ async function handleAutomaticGptReply(client, message, { from, body }) {
     if (!answer) throw new Error('AI service returned an empty continuation.');
 
     await client.sendMessage(from, {
-      text: `╭━━━〔 🤖 BLAZE AI 〕━━━╮\n🔁 *Conversation continued*\n\n${answer}\n\n╰━━━〔 ARNOLDT20 〕━━━╯`
+      text: `╭━━━〔 🤖 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI 〕━━━╮\n🔁 *Conversation continued*\n\n${answer}\n\n╰━━━〔 𝐌selachui 〕━━━╯`
     }, { quoted: message });
   } catch (error) {
     console.error('[Chatbot] Automatic GPT continuation failed:', error.response?.data || error.message);

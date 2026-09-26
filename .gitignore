@@ -1,0 +1,17 @@
+# Local dependencies and runtime state
+node_modules/
+msela-data.json
+asset/banGroup.json
+asset/banUser.json
+asset/users_rank.json
+
+# WhatsApp multi-file auth state (never commit credentials or keys)
+public/creds.json
+public/device-list-*.json
+public/session-*.json
+public/pre-key-*.json
+public/sender-key-*.json
+public/sender-key-memory-*.json
+public/identity-key-*.json
+public/lid-mapping-*.json
+public/tctoken-*.json

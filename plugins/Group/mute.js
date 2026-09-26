@@ -50,14 +50,14 @@ function canManage(options) {
 }
 
 function privateMuteNotice(groupName, duration, until) {
-  return `🔇 *BLAZE XMD — PRIVATE NOTICE*\n\nYou have been muted in *${groupName || 'this group'}*.\n\n⏱️ Duration: *${formatDuration(duration)}*\n🕒 Expires: *${new Date(until).toLocaleString()}*\n\nText messages sent during this period may be removed automatically.\n\nIf you believe this was a mistake, contact a group admin.\n\n_© BLAZE XMD • ARNOLDT20_`;
+  return `🔇 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 — PRIVATE NOTICE*\n\nYou have been muted in *${groupName || 'this group'}*.\n\n⏱️ Duration: *${formatDuration(duration)}*\n🕒 Expires: *${new Date(until).toLocaleString()}*\n\nText messages sent during this period may be removed automatically.\n\nIf you believe this was a mistake, contact a group admin.\n\n_© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 • 𝐌selachui_`;
 }
 
 async function muteCommand(dest, client, options) {
   const { repondre, verifGroupe, arg = [], idBot, mbre = [] } = options;
   if (!verifGroupe) return repondre('❌ This command is for groups only.');
   if (!canManage(options)) return repondre('❌ Only group admins or the bot owner can mute users.');
-  if (!options.verifBlazetzAdmin && !options.superUser) return repondre('❌ BLAZE XMD must be a group admin to delete muted messages.');
+  if (!options.verifBlazetzAdmin && !options.superUser) return repondre('❌ 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 must be a group admin to delete muted messages.');
 
   const target = resolveTarget(options);
   const duration = parseDuration(arg.find((item) => /\d+[smhd]$/i.test(item)));
@@ -113,7 +113,7 @@ blazetz({
   alias: ['muteuser'],
   desc: 'Mute a group user for a duration and remove their text messages.',
   categorie: 'Group',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🔇'
 }, muteCommand);
 
@@ -122,7 +122,7 @@ blazetz({
   alias: ['unmuteuser'],
   desc: 'Remove a timed group mute.',
   categorie: 'Group',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🔊'
 }, unmuteCommand);
 
@@ -131,6 +131,6 @@ blazetz({
   alias: ['mutes'],
   desc: 'List currently muted group users.',
   categorie: 'Group',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '📋'
 }, listMutes);

@@ -32,8 +32,8 @@ blazetz({
     for (const file of files) {
       if (file.endsWith('.js')) {
         const fileContent = fs.readFileSync(path.join(commandsFolder, file), 'utf8');
-        
-        if (fileContent.includes(`nomCom: "${cmdName}"`) || 
+
+        if (fileContent.includes(`nomCom: "${cmdName}"`) ||
             fileContent.includes(`nomCom: '${cmdName}'`) ||
             fileContent.includes(`name: "${cmdName}"`) ||
             fileContent.includes(`name: '${cmdName}'`)) {
@@ -56,7 +56,7 @@ blazetz({
     const fileLines = fullContent.split('\n').length;
 
     let category = "Unknown";
-    const categoryMatch = fullContent.match(/categorie:\s*["']([^"']+)["']/i) || 
+    const categoryMatch = fullContent.match(/categorie:\s*["']([^"']+)["']/i) ||
                          fullContent.match(/category:\s*["']([^"']+)["']/i);
     if (categoryMatch) {
       category = categoryMatch[1];
@@ -69,7 +69,7 @@ blazetz({
 ├─ 📊 Size: ${fileSize} chars (${fileSizeKB} KB)
 ├─ 📝 Lines: ${fileLines}
 │
-└─ © Powered By BLAZE-TECH
+└─ © Powered By 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃
 
 💻 Javascript Code
 \`\`\`javascript
@@ -108,7 +108,7 @@ ${fullContent}
                 text: fullMessage
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© BLAZE-TECH"
+                text: "© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 title: "",

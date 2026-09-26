@@ -9,7 +9,7 @@ const baileys_1 = require("@whiskeysockets/baileys");
 const fs = require('fs-extra');
 const util = require('util');
 let { listall } = require('./stylish-font');
-/*_________by Mselachui 
+/*_________by Mselachui
 
 fonction zJson:
 récupère un objet json
@@ -32,7 +32,7 @@ module.exports.genererNomFichier = async (extension) => {
 /** ************ */
 module.exports.stick = async (buffer, author) => {
     var sticker = new Sticker(buffer, {
-        pack: 'BLAZE-TECH',
+        pack: '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃',
         author: author,
         type: StickerTypes.FULL,
         categories: ['🤩', '🎉'],
@@ -228,7 +228,7 @@ async function ajouterCommande() {
       }
   //console.log("installation de plugins terminé 👍🏿")
     })
-  
+
   */
 }
 exports.ajouterCommande = ajouterCommande;
@@ -256,7 +256,7 @@ async function xlab() {
         }
     });
     //console.log("installation des plugins ... ")
-    //console.log(fichier+" installé 
+    //console.log(fichier+" installé
     //////////
 }
 exports.xlab = xlab;

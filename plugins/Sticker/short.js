@@ -1,7 +1,7 @@
 const { blazetz } = require("../../devblaze/blazetz");
 const axios = require("axios");
 
-// VCard Contact (BLAZE VERIFIED ✅)
+// VCard Contact (MSELA CHUI XMD VERIFIED ✅)
 const quotedContact = {
   key: {
     fromMe: false,
@@ -10,12 +10,12 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
       vcard: `BEGIN:VCARD
 VERSION:3.0
-FN:BLAZE VERIFIED ✅
-ORG:BLAZE-TECH BOT;
-TEL;type=CELL;type=VOICE;waid=255627417402:+255627417402
+FN:MSELA CHUI XMD VERIFIED ✅
+ORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;
+TEL;type=CELL;type=VOICE;waid=260774358600:+260774358600
 END:VCARD`
     }
   }
@@ -26,8 +26,8 @@ const newsletterContext = {
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: "120363421014261315@newsletter",
-    newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+    newsletterJid: "120363405040601085@newsletter",
+    newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
     serverMessageId: 1
   }
 };
@@ -37,7 +37,7 @@ blazetz(
     nomCom: "short",
     alias: ["tiny", "shorturl", "shorten", "urlshort"],
     categorie: "Sticker",
-    author: "ARNOLDT20",
+    author: "𝐌selachui",
     reaction: "General"
   },
   async (from, conn, context) => {
@@ -79,7 +79,7 @@ blazetz(
 ┃ ✂️ Shortened:
 ┃ ${shortenedUrl}
 ┗━━━━━━━━━━━━━━━━━━━━━━━
-🔗 Powered by BLAZE XMD`;
+🔗 Powered by 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`;
 
       await conn.sendMessage(
         from,

@@ -1,9 +1,9 @@
 {
-  "name": "BLAZE-TECH",
-  "description": "BLAZE XMD WhatsApp bot developed by ARNOLDT20",
+  "name": "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
+  "description": "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 WhatsApp bot developed by 𝐌selachui",
   "keywords": ["bot", "node", "baileys", "whatsapp"],
   "logo": "https://files.catbox.moe/hflcbc.jpg",
-  "repository": "https://github.com/blazetech-glitch/BLAZE-XMD",
+  "repository": "https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES",
   "success_url": "/",
   "stack": "heroku-24",
   "env": {
@@ -17,9 +17,24 @@
       "value": ".",
       "required": false
     },
-    "BOT_OS": {
-      "description": "Menu presentation target: use ios for the iPhone-friendly menu, or android for the existing menu.",
-      "value": "ios",
+    "NUMERO_OWNER": {
+      "description": "Owner phone number used for protected settings commands.",
+      "value": "260774358600",
+      "required": false
+    },
+    "PUBLIC_MODE": {
+      "description": "Set to on so ordinary commands work for all users; off restricts ordinary commands to owner/sudo.",
+      "value": "on",
+      "required": false
+    },
+    "PM_PERMIT": {
+      "description": "Set to off to allow ordinary private-chat commands from all users.",
+      "value": "off",
+      "required": false
+    },
+    "AUTO_JOIN_GROUP": {
+      "description": "Set to on to automatically accept the configured group invite; off is safer by default.",
+      "value": "off",
       "required": false
     }
   },

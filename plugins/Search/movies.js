@@ -3,7 +3,7 @@ const { blazetz } = require("../../devblaze/blazetz");
 const traduire = require("../../devblaze/traduction");
 const { Sticker, StickerTypes } = require('wa-sticker-formatter');
 
-// VCard Contact (BLAZE VERIFIED ✅)
+// VCard Contact (MSELA CHUI XMD VERIFIED ✅)
 const quotedContact = {
   key: {
     fromMe: false,
@@ -12,8 +12,8 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:BLAZE-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\nEND:VCARD"
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:MSELA CHUI XMD VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD"
     }
   }
 };
@@ -24,8 +24,8 @@ const newsletterContext = {
     forwardingScore: 999,
     isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: "120363421014261315@newsletter",
-      newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+      newsletterJid: "120363405040601085@newsletter",
+      newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
       serverMessageId: 1
     }
   }
@@ -47,8 +47,8 @@ blazetz({
     const imdbData = response.data;
 
     let imdbInfo = "THANKS ALL FOR THE SUPPORT ITS ME PKDRILLER \n";
-    imdbInfo += " ``` BLAZE-TECH FILMS```\n";
-    imdbInfo += "*Made by 𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳*\n";
+    imdbInfo += " ``` 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 FILMS```\n";
+    imdbInfo += "*Made by 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃*\n";
     imdbInfo += "🎬Title    : " + imdbData.Title + "\n";
     imdbInfo += "📅year      : " + imdbData.Year + "\n";
     imdbInfo += "⭐Assessment : " + imdbData.Rated + "\n";

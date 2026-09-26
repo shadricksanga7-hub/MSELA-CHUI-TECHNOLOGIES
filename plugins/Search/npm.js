@@ -45,14 +45,14 @@ blazetz({
     `;
 
     // Send the response
-    await client.sendMessage(dest, { 
+    await client.sendMessage(dest, {
       text: responseText,
       contextInfo: {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-          newsletterJid: "120363421014261315@newsletter",
-          newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+          newsletterJid: "120363405040601085@newsletter",
+          newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
           serverMessageId: 1
         }
       }
@@ -65,7 +65,7 @@ blazetz({
 
   } catch (error) {
     console.error("NPM Search Error:", error);
-    
+
     if (error.response && error.response.status === 404) {
       await repondre(`❌ Package *"${packageName}"* not found on npm registry.\n\nCheck spelling or try another package.`);
     } else if (error.code === 'ECONNABORTED') {

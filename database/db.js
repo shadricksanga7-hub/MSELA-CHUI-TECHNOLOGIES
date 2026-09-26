@@ -2,20 +2,20 @@
 /**
  * database/db.js
  *
- * Unified storage for BLAZE-TECH, ported from BLAZE-XMD's database/config.js
+ * Unified storage for 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃, ported from 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's database/config.js
  * (originally ES Modules) to CommonJS.
  *
- * Backend selection (same fallback order as BLAZE-XMD):
+ * Backend selection (same fallback order as 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃):
  *   - If process.env.DATABASE_URL is set, tries PostgreSQL first.
  *   - Otherwise (or if PostgreSQL fails to connect), falls back to a
- *     single JSON file (./blaze-data.json) — no setup required, so
+ *     single JSON file (./msela-data.json) — no setup required, so
  *     the bot keeps working exactly as it does today if no Postgres
  *     add-on is attached on Heroku.
  *
  * This consolidates what used to be several separate JSON files
  * (lib/antibot.js, lib/antilien.js, lib/warn.js, lib/welcome.js,
  * lib/groupProtection.js) into one place, one group_settings row per
- * group, matching BLAZE-XMD's schema/shape.
+ * group, matching 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's schema/shape.
  */
 const path = require('path');
 const fs = require('fs');
@@ -35,7 +35,7 @@ const _jsonDefaults = () => ({
 
 let _jsonData = null;
 let _jsonSaveTimer = null;
-const _jsonPath = path.resolve(__dirname, '../blaze-data.json');
+const _jsonPath = path.resolve(__dirname, '../msela-data.json');
 
 function _jsonFlush() {
     try { fs.writeFileSync(_jsonPath, JSON.stringify(_jsonData, null, 2)); } catch {}
@@ -55,7 +55,7 @@ function initJson() {
             _jsonData = _jsonDefaults();
         }
         _backend = 'json';
-        console.log('✅ [DB] Using JSON file database (blaze-data.json)');
+        console.log('✅ [DB] Using JSON file database (msela-data.json)');
     } catch (e) {
         console.log('⚠️ [DB] JSON init failed:', e.message);
         throw e;

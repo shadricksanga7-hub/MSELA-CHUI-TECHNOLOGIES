@@ -13,12 +13,12 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
       vcard: `BEGIN:VCARD
 VERSION:3.0
-FN:BLAZE VERIFIED
-ORG:BLAZE-TECH BOT;
-TEL;type=CELL;type=VOICE;waid=255627417402:+255627417402
+FN:MSELA CHUI XMD VERIFIED
+ORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;
+TEL;type=CELL;type=VOICE;waid=260774358600:+260774358600
 END:VCARD`
     }
   }
@@ -33,7 +33,7 @@ blazetz(
   async (from, conn, context) => {
     const { arg, repondre, prefixe, ms } = context;
 
-    const id = arg[0]?.match(/\d+/)?.join("");
+    const id = String(arg[0] || '').match(/^\d+$/)?.[0];
     const text = arg.slice(1).join(" ");
 
     try {
@@ -43,17 +43,18 @@ blazetz(
           from,
           {
             text:
-              `Example:\n${prefixe}fancy 10 blaze tech\n\n` +
-              fancy.list("BLAZE-TECH", fancy)
+              `Example:\n${prefixe}fancy 10 𝐌selachui\n\n` +
+              fancy.list("𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃", fancy)
           },
           { quoted: quotedContact }
         );
       }
 
-      const selectedStyle = fancy[parseInt(id) - 1];
+      const styleNumber = Number(id);
+      const selectedStyle = Number.isInteger(styleNumber) && styleNumber >= 1 && styleNumber <= 34 ? fancy[styleNumber - 1] : null;
       const resultText = selectedStyle
         ? fancy.apply(selectedStyle, text)
-        : "Style not found";
+        : `Style not found. Choose a number from 1 to 34.`;
 
       // 🔘 COPY BUTTON
       const buttons = [
@@ -106,4 +107,4 @@ blazetz(
     }
   }
 );
-            
+

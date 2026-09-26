@@ -3,16 +3,16 @@ const { blazetz } = require("../../devblaze/blazetz");
 /**
  * owner
  *
- * Ported from BLAZE-XMD's plugins/General/dev.js (aliased there as
- * 'owner' among others) — replaces BLAZE-TECH's previous owner.js.
+ * Ported from 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's plugins/General/dev.js (aliased there as
+ * 'owner' among others) — replaces 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's previous owner.js.
  * Sends an interactive card (title/body/footer + buttons) via
- * relayMessage, followed by a vCard contact, matching BLAZE-XMD's exact
+ * relayMessage, followed by a vCard contact, matching 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's exact
  * output. Falls back to a plain text card + vCard if the interactive
  * message fails to send (e.g. unsupported on the recipient's client).
  */
-const DEV_NUMBER = "255627417402";
-const DEV_NAME = "blaze tech | Blaze Tech Dev";
-const DEV_ORG = "BLAZE-TECH Bot";
+const DEV_NUMBER = "260774358600";
+const DEV_NAME = "𝐌selachui";
+const DEV_ORG = "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃";
 
 blazetz({
     nomCom: "owner",
@@ -39,7 +39,7 @@ blazetz({
                     text: "*乂  𝗢 𝗪 𝗡 𝗘 𝗥     ◦     𝗜 𝗡 𝗙 𝗢*\n✧ Tag : \n      ◦ @" + DEV_NUMBER + " 🇹🇿\n\n✧ Rules : \n      ◦ _Don't call owner's number_\n      ◦ _Don't talk shit_\n      ◦ _Don't spam_\n      ◦ _Don't goon😡_"
                 },
                 footer: {
-                    text: "blaze tech"
+                    text: "𝐌selachui"
                 },
                 nativeFlowMessage: {
                     buttons: [
@@ -52,9 +52,9 @@ blazetz({
                                 location: "tech",
                                 booking_url: `https://wa.me/${DEV_NUMBER}`,
                                 phone_number: DEV_NUMBER,
-                                booking_management_url: "https://whatsapp.com/channel/0029VbAjwl9MF8vQQa0ZT32",
-                                description: "*◦ 👤 Name  :*  ARNOLDT20\n*◦ 📞 Number  :*  +" + DEV_NUMBER + "\n*◦ 💭 Bio  :*  tech \n*◦ ⚡ Status  :*  _Developer_\n*◦ Country  :*  Tanzania\n",
-                                email: "Blazetech154@gmail.com",
+                                booking_management_url: "https://whatsapp.com/channel/0029Vb6b5YoCMY0BMlXAvQ3H",
+                                description: "*◦ 👤 Name  :*  𝐌selachui\n*◦ 📞 Number  :*  +" + DEV_NUMBER + "\n*◦ 💭 Bio  :*  tech \n*◦ ⚡ Status  :*  _Developer_\n*◦ Country  :*  Zambia\n",
+                                email: "",
                                 display_text: "𝐌𝐨𝐫𝐞 𝐎𝐰𝐧𝐞𝐫𝐈𝐧𝐟𝐨",
                                 display_content: {
                                     display_language: "en",
@@ -93,7 +93,7 @@ blazetz({
         console.error("Owner command error:", error);
         await react("❌");
 
-        const fallbackText = `📌 *DEVELOPER INFO*\n━━━━━━━━━━━━━━━━\n👤 Name: ${DEV_NAME}\n🏢 Project: ${DEV_ORG}\n📞 Contact: +${DEV_NUMBER}\nDon't spam the dev or you'll regret your existence.\nSerious bugs only — no "how do I use this" questions.\n━━━━━━━━━━━━━━━━\n© blaze tech`;
+        const fallbackText = `📌 *DEVELOPER INFO*\n━━━━━━━━━━━━━━━━\n👤 Name: ${DEV_NAME}\n🏢 Project: ${DEV_ORG}\n📞 Contact: +${DEV_NUMBER}\nDon't spam the dev or you'll regret your existence.\nSerious bugs only — no "how do I use this" questions.\n━━━━━━━━━━━━━━━━\n© 𝐌selachui`;
         await repondre(fallbackText);
 
         await client.sendMessage(dest, {

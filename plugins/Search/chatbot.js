@@ -1,8 +1,9 @@
 const { blazetz } = require('../../devblaze/blazetz');
 const {
   setChatbotState,
-  isChatbotEnabled
-} = require('../../handlers/chatbot');
+  isChatbotEnabled,
+  toggleChatbot,
+} = require('../../handlres/chatbot');
 
 function privateChatIds(...values) {
   return [...new Set(values
@@ -24,7 +25,7 @@ blazetz(
   {
     nomCom: 'chatbot',
     categorie: 'Search',
-    author: 'ARNOLDT20',
+    author: '𝐌selachui',
     reaction: '🤖',
     alias: ['cb']
   },
@@ -35,7 +36,7 @@ blazetz(
       const action = String(arg[0] || 'toggle').toLowerCase();
       if (['help', '?'].includes(action)) {
         return repondre([
-          '🤖 *BLAZE XMD GROUP CHATBOT*',
+          '🤖 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 GROUP CHATBOT*',
           '',
           '`.chatbot on` — enable replies in this group',
           '`.chatbot off` — disable replies in this group',
@@ -48,13 +49,13 @@ blazetz(
 
       if (action === 'status') {
         return repondre(isChatbotEnabled(dest)
-          ? '✅ Group chatbot is *ON*. Reply to a BLAZE XMD message to receive an AI response.'
+          ? '✅ Group chatbot is *ON*. Reply to a 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 message to receive an AI response.'
           : '⚪ Group chatbot is *OFF*. Use `.chatbot on` to enable it.');
       }
 
       if (['on', 'enable', 'start'].includes(action)) {
         setChatbotState(dest, true);
-        return repondre('✅ Group chatbot enabled. It will answer only replies directed to BLAZE XMD.');
+        return repondre('✅ Group chatbot enabled. It will answer only replies directed to 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃.');
       }
 
       if (['off', 'disable', 'stop'].includes(action)) {
@@ -65,7 +66,7 @@ blazetz(
       if (action === 'toggle') {
         const enabled = toggleChatbot(dest);
         return repondre(enabled
-          ? '✅ Group chatbot enabled. Reply to BLAZE XMD messages to get an AI response.'
+          ? '✅ Group chatbot enabled. Reply to 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 messages to get an AI response.'
           : '🛑 Group chatbot disabled.');
       }
 
@@ -77,7 +78,7 @@ blazetz(
 
     if (['help', '?'].includes(action)) {
       return repondre([
-        '🤖 *BLAZE XMD AI CHATBOT*',
+        '🤖 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI CHATBOT*',
         '',
         '`.chatbot on` — enable automatic private replies',
         '`.chatbot off` — disable automatic private replies',
@@ -98,19 +99,19 @@ blazetz(
 
     if (['on', 'enable', 'start'].includes(action)) {
       setPrivateChatbotState(userJids, true);
-      return repondre('✅ *BLAZE XMD AI chatbot enabled.*\nSend a normal private message to receive an AI reply.');
+      return repondre('✅ *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI chatbot enabled.*\nSend a normal private message to receive an AI reply.');
     }
 
     if (['off', 'disable', 'stop'].includes(action)) {
       setPrivateChatbotState(userJids, false);
-      return repondre('🛑 *BLAZE XMD AI chatbot disabled* for this private chat.');
+      return repondre('🛑 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI chatbot disabled* for this private chat.');
     }
 
     if (action === 'toggle') {
       const enabled = setPrivateChatbotState(userJids, !isPrivateChatbotEnabled(userJids));
       return repondre(enabled
-        ? '✅ *BLAZE XMD AI chatbot enabled.*\nSend a normal private message to begin.'
-        : '🛑 *BLAZE XMD AI chatbot disabled.*');
+        ? '✅ *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI chatbot enabled.*\nSend a normal private message to begin.'
+        : '🛑 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI chatbot disabled.*');
     }
 
     return repondre('❌ Unknown chatbot option. Use `.chatbot help`.');

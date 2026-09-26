@@ -1,35 +1,35 @@
 <div align="center">
-<img src="public/blaze-xmd-logo.svg" width="760" alt="Animated BLAZE-XMD logo" />
-    
+<img src="public/msela-chui-xmd-logo.svg" width="760" alt="Animated 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 logo" />
 
-  <img src="public/blaze-tech-logo.svg" width="680" alt="Animated BLAZE-TECH logo" />   <h1>
-    <span style="color:#ff8a3d; font-family:Georgia,serif; letter-spacing:3px;">BLAZE</span><span style="color:#2dd4bf; font-family:Georgia,serif; letter-spacing:3px;">-XMD</span>
-  </h1>   <p><strong>𝘽𝙇𝘼𝙕𝙀 𝙓𝙈𝘿</strong> <em>WhatsApp automation for modern communities</em></p>   <p>
-    <a href="https://github.com/blazetech-glitch/BLAZE-XMD/fork">
-      <img src="https://img.shields.io/github/forks/blazetech-glitch/BLAZE-XMD?style=for-the-badge&logo=github&label=FORKS&color=ff8a3d" alt="GitHub forks" />
+
+  <img src="public/msela-chui-xmd-logo.svg" width="680" alt="Animated 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 logo" />   <h1>
+    <span style="color:#ff8a3d; font-family:Georgia,serif; letter-spacing:3px;">MSELA CHUI XMD</span><span style="color:#2dd4bf; font-family:Georgia,serif; letter-spacing:3px;">-XMD</span>
+  </h1>   <p><strong>MSELA CHUI XMD</strong> <em>WhatsApp automation for modern communities</em></p>   <p>
+    <a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/fork">
+      <img src="https://img.shields.io/github/forks/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES?style=for-the-badge&logo=github&label=FORKS&color=ff8a3d" alt="GitHub forks" />
     </a>
-    <a href="https://github.com/blazetech-glitch/BLAZE-XMD">
-      <img src="https://img.shields.io/github/stars/blazetech-glitch/BLAZE-XMD?style=for-the-badge&logo=github&label=STARS&color=2dd4bf" alt="GitHub stars" />
+    <a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES">
+      <img src="https://img.shields.io/github/stars/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES?style=for-the-badge&logo=github&label=STARS&color=2dd4bf" alt="GitHub stars" />
     </a>
-    <a href="https://github.com/blazetech-glitch/BLAZE-XMD/issues">
-      <img src="https://img.shields.io/github/issues/blazetech-glitch/BLAZE-XMD?style=for-the-badge&logo=github&label=ISSUES&color=8b5cf6" alt="GitHub issues" />
+    <a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/issues">
+      <img src="https://img.shields.io/github/issues/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES?style=for-the-badge&logo=github&label=ISSUES&color=8b5cf6" alt="GitHub issues" />
     </a>
     <img src="https://img.shields.io/badge/WHATSAPP-AUTOMATION-07111f?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=25D366" alt="WhatsApp automation" />
   </p>   <p>
-    <a href="https://github.com/blazetech-glitch/BLAZE-XMD/fork">Fork Repository</a> •
-    <a href="https://blaze-tech-pair-site.onrender.com/">Get Session ID</a> •
-    <a href="https://dashboard.heroku.com/new?template=https://github.com/blazetech-glitch/BLAZE-XMD">Deploy to Heroku</a> •
+    <a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/fork">Fork Repository</a> •
+    <a href="https://msela-chui-xmd-pair-site.onrender.com/">Get Session ID</a> •
+    <a href="https://dashboard.heroku.com/new?template=https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES">Deploy to Heroku</a> •
     <a href="#commands">Explore Commands</a>
   </p>
 </div> <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=900&color=FF8A3D&center=true&vCenter=true&width=760&lines=Fast+%7C+Modern+%7C+Reliable;Modular+WhatsApp+automation;Built+for+communities%2C+groups%2C+and+creators;Add+commands+without+breaking+the+registry" alt="BLAZE-XMD animated description" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=900&color=FF8A3D&center=true&vCenter=true&width=760&lines=Fast+%7C+Modern+%7C+Reliable;Modular+WhatsApp+automation;Built+for+communities%2C+groups%2C+and+creators;Add+commands+without+breaking+the+registry" alt="𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 animated description" />
 </p> <p align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="420" alt="Animated developer coding GIF" />
 </p>
 
-> **BLAZE-XMD** is a modular WhatsApp automation project with command plugins, group utilities, media tools, search features, and configurable bot behavior. New commands can be added without disturbing the existing command registry.
+> **𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃** is a modular WhatsApp automation project with command plugins, group utilities, media tools, search features, and configurable bot behavior. New commands can be added without disturbing the existing command registry.
 
-> **Project identity:** BLAZE-XMD is both the bot name and the source repository name.
+> **Project identity:** 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 is both the bot name and the source repository name.
 
 ---
 
@@ -91,7 +91,7 @@
 </table> <details>
 <summary><strong>Tap to read more about the project architecture</strong></summary>
 
-BLAZE-XMD is designed around small command modules. A command receives a message, checks the relevant permissions, performs its task, and returns a response. This approach makes it easier to maintain existing commands and add new functionality in separate files.
+𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 is designed around small command modules. A command receives a message, checks the relevant permissions, performs its task, and returns a response. This approach makes it easier to maintain existing commands and add new functionality in separate files.
 
 A typical extension flow is:
 
@@ -128,8 +128,8 @@ Response, media, or group action
 ### Install locally
 
 ```bash
-git clone https://github.com/blazetech-glitch/BLAZE-XMD.git
-cd BLAZE-XMD
+git clone https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES.git
+cd 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃
 npm install
 cp .env.example .env
 npm start
@@ -156,21 +156,21 @@ npm start
 
 ## Pair the Bot
 
-Use the following workflow to connect BLAZE-XMD to WhatsApp.
+Use the following workflow to connect 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 to WhatsApp.
 
 ### 1. Fork the repository
 
 <p align="center">
-<a href="https://github.com/blazetech-glitch/BLAZE-XMD/fork" target="_blank">
-    <img src="https://img.shields.io/badge/FORK%20REPOSITORY-100000?style=for-the-badge&logo=github&logoColor=white&labelColor=darkblue&color=darkblue" alt="Fork BLAZE-XMD repository" />
+<a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/fork" target="_blank">
+    <img src="https://img.shields.io/badge/FORK%20REPOSITORY-100000?style=for-the-badge&logo=github&logoColor=white&labelColor=darkblue&color=darkblue" alt="Fork 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 repository" />
   </a>
 </p>
 
 ### 2. Generate a session ID
 
 <p align="center">
-<a href="https://blaze-tech-pair-site.onrender.com/" target="_blank">
-    <img src="https://img.shields.io/badge/GET%20SESSION%20ID-100000?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=darkred&color=darkred" alt="Get BLAZE-XMD session ID" />
+<a href="https://msela-chui-xmd-pair-site.onrender.com/" target="_blank">
+    <img src="https://img.shields.io/badge/GET%20SESSION%20ID-100000?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=darkred&color=darkred" alt="Get 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 session ID" />
   </a>
 </p>
 
@@ -197,7 +197,7 @@ cp .env.example .env
 | `SESSION_ID` | Yes | `your-private-session-id` | Authenticates the WhatsApp session |
 | `OWNER_NUMBER` | Yes | `1234567890` | Identifies the bot owner |
 | `PREFIX` | No | `.` | Sets the command prefix |
-| `BOT_NAME` | No | `BLAZE-XMD` | Sets the displayed bot name |
+| `BOT_NAME` | No | `𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃` | Sets the displayed bot name |
 | `MODE` | No | `public` | Controls the operating mode, if supported |
 
 > **Important:** Confirm the exact variable names in `.env.example` before deploying. The table above is a documentation template and should match the project source.
@@ -251,16 +251,16 @@ Replace the example entries below with the actual commands available in the plug
 ### Heroku
 
 <p align="center">
-<a href="https://dashboard.heroku.com/new?template=https://github.com/blazetech-glitch/BLAZE-XMD" target="_blank">
-    <img src="https://img.shields.io/badge/DEPLOY%20TO%20HEROKU-100000?style=for-the-badge&logo=heroku&logoColor=white&labelColor=purple&color=purple" alt="Deploy BLAZE-XMD to Heroku" />
+<a href="https://dashboard.heroku.com/new?template=https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES" target="_blank">
+    <img src="https://img.shields.io/badge/DEPLOY%20TO%20HEROKU-100000?style=for-the-badge&logo=heroku&logoColor=white&labelColor=purple&color=purple" alt="Deploy 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 to Heroku" />
   </a>
 </p>
 
 ### Download the source ZIP
 
 <p align="center">
-<a href="https://github.com/blazetech-glitch/BLAZE-XMD/archive/refs/heads/main.zip" target="_blank">
-    <img src="https://img.shields.io/badge/DOWNLOAD%20BOT%20ZIP-100000?style=for-the-badge&logo=github&logoColor=white&labelColor=darkorange&color=darkorange" alt="Download BLAZE-XMD ZIP" />
+<a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/archive/refs/heads/main.zip" target="_blank">
+    <img src="https://img.shields.io/badge/DOWNLOAD%20BOT%20ZIP-100000?style=for-the-badge&logo=github&logoColor=white&labelColor=darkorange&color=darkorange" alt="Download 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 ZIP" />
   </a>
 </p>
 
@@ -313,7 +313,7 @@ Add your own screenshots or a short demonstration GIF here after recording the b
 
 ```
 <p align="center">
-  <img src="public/demo.gif" width="760" alt="BLAZE-XMD command demonstration" />
+  <img src="public/demo.gif" width="760" alt="𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 command demonstration" />
 </p>
 ```
 
@@ -324,8 +324,8 @@ Add your own screenshots or a short demonstration GIF here after recording the b
 ## Project Statistics
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=blazetech-glitch&repo=BLAZE-XMD&show_icons=true&theme=tokyonight&hide_border=true&title_color=ff8a3d&icon_color=2dd4bf" height="165" alt="BLAZE-XMD GitHub statistics" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=blazetech-glitch&layout=compact&theme=tokyonight&hide_border=true&title_color=ff8a3d" height="165" alt="Most used languages by the repository owner" />
+<img src="https://github-readme-stats.vercel.app/api?username=shadricksanga7-hub&repo=MSELA-CHUI-TECHNOLOGIES&show_icons=true&theme=tokyonight&hide_border=true&title_color=ff8a3d&icon_color=2dd4bf" height="165" alt="𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 GitHub statistics" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shadricksanga7-hub&layout=compact&theme=tokyonight&hide_border=true&title_color=ff8a3d" height="165" alt="Most used languages by the repository owner" />
 </p>
 
 ---
@@ -379,21 +379,21 @@ Then open a pull request and include:
 
 ## Support
 
-For bugs or feature requests, open an issue in the [BLAZE-XMD repository](https://github.com/blazetech-glitch/BLAZE-XMD/issues). Please include the error message, deployment platform, relevant logs, and the steps that reproduce the problem. Do not include credentials.
+For bugs or feature requests, open an issue in the [𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 repository](https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/issues). Please include the error message, deployment platform, relevant logs, and the steps that reproduce the problem. Do not include credentials.
 
 <p align="center">
-<a href="https://github.com/blazetech-glitch/BLAZE-XMD/issues">Report an Issue</a> •
-  <a href="https://github.com/blazetech-glitch/BLAZE-XMD/fork">Fork the Project</a> •
-  <a href="https://github.com/blazetech-glitch">Visit BLAZE-TECH</a>
+<a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/issues">Report an Issue</a> •
+  <a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/fork">Fork the Project</a> •
+  <a href="https://github.com/shadricksanga7-hub">Visit 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃</a>
 </p>
 
 ---
 
 <div align="center">
-<strong>Built with focus by ARNOLDT20 and the BLAZE-TECH community.</strong>
-    
+<strong>Built with focus by 𝐌selachui and the 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 community.</strong>
 
-  <sub>BLAZE-XMD • Fast • Modern • Reliable</sub>
+
+  <sub>𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 • Fast • Modern • Reliable</sub>
 </div> <!-- External visual assets used above:
      - Typing animation: https://readme-typing-svg.demolab.com/
      - Coding GIF: https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif

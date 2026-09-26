@@ -5,7 +5,7 @@ const { sendGroupFeedbackSticker } = require('../../lib/groupFeedbackSticker');
 /**
  * add
  *
- * Fixed/ported from BLAZE-XMD's plugins/Groups/add.js. The old BLAZE-TECH
+ * Fixed/ported from 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's plugins/Groups/add.js. The old 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃
  * version (previously in popsstand1.js) had two bugs that made it
  * effectively unusable:
  *   1. It required superUser (bot owner) in addition to being a group
@@ -13,7 +13,7 @@ const { sendGroupFeedbackSticker } = require('../../lib/groupFeedbackSticker');
  *   2. The WhatsApp query used tag "settings" (attrs.type: "settings")
  *      instead of "set", which is not a valid add-participant request
  *      and fails silently against current WhatsApp servers.
- * This version fixes both, matching BLAZE-XMD's working implementation.
+ * This version fixes both, matching 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's working implementation.
  */
 blazetz({
     nomCom: 'add',
@@ -25,7 +25,7 @@ blazetz({
     if (!verifGroupe) return repondre('*This command works in groups only!*');
 
     // Caller check: admin OR the bot owner (superUser) — matches
-    // BLAZE-XMD's middleware.js `!isDev && !context.isAdmin` bypass logic.
+    // 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's middleware.js `!isDev && !context.isAdmin` bypass logic.
     // The previous version required verifAdmin with no bypass at all, so
     // even the owner typing the command on their own device could get
     // blocked if verifAdmin's JID comparison didn't line up perfectly
@@ -42,7 +42,7 @@ blazetz({
         return repondre('Failed to fetch group metadata.');
     }
 
-    // Bot-admin check, ported from BLAZE-XMD's middleware.js style
+    // Bot-admin check, ported from 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's middleware.js style
     // (tolerant substring/suffix match instead of strict JID equality).
     // NON-BLOCKING: only logged, not enforced. Reasoning — .link in this
     // same project calls client.groupInviteCode() with NO pre-check at
@@ -141,7 +141,7 @@ blazetz({
         console.log('[add] group-add query failed:', queryErr?.message || queryErr);
         const msg = (queryErr?.message || queryErr || '').toString();
         if (msg.includes('forbidden') || msg.includes('not-authorized') || msg.includes('403')) {
-            return repondre('👮 *BOT NOT ADMIN*\n━━━━━━━━━━━━━━━━\nWhatsApp rejected this — I need admin rights to add members.\nMake me admin first.\n━━━━━━━━━━━━━━━━\n© blaze tech');
+            return repondre('👮 *BOT NOT ADMIN*\n━━━━━━━━━━━━━━━━\nWhatsApp rejected this — I need admin rights to add members.\nMake me admin first.\n━━━━━━━━━━━━━━━━\n© 𝐌selachui');
         }
         return repondre('Failed to add user(s) to the group!');
     }
@@ -180,7 +180,7 @@ blazetz({
 
         if (inviteCode) {
             await client.sendMessage(jid, {
-                text: `You have been invited to join the group *${groupMetadata.subject}*:\n\nhttps://chat.whatsapp.com/${inviteCode}\n\n*POWERED BY BLAZE-TECH*`,
+                text: `You have been invited to join the group *${groupMetadata.subject}*:\n\nhttps://chat.whatsapp.com/${inviteCode}\n\n*POWERED BY 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃*`,
             }).catch(() => {});
         }
     }

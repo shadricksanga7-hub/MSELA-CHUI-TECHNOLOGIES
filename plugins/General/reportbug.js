@@ -17,21 +17,21 @@ blazetz({
   alias: ['bugreport', 'bug'],
   desc: 'Send a concise issue report to the bot owner.',
   categorie: 'Bug',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '📝'
 }, async (dest, client, options) => {
   const { repondre, arg, ms } = options;
   const details = String(arg || '').trim().replace(/\s+/g, ' ').slice(0, 700);
   if (!details) return repondre('📝 Use `.reportbug <short description>` with the command and error details.');
 
-  const ownerJid = normalizeJid(conf.NUMERO_OWNER || '255627417402');
+  const ownerJid = normalizeJid(conf.NUMERO_OWNER || '260774358600');
   const sender = senderJid(options, dest);
   if (!ownerJid || !sender) return repondre('❌ Bug report recipient could not be determined.');
 
   try {
     await client.sendMessage(ownerJid, {
       text: [
-        '📝 *BLAZE BUG REPORT*',
+        '📝 *MSELA CHUI XMD BUG REPORT*',
         '',
         `From: ${sender}`,
         `Chat: ${String(dest || '').slice(0, 120)}`,

@@ -10,13 +10,13 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
       vcard:
         "BEGIN:VCARD\n" +
         "VERSION:3.0\n" +
-        "FN:BLAZE VERIFIED ✅\n" +
-        "ORG:BLAZE-TECH BOT;\n" +
-        "TEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\n" +
+        "FN:MSELA CHUI XMD VERIFIED ✅\n" +
+        "ORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\n" +
+        "TEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\n" +
         "END:VCARD"
     }
   }
@@ -27,15 +27,15 @@ const contextInfo = {
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: "120363421014261315@newsletter",
-    newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+    newsletterJid: "120363405040601085@newsletter",
+    newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
     serverMessageId: 1
   },
   externalAdReply: {
-    title: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
-    body: "Powered by BLAZE TECH",
+    title: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
+    body: "Powered by 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
     thumbnailUrl: "https://files.catbox.moe/g2brwg.jpg",
-    sourceUrl: "https://whatsapp.com/channel/0029VbAjwl9MF8vQQa0ZT32",
+    sourceUrl: "https://whatsapp.com/channel/0029Vb6b5YoCMY0BMlXAvQ3H",
     mediaType: 1,
     renderLargerThumbnail: true
   }
@@ -100,7 +100,7 @@ blazetz({ nomCom: "videologo", categorie: "Download", reaction: "✋" }, async (
         await client.sendMessage(dest, {
           video: { url: logoUrl },
           mimetype: "video/mp4",
-          caption: `*Downloaded by 𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳*`,
+          caption: `*Downloaded by 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃*`,
           contextInfo,
         }, { quoted: ms });
       } else {

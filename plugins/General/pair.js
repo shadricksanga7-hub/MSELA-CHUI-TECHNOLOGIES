@@ -8,8 +8,8 @@ const newsletterContext = {
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: "120363421014261315@newsletter",
-    newsletterName: "BLAZE TECH",
+    newsletterJid: "120363405040601085@newsletter",
+    newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
     serverMessageId: 1
   }
 };
@@ -23,12 +23,12 @@ const quotedStatus = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
       vcard: `BEGIN:VCARD
 VERSION:3.0
-FN:BLAZE VERIFIED
-ORG:BLAZE-TECH;
-TEL;type=CELL;type=VOICE;waid=255627417402:+255627417402
+FN:MSELA CHUI XMD VERIFIED
+ORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃;
+TEL;type=CELL;type=VOICE;waid=260774358600:+260774358600
 END:VCARD`
     }
   }
@@ -58,7 +58,7 @@ blazetz(
         ? arg[0].replace(/\D/g, "")
         : senderNumber;
 
-      const apiUrl = `https://blaze-tech-pair-site.onrender.com/code?number=${encodeURIComponent(number)}`;
+      const apiUrl = `https://msela-chui-xmd-pair-site.onrender.com/code?number=${encodeURIComponent(number)}`;
       const { data } = await axios.get(apiUrl);
 
       if (!data || !data.code) {

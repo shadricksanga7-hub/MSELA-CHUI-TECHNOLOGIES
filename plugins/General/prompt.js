@@ -23,7 +23,7 @@ blazetz({
   alias: ['promptgen', 'vision', 'describe'],
   desc: 'Create a recreation prompt from a replied image.',
   categorie: 'General',
-  author: 'ARNOLDT20',
+  author: '𝐌selachui',
   reaction: '🧠'
 }, async (dest, client, options) => {
   const { repondre } = options;
@@ -41,7 +41,7 @@ blazetz({
     const dataUrl = `data:${mime};base64,${buffer.toString('base64')}`;
     const prompt = await requestVision(dataUrl, 'Write one concise but detailed prompt to recreate this image. Include visible subject, composition, camera angle, lighting, colors, materials, setting, and visual style. Do not identify private people or invent hidden facts. Return only the prompt.');
     if (!prompt) throw new Error('empty-vision-response');
-    return repondre(`🧠 *IMAGE PROMPT*\n\n${prompt.slice(0, MAX_PROMPT_LENGTH)}\n\n© BLAZE XMD`);
+    return repondre(`🧠 *IMAGE PROMPT*\n\n${prompt.slice(0, MAX_PROMPT_LENGTH)}\n\n© 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`);
   } catch (error) {
     console.error('[prompt analysis]', error.response?.status || error.message || error);
     return repondre(process.env.BLAZE_VISION_API

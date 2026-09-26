@@ -11,8 +11,8 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:BLAZE-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=254700000001:+254 700 000001\nEND:VCARD"
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:MSELA CHUI XMD VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260 774 358600\nEND:VCARD"
     }
   }
 };
@@ -22,8 +22,8 @@ const contextInfo = {
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: "120363421014261315@newsletter",
-    newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+    newsletterJid: "120363405040601085@newsletter",
+    newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
     serverMessageId: 1
   }
 };
@@ -106,7 +106,7 @@ blazetz({
     } catch {
       ppuser = mybotpic();
       await repondre(
-        `🚫 *Profile picture locked or not found!*  
+        `🚫 *Profile picture locked or not found!*
 🖼️ *Showing bot profile instead...*`,
         { mentions: [auteurMsgRepondu] }
       );

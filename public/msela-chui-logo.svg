@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
-  <title id="title">BLAZE-TECH by ARNOLDT20</title>
-  <desc id="desc">Animated BLAZE-TECH flame logo created by ARNOLDT20</desc>
+  <title id="title">𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 by 𝐌selachui</title>
+  <desc id="desc">Animated 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 flame logo created by 𝐌selachui</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#050914"/>
@@ -55,11 +55,11 @@
     <circle cx="158" cy="218" r="7" fill="#ffe08a" opacity=".9"/>
   </g>
   <g class="brand" transform="translate(310 0)">
-    <text x="0" y="190" fill="url(#word)" font-size="96" font-weight="900" letter-spacing="5">BLAZE</text>
+    <text x="0" y="190" fill="url(#word)" font-size="96" font-weight="900" letter-spacing="5">MSELA CHUI XMD</text>
     <text x="0" y="300" fill="#ffffff" font-size="82" font-weight="800" letter-spacing="7">TECH</text>
     <rect x="5" y="326" width="560" height="5" rx="3" fill="url(#accent)" opacity=".9">
       <animate attributeName="width" values="360;560;360" dur="3s" repeatCount="indefinite"/>
     </rect>
-    <text class="credit" x="5" y="405" fill="#ffe08a" font-size="22" font-weight="800" letter-spacing="4">CRAFTED BY ARNOLDT20</text>
+    <text class="credit" x="5" y="405" fill="#ffe08a" font-size="22" font-weight="800" letter-spacing="4">CRAFTED BY 𝐌selachui</text>
   </g>
 </svg>

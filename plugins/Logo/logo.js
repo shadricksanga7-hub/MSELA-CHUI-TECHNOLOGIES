@@ -10,8 +10,8 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:BLAZE-TECH BOT;\nTEL;type=CELL;type=VOICE;waid=255627417402:+255627417402\nEND:VCARD"
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:MSELA CHUI XMD VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\nEND:VCARD"
     }
   }
 };
@@ -21,8 +21,8 @@ const contextInfo = {
   forwardingScore: 999,
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: "120363421014261315@newsletter",
-    newsletterName: "𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳",
+    newsletterJid: "120363405040601085@newsletter",
+    newsletterName: "𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃",
     serverMessageId: 1
   }
 };
@@ -94,7 +94,7 @@ const logoCommands = [
     reaction: "🔷",
     makerUrl: "https://en.ephoto360.com/thunder-text-effect-online-97.html"
   }
-  
+
 ];
 
 // Process each logo command
@@ -103,7 +103,7 @@ logoCommands.forEach(({ nomCom, categorie, reaction, makerUrl }) => {
     const { arg, repondre, ms, prefixe } = commandeOptions;
 
     if (!arg || arg == "") {
-      return repondre(`Exemple of using:\n ${prefixe}${nomCom} blaze-tech`);
+      return repondre(`Exemple of using:\n ${prefixe}${nomCom} msela-chui-xmd`);
     }
 
     try {
@@ -115,14 +115,14 @@ logoCommands.forEach(({ nomCom, categorie, reaction, makerUrl }) => {
         image: { url: img.image },
         caption: `
 ╭──────────━⊷
-║ 𝗕𝗟𝗔𝗭𝗘 𝗫𝗠𝗗
+║ 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃
 ╰──────────━⊷
 ╭──────────━⊷
   ʙʟᴀᴢᴇ xᴍᴅ ᴄʜᴀɴɴᴇʟ ᴜᴘᴅᴀᴛs
-  ᴛᴀᴘ: https://whatsapp.com/channel/0029VbAjawl9MF8vQQa0ZT32
+  ᴛᴀᴘ: https://whatsapp.com/channel/0029Vb6b5YoCMY0BMlXAvQ3H
 ╰──────────━⊷
 
-> 𝙱𝙻𝙰𝚉𝙴 𝚇𝙼𝙳
+> 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃
 `,
         contextInfo
       }, { quoted: quotedContact });

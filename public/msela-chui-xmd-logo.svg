@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
-  <title id="title">BLAZE-XMD by ARNOLDT20</title>
-  <desc id="desc">Animated BLAZE-XMD WhatsApp automation bot logo created by ARNOLDT20</desc>
+  <title id="title">𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 by 𝐌selachui</title>
+  <desc id="desc">Animated 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 WhatsApp automation bot logo created by 𝐌selachui</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#07111f"/>
@@ -73,13 +73,13 @@
   </g>
 
   <g class="brand" transform="translate(310 0)">
-    <text x="0" y="178" fill="url(#word)" font-size="104" font-weight="800" letter-spacing="6">BLAZE</text>
+    <text x="0" y="178" fill="url(#word)" font-size="104" font-weight="800" letter-spacing="6">MSELA CHUI XMD</text>
     <text x="410" y="178" fill="#ffb000" font-size="104" font-weight="800" letter-spacing="2">-XMD</text>
     <rect x="5" y="212" width="520" height="4" rx="2" fill="#2dd4bf" opacity=".72">
       <animate attributeName="width" values="360;540;360" dur="3s" repeatCount="indefinite"/>
     </rect>
     <text x="5" y="263" fill="#c9e8f3" font-size="25" font-weight="500" letter-spacing="5">WHATSAPP AUTOMATION</text>
     <text x="5" y="302" fill="#8fb5c6" font-size="18" letter-spacing="2">FAST  •  MODERN  •  RELIABLE</text>
-    <text class="credit" x="5" y="430" fill="url(#credit)" font-size="22" font-weight="800" letter-spacing="4">CRAFTED BY ARNOLDT20</text>
+    <text class="credit" x="5" y="430" fill="url(#credit)" font-size="22" font-weight="800" letter-spacing="4">CRAFTED BY 𝐌selachui</text>
   </g>
 </svg>

@@ -23,10 +23,10 @@ blazetz({
   desc: 'Send a playful and respectful rizz line.',
   categorie: 'Funny',
   reaction: '😎',
-  author: 'ARNOLDT20'
+  author: '𝐌selachui'
 }, async (dest, client, response) => {
   const { repondre, arg = [] } = response;
   const name = cleanName(arg.join(' '));
   const line = lines[Math.floor(Math.random() * lines.length)];
-  return repondre(`😎 *BLAZE RIZZ*${name ? ` · ${name}` : ''}\n\n${line}\n\n_Keep it respectful • ARNOLDT20_`);
+  return repondre(`😎 *𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 RIZZ*${name ? ` · ${name}` : ''}\n\n${line}\n\n_Keep it respectful • 𝐌selachui_`);
 });

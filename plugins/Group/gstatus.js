@@ -4,7 +4,7 @@ const { downloadContentFromMessage } = require("@whiskeysockets/baileys");
 /**
  * gstatus
  *
- * Ported from BLAZE-XMD's plugins/Groups/gstatus.js. Posts media (image,
+ * Ported from 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃's plugins/Groups/gstatus.js. Posts media (image,
  * video, audio) or plain text into a group as a "silent group status" —
  * a WhatsApp feature that shows the content the same way a status does
  * (contextInfo.isGroupStatus / statusSourceType / statusAttributions),
@@ -57,7 +57,7 @@ blazetz({
             if (!afterCmd) {
                 await react("❌");
                 return repondre(
-                    `👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nReply to media and provide a group link or JID.\nExample:\n${prefixe}gstatus https://chat.whatsapp.com/HxCDA2s89LMEZMyixnTSy5?s=cl&p=a&ilr=4\n${prefixe}gstatus 120363@g.us\n━━━━━━━━━━━━━━━━\n© blaze tech`
+                    `👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nReply to media and provide a group link or JID.\nExample:\n${prefixe}gstatus https://chat.whatsapp.com/DmSuN4ZMdnkAGdnpK0Q5Gl?s=cl&p=a&mlu=4&ilr=4\n${prefixe}gstatus 120363@g.us\n━━━━━━━━━━━━━━━━\n© 𝐌selachui`
                 );
             }
             const parts = afterCmd.split(/\s+/);
@@ -78,13 +78,13 @@ blazetz({
                     if (!targetGroupJid) throw new Error("no id");
                 } catch {
                     await react("❌");
-                    return repondre(`👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nInvalid or expired group link.\n━━━━━━━━━━━━━━━━\n© blaze tech`);
+                    return repondre(`👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nInvalid or expired group link.\n━━━━━━━━━━━━━━━━\n© 𝐌selachui`);
                 }
             } else if (input.includes("@g.us")) {
                 targetGroupJid = input.trim();
             } else {
                 await react("❌");
-                return repondre(`👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nInvalid group link or JID.\n━━━━━━━━━━━━━━━━\n© blaze tech`);
+                return repondre(`👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nInvalid group link or JID.\n━━━━━━━━━━━━━━━━\n© 𝐌selachui`);
             }
 
             inlineText = rest || null;
@@ -133,7 +133,7 @@ blazetz({
         if (!mediaType && !caption) {
             await react("❌");
             return repondre(
-                `👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nReply to an image, video, audio, or include text.\nExample: ${prefixe}gstatus Check out this update!\n━━━━━━━━━━━━━━━━\n© blaze tech`
+                `👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nReply to an image, video, audio, or include text.\nExample: ${prefixe}gstatus Check out this update!\n━━━━━━━━━━━━━━━━\n© 𝐌selachui`
             );
         }
 
@@ -163,11 +163,11 @@ blazetz({
 
         await react("✅");
         if (!verifGroupe) {
-            return repondre(`👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\n✅ Status posted to group!\n━━━━━━━━━━━━━━━━\n© blaze tech`);
+            return repondre(`👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\n✅ Status posted to group!\n━━━━━━━━━━━━━━━━\n© 𝐌selachui`);
         }
     } catch (error) {
         console.error("GStatus Error:", error);
         await react("❌");
-        return repondre(`👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nError: ${error.message}\n━━━━━━━━━━━━━━━━\n© blaze tech`);
+        return repondre(`👥 *GROUP STATUS*\n━━━━━━━━━━━━━━━━\nError: ${error.message}\n━━━━━━━━━━━━━━━━\n© 𝐌selachui`);
     }
 });
