@@ -1,0 +1,37 @@
+{
+  "name": "BLAZE-TECH",
+  "description": "BLAZE XMD WhatsApp bot developed by ARNOLDT20",
+  "keywords": ["bot", "node", "baileys", "whatsapp"],
+  "logo": "https://files.catbox.moe/hflcbc.jpg",
+  "repository": "https://github.com/blazetech-glitch/BLAZE-XMD",
+  "success_url": "/",
+  "stack": "heroku-24",
+  "env": {
+    "SESSION_ID": {
+      "description": "Your session ID — the code you receive after scanning the QR code / pairing.",
+      "value": "",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Command prefix (can also be changed later with .setprefix).",
+      "value": ".",
+      "required": false
+    },
+    "BOT_OS": {
+      "description": "Menu presentation target: use ios for the iPhone-friendly menu, or android for the existing menu.",
+      "value": "ios",
+      "required": false
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
