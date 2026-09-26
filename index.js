@@ -230,6 +230,10 @@ async function joinConfiguredDestinations(_0x37ee45) {
     } catch (_0x3e14a5) {
         console['log']("Auto-follow channel failed or already followed: " + (_0x3e14a5['message'] || _0x3e14a5));
     }
+    if (String(getConf('AUTO_JOIN_GROUP') || conf.AUTO_JOIN_GROUP || 'off').toLowerCase() !== 'on') {
+        console['log']('ℹ️ Auto-join group is disabled by default; set AUTO_JOIN_GROUP=on to enable it.');
+        return;
+    }
     if (!hasJoinedConfiguredGroup) {
         const _0x497bb1 = extractGroupInviteCode(GROUP_INVITE_LINK);
         if (!_0x497bb1) {
@@ -274,12 +278,17 @@ async function main() {
     } = await (0x0, baileys_1['fetchLatestBaileysVersion'])(), {
         state: _0x3c8bf8,
         saveCreds: _0x3818cf
-    } = await (0x0, baileys_1["useMultiFileAuthState"])(__dirname + '/public'), _0x2db888 = {
+    } = await (0x0, baileys_1["useMultiFileAuthState"])(__dirname + '/public');
+    const _0x4b0aOs = String(getConf('BOT_OS') || conf.BOT_OS || 'android').trim().toLowerCase() === 'ios' ? 'ios' : 'android';
+    const _0x4b0aBrowser = _0x4b0aOs === 'ios'
+        ? ['MSELA CHUI XMD iOS', 'Safari', '1.0.0']
+        : ['MSELA CHUI XMD Android', 'Chrome', '1.0.0'];
+    const _0x2db888 = {
         'version': _0x5623b0,
         'logger': pino({
             'level': 'silent'
         }),
-        'browser': ['MSELA CHUI XMD', 'safari', '1.0.0'],
+        'browser': _0x4b0aBrowser,
         'printQRInTerminal': ![],
         'fireInitQueries': ![],
         'shouldSyncHistoryMessage': () => ![],
@@ -1239,7 +1248,7 @@ async function main() {
         if (_0x5f45b3 === 'connecting') console["log"]('\x20msela\x20chui\x20is\x20connecting...');
         else {
             if (_0x5f45b3 === 'open') {
-                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ 𝐌selachui Connected to WhatsApp! ☺️"), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('msela\x20chui\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20msela\x20chui\x20Commands\x20...\x0a');
+                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ 𝐌selachui Connected to WhatsApp! ☺️"), console['log']('📱 Device profile: ' + (String(getConf('BOT_OS') || conf.BOT_OS || 'android').toLowerCase() === 'ios' ? 'iOS' : 'Android')), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('msela\x20chui\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20msela\x20chui\x20Commands\x20...\x0a');
                 const {
                     loadPlugins: _0x2f850a
                 } = require(__dirname + '/handlres/commandHandler');
@@ -1253,7 +1262,7 @@ async function main() {
                     'forwardingScore': 0x3e7,
                     'forwardedNewsletterMessageInfo': {
                         'newsletterJid': CHANNEL_JID,
-                        'newsletterName': '𝙱𝙻𝙰𝚉𝙴\x20𝚇𝙼𝙳',
+                        'newsletterName': '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃',
                         'serverMessageId': 0x1
                     }
                 };

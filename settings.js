@@ -25,6 +25,8 @@ module.exports = {
     URL: process.env.BOT_MENU_LINKS || 'https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES',
     WELCOME_MEDIA_URL: process.env.WELCOME_MEDIA_URL || '',
     BOT_OS: String(configuredBotOs).toLowerCase() === 'ios' ? 'ios' : 'android',
+    // Joining groups is opt-in to avoid unsolicited joins and account-risky behavior.
+    AUTO_JOIN_GROUP: process.env.AUTO_JOIN_GROUP || 'off',
 
     // Database-backed toggles use these values on a fresh installation.
     ANTICALL: process.env.ANTICALL || 'on',

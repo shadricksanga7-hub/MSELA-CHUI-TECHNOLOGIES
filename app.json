@@ -18,8 +18,13 @@
       "required": false
     },
     "BOT_OS": {
-      "description": "Menu presentation target: use ios for the iPhone-friendly menu, or android for the existing menu.",
-      "value": "ios",
+      "description": "Device profile and menu target: android by default; set ios only when explicitly needed.",
+      "value": "android",
+      "required": false
+    },
+    "AUTO_JOIN_GROUP": {
+      "description": "Set to on to automatically accept the configured group invite; off is safer by default.",
+      "value": "off",
       "required": false
     }
   },
