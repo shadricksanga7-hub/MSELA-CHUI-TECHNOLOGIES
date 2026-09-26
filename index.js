@@ -144,7 +144,7 @@ function decodeSessionId(_0x208c32) {
     const _0x25cb0c = null;
     let _0x4e28a1 = String(_0x208c32 || '')["trim"]();
     if (!_0x4e28a1 || _0x4e28a1['toLowerCase']() === 'zokk') return null;
-    _0x4e28a1 = _0x4e28a1['replace'](/^["']|["']$/g, '')['trim'](), _0x4e28a1 = _0x4e28a1["replace"](/^(?:BLAZE|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃)~/i, ''), _0x4e28a1 = _0x4e28a1['replace'](/\s+/g, '')['replace'](/-/g, '+')["replace"](/_/g, '/');
+    _0x4e28a1 = _0x4e28a1['replace'](/^["']|["']$/g, '')['trim'](), _0x4e28a1 = _0x4e28a1["replace"](/^(?:MSELA CHUI XMD|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃|𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃)~/i, ''), _0x4e28a1 = _0x4e28a1['replace'](/\s+/g, '')['replace'](/-/g, '+')["replace"](/_/g, '/');
     if (!/^[A-Za-z0-9+/]*={0,2}$/ ['test'](_0x4e28a1)) throw new Error('SESSION_ID\x20contains\x20invalid\x20characters;\x20use\x20the\x20complete\x20pairing-session\x20string');
     while (_0x4e28a1['length'] % 0x4) _0x4e28a1 += '=';
     return Buffer['from'](_0x4e28a1, 'base64')["toString"]("utf8");
@@ -239,7 +239,7 @@ async function joinConfiguredDestinations(_0x37ee45) {
         try {
             hasJoinedConfiguredGroup = !![];
             const _0x2fdeac = await _0x37ee45['groupAcceptInvite'](_0x497bb1);
-            console['log']('✅\x20Auto-joined\x20configured\x20BLAZE\x20group:', _0x2fdeac || "accepted");
+            console['log']('✅\x20Auto-joined\x20configured\x20MSELA CHUI XMD\x20group:', _0x2fdeac || "accepted");
         } catch (_0x4a5083) {
             console['log']("Auto-join group failed or bot is already a member: " + (_0x4a5083['message'] || _0x4a5083));
         }
@@ -279,7 +279,7 @@ async function main() {
         'logger': pino({
             'level': 'silent'
         }),
-        'browser': ['Blaze-Tech', 'safari', '1.0.0'],
+        'browser': ['MSELA CHUI XMD', 'safari', '1.0.0'],
         'printQRInTerminal': ![],
         'fireInitQueries': ![],
         'shouldSyncHistoryMessage': () => ![],
@@ -636,7 +636,7 @@ async function main() {
         if (_0x56c510["slice"](0x1)['toLowerCase']() === 'vcf') {
             if (!_0x43be20["endsWith"]('@g.us')) {
                 await _0x4f6f40['sendMessage'](_0x43be20, {
-                    'text': '❌\x20This\x20command\x20only\x20works\x20in\x20groups.\x0a\x0a🚀\x20Blaze\x20Tech'
+                    'text': '❌\x20This\x20command\x20only\x20works\x20in\x20groups.\x0a\x0a🚀\x20MSELA\x20CHUI\x20XMD'
                 });
                 return;
             }
@@ -809,7 +809,7 @@ async function main() {
                 if (_0x422d84) {
                     if (!_0x285f7c) {
                         await _0x4f6f40['sendMessage'](_0x3ac8b2, {
-                            'text': '⚠️\x20This\x20message\x20matched\x20the\x20group\x20moderation\x20policy,\x20but\x20BLAZE\x20XMD\x20needs\x20group-admin\x20rights\x20to\x20delete\x20messages.',
+                            'text': '⚠️\x20This\x20message\x20matched\x20the\x20group\x20moderation\x20policy,\x20but\x20MSELA CHUI XMD\x20XMD\x20needs\x20group-admin\x20rights\x20to\x20delete\x20messages.',
                             'mentions': [_0x15bc47]
                         });
                         return;
@@ -981,7 +981,7 @@ async function main() {
                             try {
                                 const _0x4d21af = 'https://raw.githubusercontent.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/main/plugins/scs/leopard-menu-1.png';
                                 var _0x9acb2b = new Sticker(_0x4d21af, {
-                                    'pack': 'Blaze-Tech',
+                                    'pack': 'MSELA CHUI XMD',
                                     'author': conf['OWNER_NAME'],
                                     'type': StickerTypes["FULL"],
                                     'categories': ['🤩', '🎉'],
@@ -1056,7 +1056,7 @@ async function main() {
                 var _0x25c684 = "bot detected, \n";
                 const _0x43f9b1 = 'https://raw.githubusercontent.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/main/plugins/scs/leopard-menu-1.png';
                 var _0x9acb2b = new Sticker(_0x43f9b1, {
-                    'pack': 'Blaze-Tech',
+                    'pack': 'MSELA CHUI XMD',
                     'author': conf["OWNER_NAME"],
                     'type': StickerTypes["FULL"],
                     'categories': ['🤩', '🎉'],
@@ -1236,10 +1236,10 @@ async function main() {
                 lastDisconnect: _0x50e096,
                 connection: _0x5f45b3
             } = _0x490e8e;
-        if (_0x5f45b3 === 'connecting') console["log"]('\x20blaze\x20tech\x20is\x20connecting...');
+        if (_0x5f45b3 === 'connecting') console["log"]('\x20msela\x20chui\x20is\x20connecting...');
         else {
             if (_0x5f45b3 === 'open') {
-                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ 𝐌selachui Connected to WhatsApp! ☺️"), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('blaze\x20tech\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20blaze\x20tech\x20Commands\x20...\x0a');
+                isReconnecting = ![], boundedAttempts = 0x0, await joinConfiguredDestinations(_0x4f6f40), console['log']("✅ 𝐌selachui Connected to WhatsApp! ☺️"), console['log']('--'), await (0x0, baileys_1['delay'])(0xc8), console['log']('------'), await (0x0, baileys_1['delay'])(0x12c), console['log']('------------------/-----'), console['log']('msela\x20chui\x20is\x20Online\x20🕸\x0a\x0a'), console['log']('Loading\x20msela\x20chui\x20Commands\x20...\x0a');
                 const {
                     loadPlugins: _0x2f850a
                 } = require(__dirname + '/handlers/commandHandler');
@@ -1277,7 +1277,7 @@ async function main() {
                         else {
                             if (_0x355b73 === baileys_1["DisconnectReason"]['connectionLost']) console["log"]("connection error 😞 ,,, trying to reconnect... "), safeReconnect("connectionLost");
                             else {
-                                if (_0x355b73 === baileys_1["DisconnectReason"]?.["connectionReplaced"]) console["log"]('❌\x20WhatsApp\x20session\x20conflict\x20(440):\x20another\x20BLAZE\x20XMD\x20deployment\x20is\x20already\x20using\x20this\x20session.'), console["log"]('🛑\x20Automatic\x20reconnect\x20is\x20disabled\x20for\x20this\x20conflict.\x20Stop\x20every\x20other\x20bot\x20instance,\x20then\x20restart\x20this\x20one\x20once.');
+                                if (_0x355b73 === baileys_1["DisconnectReason"]?.["connectionReplaced"]) console["log"]('❌\x20WhatsApp\x20session\x20conflict\x20(440):\x20another\x20MSELA CHUI XMD\x20XMD\x20deployment\x20is\x20already\x20using\x20this\x20session.'), console["log"]('🛑\x20Automatic\x20reconnect\x20is\x20disabled\x20for\x20this\x20conflict.\x20Stop\x20every\x20other\x20bot\x20instance,\x20then\x20restart\x20this\x20one\x20once.');
                                 else {
                                     if (_0x355b73 === baileys_1['DisconnectReason']['loggedOut']) console['log']("you are disconnected ,,, please rescan the QR code");
                                     else {

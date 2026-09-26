@@ -153,7 +153,7 @@ blazetz({
     await updateBusinessProfile(field, value);
     return repondre(`✅ Business *${field}* updated. Use .business status to review the profile.`);
   }
-  return repondre('🏢 *BLAZE BUSINESS ASSISTANT*\n\n`.business set name Your Business`\n`.business set category Retail and Delivery`\n`.business set services Products or services`\n`.business set hours Mon-Sat 08:00-18:00`\n`.business set location Your location`\n`.business set phone +255...`\n`.business set price Pricing guidance`\n`.business set policy Return or booking policy`\n`.business set tone Warm, brief, professional`\n`.business set instructions Always ask before confirming an order`\n`.business set greeting Your preferred greeting`\n`.business on` / `.business off`\n`.business status` / `.business clear`');
+  return repondre('🏢 *MSELA CHUI XMD BUSINESS ASSISTANT*\n\n`.business set name Your Business`\n`.business set category Retail and Delivery`\n`.business set services Products or services`\n`.business set hours Mon-Sat 08:00-18:00`\n`.business set location Your location`\n`.business set phone +255...`\n`.business set price Pricing guidance`\n`.business set policy Return or booking policy`\n`.business set tone Warm, brief, professional`\n`.business set instructions Always ask before confirming an order`\n`.business set greeting Your preferred greeting`\n`.business on` / `.business off`\n`.business status` / `.business clear`');
 });
 // Each settingKey below matches exactly what index.js's getConf() reads.
 

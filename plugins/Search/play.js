@@ -163,7 +163,7 @@ blazetz({
     await client.sendMessage(dest, {
       audio: { url: downloadUrl },
       mimetype: 'audio/mpeg',
-      fileName: `${cleanFileName(title, 'blaze-audio')}.mp3`,
+      fileName: `${cleanFileName(title, 'msela-audio')}.mp3`,
       title: cleanFileName(title, '𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 audio'),
       body: `${video.timestamp || 'Audio'} · ${video.author?.name || 'YouTube'} · 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`,
       image: { url: video.thumbnail, renderSmallThumbnail: true },
@@ -197,7 +197,7 @@ blazetz({
     await client.sendMessage(dest, {
       document: { url: downloadUrl },
       mimetype: 'audio/mpeg',
-      fileName: `${cleanFileName(title, 'blaze-song')}.mp3`,
+      fileName: `${cleanFileName(title, 'msela-song')}.mp3`,
       caption: `🎶 *${video.title}*\n${video.timestamp || 'Audio'} · 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`
     }, { quoted: ms });
     await client.sendMessage(dest, { react: { text: '✅', key: ms.key } });
@@ -228,7 +228,7 @@ blazetz({
 
     const resolved = await resolveFullVideo(video.url);
     const bytes = await probeVideo(resolved.downloadUrl);
-    const title = cleanFileName(resolved.title || video.title, 'blaze-video');
+    const title = cleanFileName(resolved.title || video.title, 'msela-video');
     const fileName = `${title}.mp4`;
     const caption = `🎬 *${video.title}*\n${video.timestamp || 'Video'} · 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃`;
     await advanceVideoProgress(client, dest, progress, video.title);

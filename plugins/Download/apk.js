@@ -1,7 +1,7 @@
 const axios = require("axios");
 const { blazetz } = require("../../devblaze/blazetz");
 
-// VCard Contact (BLAZE VERIFIED ✅)
+// VCard Contact (MSELA CHUI XMD VERIFIED ✅)
 const quotedContact = {
   key: {
     fromMe: false,
@@ -10,8 +10,8 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
-      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:BLAZE VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+254 700 000001\nEND:VCARD"
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
+      vcard: "BEGIN:VCARD\nVERSION:3.0\nFN:MSELA CHUI XMD VERIFIED ✅\nORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\nTEL;type=CELL;type=VOICE;waid=260774358600:+260 774 358600\nEND:VCARD"
     }
   }
 };

@@ -20,7 +20,7 @@ function sourceFrom(options) {
 function reportFor(source) {
   const report = analyzeSource(source);
   return [
-    '💻 *BLAZE CODE INSPECTOR*',
+    '💻 *MSELA CHUI XMD CODE INSPECTOR*',
     '',
     `Language: *${report.language}*`,
     `Size: *${report.lines} line(s)* · *${report.characters} character(s)*`,

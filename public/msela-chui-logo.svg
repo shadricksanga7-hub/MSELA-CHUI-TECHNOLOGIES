@@ -55,7 +55,7 @@
     <circle cx="158" cy="218" r="7" fill="#ffe08a" opacity=".9"/>
   </g>
   <g class="brand" transform="translate(310 0)">
-    <text x="0" y="190" fill="url(#word)" font-size="96" font-weight="900" letter-spacing="5">BLAZE</text>
+    <text x="0" y="190" fill="url(#word)" font-size="96" font-weight="900" letter-spacing="5">MSELA CHUI XMD</text>
     <text x="0" y="300" fill="#ffffff" font-size="82" font-weight="800" letter-spacing="7">TECH</text>
     <rect x="5" y="326" width="560" height="5" rx="3" fill="url(#accent)" opacity=".9">
       <animate attributeName="width" values="360;560;360" dur="3s" repeatCount="indefinite"/>

@@ -10,11 +10,11 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
       vcard:
         "BEGIN:VCARD\n" +
         "VERSION:3.0\n" +
-        "FN:BLAZE VERIFIED ✅\n" +
+        "FN:MSELA CHUI XMD VERIFIED ✅\n" +
         "ORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\n" +
         "TEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\n" +
         "END:VCARD"

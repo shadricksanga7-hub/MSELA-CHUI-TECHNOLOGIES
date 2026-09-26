@@ -42,7 +42,7 @@ blazetz({
   author: '𝐌selachui',
   reaction: '😂'
 }, async (dest, client, { repondre }) => {
-  await repondre(`😂 *BLAZE JOKE*\n\n${pick(JOKES)}`);
+  await repondre(`😂 *MSELA CHUI XMD JOKE*\n\n${pick(JOKES)}`);
 });
 
 blazetz({

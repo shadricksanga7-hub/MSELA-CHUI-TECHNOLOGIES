@@ -31,7 +31,7 @@ blazetz({
   try {
     await client.sendMessage(ownerJid, {
       text: [
-        '📝 *BLAZE BUG REPORT*',
+        '📝 *MSELA CHUI XMD BUG REPORT*',
         '',
         `From: ${sender}`,
         `Chat: ${String(dest || '').slice(0, 120)}`,

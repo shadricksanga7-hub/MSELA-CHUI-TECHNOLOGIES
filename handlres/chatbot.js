@@ -256,7 +256,7 @@ function extractQuotedText(message) {
 
 function isAiResponse(text) {
   return /^╭━━━〔\s*🤖\s*𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 AI/i.test(text)
-    || /^🤖\s*\*?BLAZE GPT/i.test(text)
+    || /^🤖\s*\*?MSELA CHUI XMD GPT/i.test(text)
     || /╰━━━〔\s*𝐌selachui\s*〕━━━╯/i.test(text);
 }
 

@@ -548,7 +548,7 @@ blazetz({ nomCom: "tag", categorie: 'Group', reaction: "🎤" }, async (dest, cl
     } else if (msgRepondu.stickerMessage) {
       let media = await client.downloadAndSaveMediaMessage(msgRepondu.stickerMessage);
       let stickerMess = new Sticker(media, {
-        pack: 'blaze-tech',
+        pack: 'msela-chui-xmd',
         type: StickerTypes.CROPPED,
         categories: ["🤩", "🎉"],
         id: "12345",

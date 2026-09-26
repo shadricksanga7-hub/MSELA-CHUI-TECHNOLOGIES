@@ -10,7 +10,7 @@ blazetz({
 }, async (dest, client, options) => {
   const { repondre } = options;
   return repondre([
-    '╭─〔 🧰 BLAZE BUG MENU 〕─╮',
+    '╭─〔 🧰 MSELA CHUI XMD BUG MENU 〕─╮',
     '│ .ping · latency and online check',
     '│ .crsh · owner health and memory check',
     '│ .reportbug <details> · send a bug report',

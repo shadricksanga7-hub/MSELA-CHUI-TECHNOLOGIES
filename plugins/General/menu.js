@@ -38,11 +38,11 @@ const quotedContact = {
   },
   message: {
     contactMessage: {
-      displayName: "BLAZE VERIFIED ✅",
+      displayName: "MSELA CHUI XMD VERIFIED ✅",
       vcard:
         "BEGIN:VCARD\n" +
         "VERSION:3.0\n" +
-        "FN:BLAZE VERIFIED ✅\n" +
+        "FN:MSELA CHUI XMD VERIFIED ✅\n" +
         "ORG:𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 BOT;\n" +
         "TEL;type=CELL;type=VOICE;waid=260774358600:+260774358600\n" +
         "END:VCARD"
@@ -118,7 +118,7 @@ blazetz({
   const iosMenu = isIosPlainMenu;
   let optionsText = iosMenu
     ? `${iosPlainMenu(["𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 IOS MENU", "", "Reply with a category number:", ""])}\n`
-    : `📑 *BLAZE TOOL MENU*\n\nReply with category number:\n\n`;
+    : `📑 *MSELA CHUI XMD TOOL MENU*\n\nReply with category number:\n\n`;
 
   categories.forEach((cat, index) => {
     optionsText += iosMenu

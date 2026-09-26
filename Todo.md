@@ -2,9 +2,9 @@
 <img src="public/msela-chui-xmd-logo.svg" width="760" alt="Animated 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 logo" />
 
 
-  <img src="public/blaze-tech-logo.svg" width="680" alt="Animated 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 logo" />   <h1>
-    <span style="color:#ff8a3d; font-family:Georgia,serif; letter-spacing:3px;">BLAZE</span><span style="color:#2dd4bf; font-family:Georgia,serif; letter-spacing:3px;">-XMD</span>
-  </h1>   <p><strong>𝘽𝙇𝘼𝙕𝙀 𝙓𝙈𝘿</strong> <em>WhatsApp automation for modern communities</em></p>   <p>
+  <img src="public/msela-chui-xmd-logo.svg" width="680" alt="Animated 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 logo" />   <h1>
+    <span style="color:#ff8a3d; font-family:Georgia,serif; letter-spacing:3px;">MSELA CHUI XMD</span><span style="color:#2dd4bf; font-family:Georgia,serif; letter-spacing:3px;">-XMD</span>
+  </h1>   <p><strong>MSELA CHUI XMD</strong> <em>WhatsApp automation for modern communities</em></p>   <p>
     <a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/fork">
       <img src="https://img.shields.io/github/forks/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES?style=for-the-badge&logo=github&label=FORKS&color=ff8a3d" alt="GitHub forks" />
     </a>
@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/WHATSAPP-AUTOMATION-07111f?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=25D366" alt="WhatsApp automation" />
   </p>   <p>
     <a href="https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES/fork">Fork Repository</a> •
-    <a href="https://blaze-tech-pair-site.onrender.com/">Get Session ID</a> •
+    <a href="https://msela-chui-xmd-pair-site.onrender.com/">Get Session ID</a> •
     <a href="https://dashboard.heroku.com/new?template=https://github.com/shadricksanga7-hub/MSELA-CHUI-TECHNOLOGIES">Deploy to Heroku</a> •
     <a href="#commands">Explore Commands</a>
   </p>
@@ -169,7 +169,7 @@ Use the following workflow to connect 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗
 ### 2. Generate a session ID
 
 <p align="center">
-<a href="https://blaze-tech-pair-site.onrender.com/" target="_blank">
+<a href="https://msela-chui-xmd-pair-site.onrender.com/" target="_blank">
     <img src="https://img.shields.io/badge/GET%20SESSION%20ID-100000?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=darkred&color=darkred" alt="Get 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃 session ID" />
   </a>
 </p>

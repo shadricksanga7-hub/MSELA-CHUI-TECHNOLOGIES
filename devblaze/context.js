@@ -7,7 +7,7 @@ module.exports = {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363405040601085@newsletter',
-        newsletterName: 'Blaze Tech info',
+        newsletterName: 'Msela Chui info',
         serverMessageId: 143
       }
     };

@@ -73,7 +73,7 @@
   </g>
 
   <g class="brand" transform="translate(310 0)">
-    <text x="0" y="178" fill="url(#word)" font-size="104" font-weight="800" letter-spacing="6">BLAZE</text>
+    <text x="0" y="178" fill="url(#word)" font-size="104" font-weight="800" letter-spacing="6">MSELA CHUI XMD</text>
     <text x="410" y="178" fill="#ffb000" font-size="104" font-weight="800" letter-spacing="2">-XMD</text>
     <rect x="5" y="212" width="520" height="4" rx="2" fill="#2dd4bf" opacity=".72">
       <animate attributeName="width" values="360;540;360" dur="3s" repeatCount="indefinite"/>

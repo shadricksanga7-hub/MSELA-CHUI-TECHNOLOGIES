@@ -8,7 +8,7 @@
  * Backend selection (same fallback order as 𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃):
  *   - If process.env.DATABASE_URL is set, tries PostgreSQL first.
  *   - Otherwise (or if PostgreSQL fails to connect), falls back to a
- *     single JSON file (./blaze-data.json) — no setup required, so
+ *     single JSON file (./msela-data.json) — no setup required, so
  *     the bot keeps working exactly as it does today if no Postgres
  *     add-on is attached on Heroku.
  *
@@ -35,7 +35,7 @@ const _jsonDefaults = () => ({
 
 let _jsonData = null;
 let _jsonSaveTimer = null;
-const _jsonPath = path.resolve(__dirname, '../blaze-data.json');
+const _jsonPath = path.resolve(__dirname, '../msela-data.json');
 
 function _jsonFlush() {
     try { fs.writeFileSync(_jsonPath, JSON.stringify(_jsonData, null, 2)); } catch {}
@@ -55,7 +55,7 @@ function initJson() {
             _jsonData = _jsonDefaults();
         }
         _backend = 'json';
-        console.log('✅ [DB] Using JSON file database (blaze-data.json)');
+        console.log('✅ [DB] Using JSON file database (msela-data.json)');
     } catch (e) {
         console.log('⚠️ [DB] JSON init failed:', e.message);
         throw e;
