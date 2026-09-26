@@ -660,8 +660,12 @@ async function main() {
             {
                 messages: _0x198bda
             } = _0x2273d3,
-            _0x4aeba8 = _0x198bda[0x0];
-        if (!_0x4aeba8['message']) return;
+            _0x4aeba8 = (_0x198bda || []).find(_0x2e0b1a => {
+                const _0x4b6f3a = (0x0, baileys_1['normalizeMessageContent'])(_0x2e0b1a?.['message']) || _0x2e0b1a?.['message'];
+                return _0x4b6f3a && !_0x4b6f3a['protocolMessage'] && (0x0, baileys_1['getContentType'])(_0x4b6f3a) !== 'reactionMessage';
+            }) || (_0x198bda || [])[0x0];
+        if (!_0x4aeba8?.['message']) return;
+        _0x4aeba8['message'] = (0x0, baileys_1['normalizeMessageContent'])(_0x4aeba8['message']) || _0x4aeba8['message'];
         const _0x2c7ae1 = _0xf6d9ab => {
             const _0x1b42f4 = null;
             if (!_0xf6d9ab) return _0xf6d9ab;
