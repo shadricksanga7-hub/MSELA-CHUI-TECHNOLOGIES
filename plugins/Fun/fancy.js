@@ -44,7 +44,7 @@ blazetz(
           {
             text:
               `Example:\n${prefixe}fancy 10 𝐌selachui\n\n` +
-              fancy.list("MSELA-CHUI-XMD", fancy)
+              fancy.list("𝐌𝐒𝐄𝐋𝐀-𝐂𝐇𝐔𝐈-𝐗𝐌𝐃", fancy)
           },
           { quoted: quotedContact }
         );
