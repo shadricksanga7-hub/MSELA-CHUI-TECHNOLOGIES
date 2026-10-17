@@ -97,7 +97,7 @@ async function groupEvents(client, group) {
                     .replace(/{time}/g, time)
                     .replace(/{count}/g, String(metadata.participants?.length || ''));
             } else {
-                msg = `✦ *BLAZE XMD* ✦
+                msg = `✦ *MSELA-CHUI-XMD* ✦
 
 Welcome, @${mentionLabel(member)}
 *${groupName}*
