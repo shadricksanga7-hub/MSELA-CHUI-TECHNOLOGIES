@@ -123,7 +123,7 @@ Glad to have you here.`;
                     .replace(/{time}/g, time)
                     .replace(/{count}/g, String(metadata.participants?.length || ''));
             } else {
-                msg = `✦ *BLAZE XMD* ✦
+                msg = `✦ *MSELA-CHUI-XMD* ✦
 
 Goodbye, @${mentionLabel(member)}
 You will be missed in *${groupName}*.`;
